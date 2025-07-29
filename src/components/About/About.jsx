@@ -27,7 +27,7 @@ const About = () => {
           <AnimatedLetters letterClass={letterClass} strArray={"About me".split("")} idx={15}/>
         </h1>
         <p>
-          I am a very ambitious software developer with a unique background that has prepared me to be a team player who communicates effectively, faces problems analytically and has the technical skills to tackle any challenge.<br /><br />
+          I am a full stack engineer and Web Application Developer with a unique background that has prepared me to be a team player who communicates effectively, faces problems analytically and has the technical skills to get any project completed and obstacles overcome.<br /><br />
           {/* You can add more intro text or split it up as you like */}
         </p>
         <LanguageList />
