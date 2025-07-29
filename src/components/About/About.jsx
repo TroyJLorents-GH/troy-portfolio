@@ -38,7 +38,7 @@ const About = () => {
           <Link to="/about/dev" className="flat-button">DEVELOPMENT TOOLS</Link>
         </div>
       </div>
-      <div className="stage-cube-cont">
+      {/* <div className="stage-cube-cont">
         <div className="cubespinner">
           <div className="face1">
             <FontAwesomeIcon icon={faAws} color="#FF9900"/>
@@ -59,7 +59,7 @@ const About = () => {
             <FontAwesomeIcon icon={faJava} color="#EC4D28"/>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

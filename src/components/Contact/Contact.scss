@@ -1,0 +1,36 @@
+.container.contact-page {
+  margin: 2rem;
+  h1 { margin-bottom: 1.2rem;}
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    max-width: 400px;
+    input, textarea {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #bbb;
+      font-size: 1rem;
+    }
+    textarea { min-height: 110px; }
+    button {
+      background: #06bcee;
+      color: #fff;
+      font-weight: 600;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 0;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background 0.18s;
+      &:hover { background: #ffd700; color: #222;}
+    }
+  }
+  .thankyou-msg {
+    background: #e6fbe9;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    h2 { color: #06bcee; }
+  }
+}
