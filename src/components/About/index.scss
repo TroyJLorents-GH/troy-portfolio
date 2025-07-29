@@ -1,0 +1,179 @@
+// === Layout/Container Styles ===
+.container.about-page {
+  padding: 2rem 1rem;
+  background: #f9f9fc;
+  border-radius: 10px;
+  max-width: 900px;
+  margin: 2rem auto;
+  box-shadow: 0 4px 32px 0 #d1d2fa33;
+  position: relative;
+  min-height: 600px; // prevents overlap if cube is absolutely positioned
+}
+.text-zone {
+  min-width: 280px;
+  color: #181824;
+}
+h1, h2, h3 {
+  color: #333;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+li {
+  margin-bottom: 1.2em;
+  font-size: 1.05rem;
+}
+
+// === Progress Bars ===
+.progress-bar {
+  width: 80%;
+  background: #e6e6ef;
+  border-radius: 6px;
+  margin: 0.3em 0 0.7em 0;
+  height: 18px;
+  overflow: hidden;
+}
+.progress {
+  background: #6fc4f5;
+  height: 100%;
+  border-radius: 6px 0 0 6px;
+  transition: width 0.6s cubic-bezier(.23,1.07,.67,.98);
+}
+
+// === 3D Cube Spinner ===
+.stage-cube-cont {
+  width: 50%;
+  height: 100%;
+  top: 0;
+  padding-top: 18%;
+  margin-left: 0;
+  position: absolute;
+  right: 0;
+  overflow: hidden;
+  z-index: 10;
+}
+.cubespinner {
+  animation-name: spincube;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 12s;
+  transform-style: preserve-3d;
+  transform-origin: 150px 150px 0;
+  margin-left: calc(60% - 150px);
+  display: flex;
+  div {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border: 1px solid #ccc;
+    background: rgba(255, 255, 255, 0.4);
+    text-align: center;
+    font-size: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 20px 0px lightyellow;
+  }
+  .face1 { transform: translateZ(150px); color: #232f3e; }
+  .face2 { transform: rotateY(90deg) translateZ(150px); }
+  .face3 { transform: rotateY(90deg) rotateX(90deg) translateZ(150px); }
+  .face4 { transform: rotateY(180deg) rotateZ(90deg) translateZ(150px); }
+  .face5 { transform: rotateY(-90deg) rotateZ(90deg) translateZ(150px); }
+  .face6 { transform: rotateX(-90deg) translateZ(150px); }
+}
+@keyframes spincube {
+  from, to { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);}
+  16% { transform: rotateY(-90deg) rotateZ(90deg);}
+  33% { transform: rotateY(-90deg) rotateX(90deg);}
+  50% { transform: rotateY(-180deg) rotateZ(90deg);}
+  66% { transform: rotateY(-270deg) rotateX(90deg);}
+  83% { transform: rotateX(90deg);}
+}
+
+// === Flat Button Style ===
+.flat-button { 
+  color: #ffd700; 
+  font-size: 15px; 
+  font-weight: 800;
+  letter-spacing: 4px;
+  text-decoration: none;
+  padding: 10px 70px; 
+  border: 2px solid #ffd700; 
+  margin-top: 25px; 
+  float: left; 
+  animation: fadeIn 1s 1.8s backwards; 
+  white-space: nowrap; 
+  &:hover { 
+    background: #ffd700; 
+    color: #333;
+  }
+}
+
+// === Responsive Cube/Buttons ===
+@media screen and (max-width: 1000px){
+  .stage-cube-cont {
+    position: initial; 
+    width: 100%; 
+    height: 0%; 
+    overflow: visible; 
+    padding-top: 2rem;
+  }
+  .cubespinner {
+    transform-origin: 100% 0 0;
+    position: absolute; 
+    top: 50px; 
+    right: 80px;
+    div {
+      width: 50px;
+      height: 50px;
+      font-size: 25px;
+    }
+    .face1 { transform: translateZ(25px); color: #232f3e;}
+    .face2 { transform: rotateY(90deg) translateZ(25px);}
+    .face3 { transform: rotateY(90deg) rotateX(90deg) translateZ(25px);}
+    .face4 { transform: rotateY(180deg) rotateZ(90deg) translateZ(25px);}
+    .face5 { transform: rotateY(-90deg) rotateZ(90deg) translateZ(25px);}
+    .face6 { transform: rotateX(-90deg) translateZ(25px);}
+  }
+  .flat-button { font-size: 2vw; letter-spacing: 0.4em;}
+}
+
+// === Skill Progress Bar Colors ===
+.python-progress .progress { background: #3674a6; }
+.dotnet-progress .progress { background: #512bd4; }
+.typescript-progress .progress { background: #3178c6; }
+.js-progress .progress { background: #f0db4f; }
+.html-progress .progress { background: #e44d26; }
+.css-progress .progress { background: #264de4; }
+.sql-progress .progress { background: #e38c00; }
+.react-progress .progress { background: #61dafb; }
+.mui-progress .progress { background: #007fff; }
+.aspnet-progress .progress { background: #4e83b4; }
+.django-progress .progress { background: #092e20; }
+.node-progress .progress { background: #8cc84b; }
+.bootstrap-progress .progress { background: #563d7c; }
+.azure-progress .progress { background: #008ad7; }
+.aws-progress .progress { background: #ff9900; }
+.git-progress .progress { background: #f1502f; }
+.bash-progress .progress { background: #333; }
+.docker-progress .progress { background: #2496ed; }
+.octopus-progress .progress { background: #2f93e0; }
+.swagger-progress .progress { background: #85ea2d; }
+.insomnia-progress .progress { background: #4000bf; }
+.postman-progress .progress { background: #ca7009; }
+.powerauto-progress .progress { background: #0176d3; }
+.sharepoint-progress .progress { background: #0078d4; }
+.airtable-progress .progress { background: #ffba00; }
+.plumsail-progress .progress { background: #e073b6; }
+.servicenow-progress .progress { background: #0b5b4c; }
+.sqlserver-progress .progress { background: #a91d22; }
+.postgres-progress .progress { background: #336791; }
+.powerbi-progress .progress { background: #f2c811; }
+.splunk-progress .progress { background: #00a5e6; }
+.elastic-progress .progress { background: #005571; }
+.jira-progress .progress { background: #0052cc; }
+.confluence-progress .progress { background: #172b4d; }
+.tinkercad-progress .progress { background: #fdc002; }
+.blender-progress .progress { background: #ea7600; }
+.fusion-progress .progress { background: #f68712; }
