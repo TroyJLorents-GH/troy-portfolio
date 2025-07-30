@@ -18,37 +18,37 @@ const Sidebar = () => (
   <div className="nav-bar">
     <nav>
       <NavLink exact="true" to="/" activeclassname="active">
-        <FontAwesomeIcon icon={faHome} color="#4d4d4e" />
+        <FontAwesomeIcon icon={faHome} color="#d1cccc" />
       </NavLink>
       <NavLink to="/work" activeclassname="active">
-        <FontAwesomeIcon icon={faSuitcase} color="#4d4d4e" />
+        <FontAwesomeIcon icon={faSuitcase} color="#d1cccc" />
       </NavLink>
       <NavLink to="/portfolio" activeclassname="active">
-        <FontAwesomeIcon icon={faBriefcase} color="#4d4d4e" />
+        <FontAwesomeIcon icon={faBriefcase} color="#d1cccc" />
       </NavLink>
       <NavLink to="/contact" activeclassname="active">
-        <FontAwesomeIcon icon={faEnvelope} color="#4d4d4e" />
+        <FontAwesomeIcon icon={faEnvelope} color="#d1cccc" />
       </NavLink>
     </nav>
     <ul>
       <li>
         <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/troy-lorents/">
-          <FontAwesomeIcon icon={faLinkedin} color="#4d4d4e" />
+          <FontAwesomeIcon icon={faLinkedin} color="#6d6d6e" />
         </a>
       </li>
       <li>
         <a target="_blank" rel="noreferrer" href="https://github.com/TroyJLorents-GH">
-          <FontAwesomeIcon icon={faGithub} color="#4d4d4e" />
+          <FontAwesomeIcon icon={faGithub} color="#6d6d6e" />
         </a>
       </li>
       <li>
         <a href="mailto:troy.j.lorents@gmail.com" title="Email">
-          <FontAwesomeIcon icon={faEnvelope} color="#4d4d4e" />
+          <FontAwesomeIcon icon={faEnvelope} color="#6d6d6e" />
         </a>
       </li>
       <li>
         <a target="_blank" rel="noreferrer" href="/assets/Troy Lorents_225_Resume.pdf" title="Resume">
-          <FontAwesomeIcon icon={faFilePdf} color="#4d4d4e" />
+          <FontAwesomeIcon icon={faFilePdf} color="#6d6d6e" />
         </a>
       </li>
     </ul>
