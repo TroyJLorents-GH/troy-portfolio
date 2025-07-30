@@ -73,9 +73,11 @@ const Home = () => {
           <div className="hero-text">
             <h1>Welcome.</h1>
             <p>
-              My name is <b>Troy Lorents</b>, a full-stack developer based in Arizona, USA.<br />
-              I build modern web apps, APIs, and automation tools for education, business, and workflow management.<br /><br />
-              I'm passionate about clean code, scalable architecture, and building beautiful, user-focused solutions.
+              My name is <b>Troy Lorents</b>, a full-stack developer from Arizona. I specialize in building modern web applications, APIs, and<br />
+               automation tools that make life easier for educators, businesses, and teams.<br /><br />
+              With years of experience delivering real-world solutions, I am passionate about writing clean, maintainable<br />
+              code and designing scalable, robust architectures. Whether it’s streamlining complex workflows or crafting user-friendly interfaces,<br />
+               I thrive on learning and turning ideas into polished, high-impact products.
             </p>
             <div style={{ textAlign: "center" }}>
               {/* <a href="/assets/Troy Lorents_225_Resume.pdf" target="_blank" className="resume-btn">Download Resume (PDF)</a> */}
@@ -106,10 +108,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      <div className="footer">
-        ©2025 troy.j.lorents@gmail.com
-      </div>
     </>
   );
 };

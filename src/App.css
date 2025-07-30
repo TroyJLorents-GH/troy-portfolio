@@ -36,3 +36,28 @@
     transform: rotate(360deg);
   }
 }
+
+
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.page-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 100vh;
+  margin-left: 80px;   
+}
+
+.footer {
+  text-align: center;
+  padding: 1.5rem 0;
+  color: #06bcee;
+  opacity: 0.75;
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
+  background: #19182a;  
+  margin-top: auto;
+}

@@ -10,13 +10,16 @@ function App() {
   return (
     <div className="app-layout">
       <Sidebar />
-      <div className="page-content" style={{ marginLeft: 80, minHeight: '100vh' }}>
+      <div className="page-content">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/work" element={<Work />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
+        <footer className="footer">
+          ©2025 troy.j.lorents@gmail.com
+        </footer>
       </div>
     </div>
   );
