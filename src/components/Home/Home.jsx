@@ -15,7 +15,7 @@ const Home = () => {
       <section className="hero-section">
         <div className="hero-content">
           <div className="hero-text">
-            <h1>Welcome.</h1>
+            <h1>Welcome</h1>
             <p>
               My name is <b>Troy Lorents</b>, a full-stack developer from Arizona. I specialize in building modern web applications, APIs, and<br />
               automation tools that make life easier for educators, businesses, and teams.<br /><br />

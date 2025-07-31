@@ -2,6 +2,7 @@
   background: #19182a;
   min-height: 100vh;
   padding: 2rem;
+  gap: 5px;
   display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,12 +19,12 @@
 .work-card {
   background: #29273f;
   border-radius: 18px;
-  box-shadow: 0 3px 16px rgba(190, 186, 186, 0.133);
+  box-shadow: -8px 9px 19px 5px rgba(190, 186, 186, 0.133);
   margin-bottom: 2.1rem;
   transition: box-shadow 0.18s;
   padding: 1.9rem 2rem 1.2rem 2rem;
   cursor: pointer;
-  border: 1.5px solid #cdced8;
+  // border: 1.5px solid #cdced8;
   max-width: 700px;
   width: 100%;
   &:hover, &.expanded {
