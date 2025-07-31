@@ -13,7 +13,6 @@ const Work = () => {
     <div className="work-root">
       <div className="work-hero-section">
         <h1 className="work-title">Work & Experience</h1>
-        <img src="/assets/hero_setup.avif" alt="Hero" className="work-hero-image" />
       </div>
       {workExperience.map((job, idx) => (
         <div className={`work-card ${openIdx === idx ? "expanded" : ""}`} key={idx}>

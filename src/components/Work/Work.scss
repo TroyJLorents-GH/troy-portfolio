@@ -9,14 +9,14 @@
 
 .work-title {
   font-size: 2.4rem;
-  font-weight: 800;
+  font-weight: 300;
   color: #fff;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.2rem;
   letter-spacing: 0.01em;
 }
 
 .work-card {
-  background: #8d8e9c;
+  background: #29273f;
   border-radius: 18px;
   box-shadow: 0 3px 16px rgba(190, 186, 186, 0.133);
   margin-bottom: 2.1rem;
@@ -104,22 +104,26 @@
   justify-content: center;
   background: #19182a;
 
-  .work-hero-image {
-    width: 150px;       // match Home or adjust as needed
-    max-width: 20vw;
-    min-width: 90px;
-    border-radius: 18px;
-    box-shadow: -10px 3px 32px 10px #08082066;
-    display: block;
-    margin: 0;
-  }
+  // .work-hero-image {
+  //   width: 150px;       // match Home or adjust as needed
+  //   max-width: 20vw;
+  //   min-width: 90px;
+  //   border-radius: 18px;
+  //   box-shadow: -10px 3px 32px 10px #08082066;
+  //   display: block;
+  //   margin: 0;
+  // }
 
   .work-title {
-    font-size: 2.3rem;
-    font-weight: 800;
+   font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 2.6rem;
+    font-weight: 300;
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.04em;
     color: #fff;
-    margin: 0;
-    letter-spacing: 0.02em;
+    line-height: 1.12;
+    display: flex;
+    justify-content: center;
   }
 }
 @media (max-width: 700px) {

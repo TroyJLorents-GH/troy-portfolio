@@ -1,16 +1,20 @@
 .portfolio-root {
   max-width: 950px;
   margin: 3rem auto 0 auto;
-  padding: 2rem 1.5rem;
+  padding: 1rem 1vw 2rem 1vw;
   color: #fff;
 }
 
 .portfolio-title {
-  font-size: 2.3rem;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  margin-bottom: 2.3rem;
-  color: #06bcee;
+  font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 2.6rem;
+    font-weight: 300;
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.04em;
+    color: #fff;
+    line-height: 1.12;
+    display: flex;
+    justify-content: center;
 }
 
 .portfolio-list {
@@ -22,7 +26,7 @@
 .portfolio-card {
   background: #232237;
   border-radius: 16px;
-  box-shadow: 0 4px 32px 0 #15151a33;
+  box-shadow: 0 4px 32px 0 #67676b33;
   padding: 2rem 2.3rem 1.7rem 2.3rem;
   display: flex;
   flex-direction: column;
