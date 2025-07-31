@@ -14,19 +14,28 @@ const Sidebar = () => {
   const [active, setActive] = useState("about");
 
   useEffect(() => {
-    const onScroll = () => {
-      let found = "about";
-      for (const sec of sections) {
-        const el = document.getElementById(sec.id);
-        if (el && el.getBoundingClientRect().top <= 140) {
+  const onScroll = () => {
+    const targetLine = window.innerHeight * 0.4; // 40% down the viewport
+    let found = sections[0].id;
+    for (const sec of sections) {
+      const el = document.getElementById(sec.id);
+      if (el) {
+        const rect = el.getBoundingClientRect();
+        if (rect.top <= targetLine && rect.bottom >= targetLine) {
           found = sec.id;
         }
       }
-      setActive(found);
-    };
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+    }
+    // If scrolled to bottom, force Contact as active
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 2) {
+      found = "contact";
+    }
+    setActive(found);
+  };
+  window.addEventListener("scroll", onScroll);
+  onScroll(); // call initially
+  return () => window.removeEventListener("scroll", onScroll);
+}, []);
 
   return (
     <nav className="sidebar">
