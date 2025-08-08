@@ -4,7 +4,7 @@
   background: #19182a;
 }
 .sidebar {
-  width: 220px;
+  width: 190px;
   min-width: 130px;
   position: fixed;
   left: 0;
@@ -14,7 +14,7 @@
   padding: 15rem 0 0 0;
   z-index: 999;
   border-radius: 18px 0 0 18px;
-  box-shadow: inset 4px -4px 18px 14px rgba(247, 246, 246, 0.1);
+  box-shadow: inset -6px 6px 20px 15px rgba(247, 246, 246, 0.1);
   display: flex;
 
   ul {
@@ -47,13 +47,13 @@
   }
 }
 main {
-  margin-left: 220px;
+  margin-left: 180px;
   width: 100%;
   background: #19182a;
 }
 .section {
   min-height: 35vh;
-  padding: 1rem 1vw 1rem 2.5vw;
+  padding: 1rem 2.5vw 1rem 2.5vw;
 }
 .section-about { background: #19182a; }
 .section-skills { background: #232237; }

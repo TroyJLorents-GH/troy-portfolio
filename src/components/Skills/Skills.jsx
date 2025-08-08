@@ -11,7 +11,7 @@ const skillsData = [
   {
     label: "Frameworks & Technologies",
     items: [
-      "ASP.NET", "Entity Framework", "MVC", "Django", "Node.js", "jQuery", "React.js", "React Native", "EXPO", "Material UI", "Bootstrap", "Tailwind CSS", "SCSS", "WordPress", "Tkinter", "Streamlit"
+      "ASP.NET", "Entity Framework", "MVC", "Django", "Node.js", "jQuery", "React.js", "React Native", "EXPO", "Nest.js", "Material UI", "Bootstrap", "Tailwind CSS", "SCSS", "WordPress", "Tkinter", "Streamlit"
     ]
   },
   {
@@ -26,6 +26,18 @@ const skillsData = [
       "Git", "Bash", "Docker", "Octopus", "Swagger", "Insomnia", "Postman", "Netlify"
     ]
   },
+   {
+    label: "Data / Reporting",
+    items: [
+      "SQL Server", "PostgreSQL", "MySQL", "Power BI", "Splunk", "Elastic"
+    ]
+  },
+  {
+    label: "AI / ML",
+    items: [
+      "Machine Learning", "OpenAI API", "OpenAI SDK", "Gemini SDK", "LLM (Large Language Models)", "LLM Application Development", "LLM Integration", "Prompt Engineering (LLM)"
+    ]
+  },
   {
     label: "Automation / Workflow",
     items: [
@@ -33,21 +45,9 @@ const skillsData = [
     ]
   },
   {
-    label: "Data / Reporting",
-    items: [
-      "SQL Server", "PostgreSQL", "Power BI", "Splunk", "Elastic"
-    ]
-  },
-  {
     label: "Other",
     items: [
       "JIRA", "Confluence", "TinkerCad", "Blender", "Fusion 360/CAD"
-    ]
-  },
-  {
-    label: "AI / ML",
-    items: [
-      "Machine Learning", "OpenAI API"
     ]
   },
 ];

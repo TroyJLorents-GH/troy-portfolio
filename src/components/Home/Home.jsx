@@ -17,11 +17,8 @@ const Home = () => {
           <div className="hero-text">
             <h1>Welcome</h1>
             <p>
-              My name is <b>Troy Lorents</b>, a full-stack developer from Arizona. I specialize in building modern web applications, APIs, and<br />
-              automation tools that make life easier for educators, businesses, and teams.<br /><br />
-              With years of experience delivering real-world solutions, I am passionate about writing clean, maintainable<br />
-              code and designing scalable, robust architectures. Whether it’s streamlining complex workflows or crafting user-friendly interfaces,<br />
-              I thrive on learning and turning ideas into polished, high-impact products.
+              I'm <b>Troy Lorents</b>, a full-stack software developer with a passion for building modern products that solve real problems. With a background in business and six years of software engineering experience, I design, develop, and deploy web, mobile, and AI-powered solutions, from enterprise workflow apps to production-ready chatbots.<br /><br />
+              I specialize in React.js, .NET, Python, and cloud platforms, and I'm always developing with new tech, whether that's LLM integrations or React Native/Expo apps. I enjoy working on teams that value rapid iteration, innovation, and real-world impact.
             </p>
           </div>
           <div className="hero-image">
