@@ -90,7 +90,7 @@ const portfolioData = [
     }
   ],
 status: "in-progress",
-  progress: 50,
+  progress: 85,
   description:
     "A mobile app for scheduling, calendar management, and to-do tracking, built with React Native and Expo. Integrates with Google Calendar, supports reminders, and features an intuitive modern UI, and is an Productivity App that users will actually want to use daily! Currently in development, aiming for both iOS and Android release.",
   tags: [
