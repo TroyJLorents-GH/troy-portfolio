@@ -11,7 +11,7 @@ const skillsData = [
   {
     label: "Frameworks & Technologies",
     items: [
-      "ASP.NET", "Entity Framework", "MVC", "Django", "Node.js", "Express.js", "jQuery", "React.js", "React Native", "EXPO",  "Bootstrap", "GraphQL", "Apollo Server & Client", "Tailwind CSS", "Nest.js", "Material UI", "SCSS", "WordPress", "Tkinter", "Streamlit"
+      ".NET", "ASP.NET", "Entity Framework", "MVC", "Django", "Node.js", "Express.js", "jQuery", "React.js", "React Native", "EXPO",  "Bootstrap", "GraphQL", "Apollo Server & Client", "Tailwind CSS", "Nest.js", "Material UI", "SCSS", "WordPress", "Tkinter", "Streamlit"
     ]
   },
   {
