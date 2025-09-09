@@ -11,7 +11,7 @@ const skillsData = [
   {
     label: "Frameworks & Technologies",
     items: [
-      "ASP.NET", "Entity Framework", "MVC", "Django", "Node.js", "jQuery", "React.js", "React Native", "EXPO", "Nest.js", "Material UI", "Bootstrap", "Tailwind CSS", "SCSS", "WordPress", "Tkinter", "Streamlit"
+      "ASP.NET", "Entity Framework", "MVC", "Django", "Node.js", "Express.js", "jQuery", "React.js", "React Native", "EXPO",  "Bootstrap", "GraphQL", "Apollo Server & Client", "Tailwind CSS", "Nest.js", "Material UI", "SCSS", "WordPress", "Tkinter", "Streamlit"
     ]
   },
   {
@@ -29,7 +29,7 @@ const skillsData = [
    {
     label: "Data / Reporting",
     items: [
-      "SQL Server", "PostgreSQL", "MySQL", "Power BI", "Splunk", "Elastic"
+      "SQL Server", "PostgreSQL", "MySQL", "MongoDB", "Power BI", "Splunk", "Elastic"
     ]
   },
   {
