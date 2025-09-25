@@ -97,8 +97,43 @@ status: "in-progress",
     "React Native", "Expo", "JavaScript (ES6+)", "Google Calendar API", "OpenWeather API",
     "Mobile App", "Scheduling", "Reminders", "UI/UX", "Cross-Platform", "iOS", "Android"
   ]
-}
-  // Add more projects here...
+},
+  {
+    name: "Job Tracker Dashboard (In Progress)",
+    link: "",
+    github: [
+      {
+        label: "GitHub Repo",
+        url: "https://github.com/TroyJLorents-GH/tanstack-job-tracker"
+      }
+    ],
+    status: "in-progress",
+    progress: 95,
+    description:
+      "A job tracking and dashboard app that helps users manage applications, track statuses, and visualize progress. Built with React and TanStack libraries, featuring interactive filtering, sorting, and data visualization. Currently nearing completion with a polished UI and responsive design.",
+    tags: [
+      "React.js", "TypeScript", "TanStack Table", "TanStack Query",
+      "SCSS", "JavaScript (ES6+)", "Responsive UI", "Data Visualization"
+    ]
+  },
+  {
+    name: "GraphQL Chatroom (In Progress)",
+    link: "",
+    github: [
+      {
+        label: "GitHub Repo",
+        url: "https://github.com/TroyJLorents-GH/chat_application_FS_GQL"
+      }
+    ],
+    status: "in-progress",
+    progress: 85,
+    description:
+      "A custom chatroom application using GraphQL for queries, mutations, and subscriptions. Built with React + Apollo Client on the frontend and a GraphQL backend to handle real-time messaging. Includes room creation, message history, and live updates.",
+    tags: [
+      "React.js", "Apollo Client", "GraphQL", "Subscriptions", "Superbase", "Node.js",
+      "JavaScript (ES6+)", "Chat Application", "Real-time Updates", "UI/UX"
+    ]
+  }
 ];
 
 export default portfolioData;
