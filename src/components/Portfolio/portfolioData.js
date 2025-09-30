@@ -99,21 +99,20 @@ status: "in-progress",
   ]
 },
   {
-    name: "Job Tracker Dashboard (In Progress)",
-    link: "",
+    name: "Job Tracker Web App Dashboard",
+    link: "https://job-tracker-frontend-ekxsmomdlq-uw.a.run.app/",
     github: [
       {
         label: "GitHub Repo",
         url: "https://github.com/TroyJLorents-GH/tanstack-job-tracker"
       }
     ],
-    status: "in-progress",
-    progress: 95,
     description:
-      "A job tracking and dashboard app that helps users manage applications, track statuses, and visualize progress. Built with React and TanStack libraries, featuring interactive filtering, sorting, and data visualization. Currently nearing completion with a polished UI and responsive design.",
+       "A completed job tracking and dashboard application hosted on Google Cloud Run with user data persisted in a Supabase PostgreSQL database. Built with React, TypeScript, and TanStack libraries, it includes interactive filtering, sorting, and data visualization with a polished, responsive UI.",
     tags: [
       "React.js", "TypeScript", "TanStack Table", "TanStack Query",
-      "SCSS", "JavaScript (ES6+)", "Responsive UI", "Data Visualization"
+      "SCSS", "JavaScript (ES6+)", "Responsive UI", "Data Visualization",
+       "Google Cloud Run", "Supabase", "PostgreSQL"
     ]
   },
   {
