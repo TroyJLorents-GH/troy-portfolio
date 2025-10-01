@@ -42,77 +42,77 @@ const portfolioData = [
     "Axios", "fetch", "React Context", "CSS3/SCSS", "Power Automate", 
     "React Testing Library", "Jest", "Azure", "GitHub"
   ]
-},
-{
-  name: "InsightAI",
-  link: "https://insightai-openai.streamlit.app/", // If you have a live demo, add the URL; otherwise, leave blank
-  github: [
-    {
-      label: "GitHub Repo",
-      url: "https://github.com/TroyJLorents-GH/InsightAI"
-    }
-  ],
-  description:
-    "A document-aware AI chatbot demo that lets users upload files (PDF, Word, Excel, CSV) and chat with an AI assistant powered by GPT-4. Features document Q&A, summarization, content flagging, session history, pin/delete/resume chat, and OpenAI moderation—all in a modern Streamlit UI.",
-  tags: [
-    "Python 3.13", "Streamlit", "OpenAI GPT-4", "Document Q&A", "Chatbot",
-    "PyMuPDF (fitz)", "SQLite", "python-dotenv",
-    "Session Persistence", "Content Moderation", "Keyword Extraction"
-  ]
-},
-{
-  name: "OpenAI MLL (In Progress)",
-  link: "", // Add live demo link if you have one, else leave blank
-  github: [
-    {
-      label: "GitHub Repo",
-      url: "https://github.com/TroyJLorents-GH/openai-mll"
-    }
-  ],
-  status: "in-progress",
-  progress: 90,
-  description:
-    "A hands-on playground for experimenting with OpenAI's GPT models, including prompt engineering, API integration, and real-time responses. This project features a streamlined Python backend and CLI for fast prototyping, as well as environment management with python-dotenv. Great for AI workflow demos and testing new LLM features.",
-  tags: [
-    "Python", "OpenAI API", "OpenAI GPT-4", "Prompt Engineering", 
-  "python-dotenv", "LLM Playground", "Session Persistence", "PyMuPDF (fitz)",
-  "React", "JavaScript", "JSX", "CSS-in-JS", 
-  "Flask", "State Management", "Error/Threat Handling", "Chat Interface Design"
-  ]
-},
-{
-  name: "React Native Scheduler (In Progress)",
-  link: "", // Add your demo/testflight link here in the future if you want!
-  github: [
-    {
-      label: "GitHub Repo",
-      url: "https://github.com/TroyJLorents-GH/react-native-scheduler"
-    }
-  ],
-status: "in-progress",
-  progress: 85,
-  description:
-    "A mobile app for scheduling, calendar management, and to-do tracking, built with React Native and Expo. Integrates with Google Calendar, supports reminders, and features an intuitive modern UI, and is an Productivity App that users will actually want to use daily! Currently in development, aiming for both iOS and Android release.",
-  tags: [
-    "React Native", "Expo", "JavaScript (ES6+)", "Google Calendar API", "OpenWeather API",
-    "Mobile App", "Scheduling", "Reminders", "UI/UX", "Cross-Platform", "iOS", "Android"
-  ]
-},
+  },
   {
-    name: "Job Tracker Web App Dashboard",
-    link: "https://job-tracker-frontend-ekxsmomdlq-uw.a.run.app/",
+      name: "NextStep - Career Guidance and Job Discovery Web App",
+      link: "https://job-tracker-frontend-ekxsmomdlq-uw.a.run.app/",
+      github: [
+        {
+          label: "GitHub Repo",
+          url: "https://github.com/TroyJLorents-GH/tanstack-job-tracker"
+        }
+      ],
+      description:
+        "A completed job tracking and dashboard application. Search for jobs across LinkedIn, Indeed, Glassdoor, ZipRecruiter all in one place. Hosted on GC with user data persisted in a Supabase PostgreSQL database. Built with React, TypeScript, and TanStack libraries, it includes interactive filtering, sorting, and data visualization with a polished, responsive UI.",
+      tags: [
+        "React.js", "TypeScript", "TanStack Table", "TanStack Query",
+        "SCSS", "JavaScript (ES6+)", "Responsive UI", "Data Visualization",
+        "Google Cloud Run", "Supabase", "PostgreSQL"
+      ]
+    },
+  {
+    name: "InsightAI",
+    link: "https://insightai-openai.streamlit.app/", // If you have a live demo, add the URL; otherwise, leave blank
     github: [
       {
         label: "GitHub Repo",
-        url: "https://github.com/TroyJLorents-GH/tanstack-job-tracker"
+        url: "https://github.com/TroyJLorents-GH/InsightAI"
       }
     ],
     description:
-       "A completed job tracking and dashboard application hosted on Google Cloud Run with user data persisted in a Supabase PostgreSQL database. Built with React, TypeScript, and TanStack libraries, it includes interactive filtering, sorting, and data visualization with a polished, responsive UI.",
+      "A document-aware AI chatbot demo that lets users upload files (PDF, Word, Excel, CSV) and chat with an AI assistant powered by GPT-4. Features document Q&A, summarization, content flagging, session history, pin/delete/resume chat, and OpenAI moderation—all in a modern Streamlit UI.",
     tags: [
-      "React.js", "TypeScript", "TanStack Table", "TanStack Query",
-      "SCSS", "JavaScript (ES6+)", "Responsive UI", "Data Visualization",
-       "Google Cloud Run", "Supabase", "PostgreSQL"
+      "Python 3.13", "Streamlit", "OpenAI GPT-4", "Document Q&A", "Chatbot",
+      "PyMuPDF (fitz)", "SQLite", "python-dotenv",
+      "Session Persistence", "Content Moderation", "Keyword Extraction"
+    ]
+  },
+  {
+    name: "OpenAI MLL (In Progress)",
+    link: "", // Add live demo link if you have one, else leave blank
+    github: [
+      {
+        label: "GitHub Repo",
+        url: "https://github.com/TroyJLorents-GH/openai-mll"
+      }
+    ],
+    status: "in-progress",
+    progress: 90,
+    description:
+      "A hands-on playground for experimenting with OpenAI's GPT models, including prompt engineering, API integration, and real-time responses. This project features a streamlined Python backend and CLI for fast prototyping, as well as environment management with python-dotenv. Great for AI workflow demos and testing new LLM features.",
+    tags: [
+      "Python", "OpenAI API", "OpenAI GPT-4", "Prompt Engineering", 
+    "python-dotenv", "LLM Playground", "Session Persistence", "PyMuPDF (fitz)",
+    "React", "JavaScript", "JSX", "CSS-in-JS", 
+    "Flask", "State Management", "Error/Threat Handling", "Chat Interface Design"
+    ]
+  },
+  {
+    name: "React Native Scheduler (In Progress)",
+    link: "", // Add your demo/testflight link here in the future if you want!
+    github: [
+      {
+        label: "GitHub Repo",
+        url: "https://github.com/TroyJLorents-GH/react-native-scheduler"
+      }
+    ],
+  status: "in-progress",
+    progress: 85,
+    description:
+      "A mobile app for scheduling, calendar management, and to-do tracking, built with React Native and Expo. Integrates with Google Calendar, supports reminders, and features an intuitive modern UI, and is an Productivity App that users will actually want to use daily! Currently in development, aiming for both iOS and Android release.",
+    tags: [
+      "React Native", "Expo", "JavaScript (ES6+)", "Google Calendar API", "OpenWeather API",
+      "Mobile App", "Scheduling", "Reminders", "UI/UX", "Cross-Platform", "iOS", "Android"
     ]
   },
   {
