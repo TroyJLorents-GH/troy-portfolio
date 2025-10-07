@@ -11,37 +11,41 @@ const skillsData = [
   {
     label: "Frameworks & Technologies",
     items: [
-      ".NET", "ASP.NET", "Entity Framework", "MVC", "Django", "Node.js", "Express.js", "jQuery", "React.js", "React Native", "EXPO",  "Bootstrap", "GraphQL", "Apollo Server & Client", "Tailwind CSS", "Nest.js", "Material UI", "SCSS", "WordPress", "Tkinter", "Streamlit"
+      ".NET", "ASP.NET", "Entity Framework", "MVC", "Python (FastAPI, Django)", "Node.js", "Express.js", "React.js", "React Native", "EXPO",  "TanStack (Table, Query, Router)",
+      "GrpahQL",  "Apollo Server & Client",  "GraphQL Subscriptions", "Nest.js",  "Bootstrap", "Tailwind CSS", "Nest.js", "Material UI", "SCSS", "WordPress", "Tkinter", "Streamlit", "Vite"
     ]
   },
   {
     label: "Cloud",
     items: [
-      "Azure", "GCP (Google Cloud Platform)", "AWS (Lambda, DynamoDB, CloudWatch, EC2, S3, API Gateway, Amplify, Elastic Beanstalk)"
+      "Azure (App Service, Blob Storage, SQL Database, Static Web Apps)", "GCP (Cloud Run, Firestore)",
+       "AWS (Lambda, DynamoDB, CloudWatch, EC2, S3, API Gateway, Amplify, Elastic Beanstalk, ECS (Fargate)",
+       "Supabase (PostgreSQL, Auth, Storage, Edge Functions)"
+
     ]
   },
   {
     label: "DevOps / Tools",
     items: [
-      "Git", "Bash", "Docker", "Octopus", "Swagger", "Insomnia", "Postman", "Netlify"
+      "Git", "GitHub Actions", "Docker", "Octopus", "VS Code", "PyCharm", "Bash", "Swagger", "Insomnia", "Postman", "Netlify"
     ]
   },
    {
     label: "Data / Reporting",
     items: [
-      "SQL Server", "PostgreSQL", "MySQL", "MongoDB", "Power BI", "Splunk", "Elastic"
+      "SQL Server", "PostgreSQL", "MySQL", "MongoDB", "Power BI", "Redshift", "Splunk", "Elastic", "Supabase"
     ]
   },
   {
     label: "AI / ML",
     items: [
-      "Machine Learning", "OpenAI API", "OpenAI SDK", "Gemini SDK", "LLM (Large Language Models)", "LLM Application Development", "LLM Integration", "Prompt Engineering (LLM)"
+      "Machine Learning", "OpenAI API", "OpenAI SDK", "Vector Databases (Pinecone, FAISS, ChromaDB)", "Gemini SDK", "LLM (Large Language Models)", "LLM Application Development", "LLM Integration", "Prompt Engineering (LLM)"
     ]
   },
   {
     label: "Automation / Workflow",
     items: [
-      "Power Automate", "N8N", "SharePoint", "Airtable", "Plumsail", "ServiceNow"
+      "Power Automate", "PowerApps", "Google Apps SCripts", "N8N", "SharePoint", "Airtable", "Plumsail", "ServiceNow"
     ]
   },
   {
