@@ -12,6 +12,7 @@ const portfolioData = [
         url: "https://github.com/TroyJLorents-GH/student-ui"
       }
     ],
+    status: "Updating",
     description:
       "A full-stack application to streamline student hiring and automate HR workflows for a university. Features a .NET Core Web API backend and a React frontend, both deployed on Azure. Includes secure authentication, advanced UI with MUI X Pro, and automated integration with Microsoft/Google tools.",
     tags: [
