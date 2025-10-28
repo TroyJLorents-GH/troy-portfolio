@@ -12,6 +12,7 @@ const sections = [
 
 const Sidebar = () => {
   const [active, setActive] = useState("about");
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
   const onScroll = () => {
@@ -37,14 +38,28 @@ const Sidebar = () => {
   return () => window.removeEventListener("scroll", onScroll);
 }, []);
 
+  const handleLinkClick = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <nav className="sidebar">
-      <ul>
+      <button
+        className="hamburger"
+        onClick={() => setMenuOpen(!menuOpen)}
+        aria-label="Toggle menu"
+      >
+        <span className={menuOpen ? "open" : ""}></span>
+        <span className={menuOpen ? "open" : ""}></span>
+        <span className={menuOpen ? "open" : ""}></span>
+      </button>
+      <ul className={menuOpen ? "open" : ""}>
         {sections.map((sec) => (
           <li key={sec.id}>
             <a
               href={`#${sec.id}`}
               className={active === sec.id ? "active" : ""}
+              onClick={handleLinkClick}
             >
               {sec.label}
             </a>

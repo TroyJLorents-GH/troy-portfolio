@@ -71,47 +71,86 @@ main {
   letter-spacing: 0.02em;
 }
 
-// @media (max-width: 950px) {
-//   .single-page-layout { flex-direction: column; }
-//   .sidebar { position: static; width: 100%; min-width: 0; height: auto; padding: 0.5rem 0; }
-//   main { margin-left: 0; }
-//   .section { padding: 3rem 1rem; }
-// }
-
-
-/* Responsive: make sidebar horizontal at top on mobile */
+/* Responsive: hamburger menu for mobile */
 @media (max-width: 850px) {
   .sidebar {
-    position: static;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: 10.5rem 0;
-    background: #19182a; // match your theme
+    padding: 1rem 1.5rem;
+    background: #19182a;
     z-index: 1000;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     border-bottom: 1px solid #232237;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
+
+  .hamburger {
+    display: flex !important;
+  }
+
   .sidebar ul {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: #19182a;
     display: flex;
     flex-direction: column;
-    gap: 0.3rem;
+    gap: 0;
     margin: 0;
     padding: 0;
     list-style: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    &.open {
+      max-height: 400px;
+      padding: 1rem 0;
+    }
   }
+
   .sidebar li {
     margin: 0;
+    width: 100%;
   }
+
   .sidebar a {
-    padding: 0.5em 0.9em;
-    font-size: 1em;
-    border-radius: 7px;
+    padding: 1rem 1.5rem;
+    font-size: 1.1em;
+    border-radius: 0;
+    display: block;
+    text-align: left;
+    border-bottom: 1px solid #232237;
+
+    &.active, &:hover {
+      background: #232237;
+      color: #06bcee;
+    }
   }
+
   main {
-    padding-top: 3.5rem; // adjust to match nav height
+    margin-left: 0;
+    padding-top: 4rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .sidebar {
+    padding: 0.8rem 1rem;
+  }
+
+  .sidebar ul {
+    top: 56px;
+  }
+
+  .section {
+    padding: 1rem 1.5rem;
   }
 }

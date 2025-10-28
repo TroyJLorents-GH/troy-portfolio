@@ -88,12 +88,47 @@
   }
 }
 
+@media (max-width: 850px) {
+  .work-root {
+    padding: 1.5rem;
+  }
+  .work-card {
+    padding: 1.5rem 1.3rem;
+  }
+}
+
 @media (max-width: 700px) {
-  .work-root { padding: 1rem; }
-  .work-card { padding: 1.1rem 1rem 0.9rem 1rem; }
-  .work-title { font-size: 1.4rem; }
-  .work-position { font-size: 1.15rem; }
-  .work-company { font-size: 0.97rem; }
+  .work-root {
+    padding: 1rem;
+  }
+  .work-card {
+    padding: 1.3rem 1.1rem;
+  }
+  .work-title {
+    font-size: 1.8rem;
+  }
+  .work-position {
+    font-size: 1.25rem;
+  }
+  .work-company {
+    font-size: 1rem;
+  }
+  .work-summary {
+    font-size: 0.98rem;
+  }
+  .work-details {
+    font-size: 1rem;
+    padding-left: 1.2em;
+  }
+}
+
+@media (max-width: 600px) {
+  .work-title {
+    font-size: 1.6rem;
+  }
+  .work-position {
+    font-size: 1.15rem;
+  }
 }
 
 
