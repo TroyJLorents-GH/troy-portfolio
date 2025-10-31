@@ -1,5 +1,23 @@
 const portfolioData = [
   {
+    name: "Enterprise Student Assignment System",
+    link: "https://studentsystem-web-cwc6dec2f3afg4d7.westus-01.azurewebsites.net/",
+    github: [
+      {
+        label: "Full-Stack (.NET + Blazor)",
+        url: "https://github.com/TroyJLorents-GH/NET_EnterpriseStudentSystem"
+      }
+    ],
+    description:
+      "A comprehensive full-stack admin dashboard for managing student assignments, grader applications, and course schedules. Complements the Student Hiring System by providing administrators with bulk operations, inline editing, and document status tracking. Built with clean architecture using .NET 8.0 Web API backend and Blazor Server for real-time UI updates via SignalR. Features Azure SQL database integration and deployed on Azure App Services with Application Insights monitoring.",
+    tags: [
+      "C# (ASP.NET Core 8.0)", ".NET 8.0", "Blazor Server", "SignalR", "Entity Framework Core",
+      "Dapper", "ADO.NET", "Clean Architecture", "Azure SQL Database", "Azure App Services",
+      "Application Insights", "Swagger/OpenAPI", "xUnit", "Repository Pattern", "Dependency Injection",
+      "Bootstrap 5", "Real-time Updates", "CRUD Operations", "SQL Server"
+    ]
+  },
+  {
     name: "Student Hiring System",
     link: "https://www.troystaticsite.com",
     github: [
