@@ -27,7 +27,7 @@ const skillsData = [
   {
     label: "DevOps / Tools",
     items: [
-      "Git", "GitHub Actions", "Docker", "Octopus", "VS Code", "PyCharm", "Bash", "Swagger", "Insomnia", "Postman", "Netlify"
+      "Git", "GitHub Actions", "Azure DevOps", "Docker", "Octopus", "VS Code", "PyCharm", "Bash", "Swagger", "Insomnia", "Postman", "Netlify"
     ]
   },
    {
@@ -39,13 +39,13 @@ const skillsData = [
   {
     label: "AI / ML",
     items: [
-      "Machine Learning", "OpenAI API", "OpenAI SDK", "Vector Databases (Pinecone, FAISS, ChromaDB)", "Gemini SDK", "LLM (Large Language Models)", "LLM Application Development", "LLM Integration", "Prompt Engineering (LLM)"
+      "Machine Learning", "OpenAI API", "Microsft Foundry", "OpenAI SDK", "Vector Databases (Pinecone, FAISS, ChromaDB)", "Azure OpenAI", "LLM (Large Language Models)", "LLM Application Development", "LLM Integration", "Prompt Engineering (LLM)"
     ]
   },
   {
     label: "Automation / Workflow",
     items: [
-      "Power Automate", "PowerApps", "Google Apps SCripts", "N8N", "SharePoint", "Airtable", "Plumsail", "ServiceNow"
+      "Power Automate", "PowerApps", "Google Apps Scripts", "N8N", "BluePrism", "SharePoint", "UI Path", "Airtable", "Plumsail", "ServiceNow"
     ]
   },
   {

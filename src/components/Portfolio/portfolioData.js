@@ -96,7 +96,7 @@ const portfolioData = [
     ]
   },
   {
-    name: "OpenAI MLL (In Progress)",
+    name: "OpenAI LLM (In Progress)",
     link: "", // Add live demo link if you have one, else leave blank
     github: [
       {
@@ -109,7 +109,7 @@ const portfolioData = [
     description:
       "A hands-on playground for experimenting with OpenAI's GPT models, including prompt engineering, API integration, and real-time responses. This project features a streamlined Python backend and CLI for fast prototyping, as well as environment management with python-dotenv. Great for AI workflow demos and testing new LLM features.",
     tags: [
-      "Python", "OpenAI API", "OpenAI GPT-4", "Prompt Engineering", 
+      "Python", "OpenAI API", "OpenAI GPT-4", "GPT-5", "gpt-4o-mini", "gpt-4.1-mini", "gpt-3.5-turbo","Prompt Engineering", 
     "python-dotenv", "LLM Playground", "Session Persistence", "PyMuPDF (fitz)",
     "React", "JavaScript", "JSX", "CSS-in-JS", 
     "Flask", "State Management", "Error/Threat Handling", "Chat Interface Design"

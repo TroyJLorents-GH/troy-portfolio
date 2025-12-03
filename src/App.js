@@ -5,6 +5,7 @@ import Skills from "./components/Skills/Skills";      // if you create this
 import Work from "./components/Work/Work";
 import Portfolio from "./components/Portfolio/Portfolio";
 import Contact from "./components/Contact/Contact";
+import AIAssistant from "./components/AIAssistant/AIAssistant";
 import "./App.scss";
 
 const App = () => (
@@ -30,6 +31,7 @@ const App = () => (
         ©2025 Troy Lorents
       </footer>
     </main>
+    <AIAssistant />
   </div>
 );
 
