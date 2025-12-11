@@ -1,5 +1,19 @@
 export const workExperience = [
   {
+    title: "Founder & Developer",
+    company: "AutomateFlows.io",
+    years: "September 2024 – Present",
+    summary: "Founded an AI automation services business delivering intelligent automation solutions for small businesses using Azure AI and modern web technologies.",
+    details: [
+      "Built and deployed production Azure AI agents for automated customer service using Azure OpenAI endpoints and conversational AI.",
+      "Developed a full-stack SaaS platform with React, TypeScript, Tailwind CSS, and Netlify serverless functions for AI-powered business automation.",
+      "Integrated Stripe payment processing for subscription-based automation services (Starter, Professional, Enterprise tiers).",
+      "Created AI-driven automation solutions for customer service, data entry, appointment scheduling, email management, and report generation.",
+      "Implemented serverless architecture using Netlify Functions for scalable API endpoints and webhook integrations.",
+      "Designed responsive, modern landing pages with Framer Motion animations and conversion-optimized user experiences."
+    ]
+  },
+  {
     title: "Web Application Developer",
     company: "ASU – School of Computing and Augmented Intelligence",
     years: "July 2024 – Present",
