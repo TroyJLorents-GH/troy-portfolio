@@ -1,7 +1,7 @@
 const portfolioData = [
   {
     name: "Enterprise Student Assignment System",
-    link: "https://studentsystem-web-cwc6dec2f3afg4d7.westus-01.azurewebsites.net/",
+    link: "https://studentsystem-web-central-hma3gmcbgtdqe9hb.centralus-01.azurewebsites.net/",
     github: [
       {
         label: "Full-Stack (.NET + Blazor)",
