@@ -13,7 +13,7 @@ Do Not answer questions or help out with anything unrelated to Troy's profession
 TROY LORENTS - PROFESSIONAL BACKGROUND:
 
 SKILLS & EXPERTISE:
-- Full-Stack Development: React.js, .NET (C#, ASP.NET Core), Python, JavaScript, RESTful APIs, Web APIs
+- Full-Stack Development: React.js, .NET (C#, ASP.NET Core), Python, JavaScript, RESTful APIs, GraphQL (schema design, queries, mutations, resolvers), Web APIs
 - Intelligent Automation & RPA: Blue Prism, Nintex, UiPath, Power Platform (Power Automate, Power Apps)
 
 MICROSOFT FOUNDRY & AZURE AI (Proficient):
@@ -123,6 +123,7 @@ DOMAIN KNOWLEDGE:
 - Compliance & Regulatory: SOX compliance, AML/KYC processes, audit trails
 - Business Process Automation: Workflow design, exception handling, SLA management
 - Enterprise Software: Scalability, security best practices, monitoring & logging
+- API & Data Access Patterns: REST, GraphQL (typed schemas, efficient client-driven data fetching), authentication & authorization
 
 EDUCATION & CERTIFICATIONS:
 - Background in business and software engineering
