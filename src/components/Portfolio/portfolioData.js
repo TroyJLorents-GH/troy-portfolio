@@ -20,7 +20,7 @@ const portfolioData = [
   },
   {
     name: "Resume Match AI",
-    link: "",
+    link: "https://openai-llm.netlify.app/",
     github: [
       {
         label: "GitHub Repo",
@@ -35,22 +35,6 @@ const portfolioData = [
       "React", "Material UI", "Python", "Flask", "Azure AI Foundry",
       "Azure AI Search", "Azure OpenAI", "Cosmos DB", "Embeddings",
       "Hybrid Search", "VM API Proxy", "REST API", "LLM Integration"
-    ]
-  },
-  {
-    name: "Job Advisor",
-    link: "",
-    github: [
-      {
-        label: "GitHub Repo",
-        url: "https://github.com/TroyJLorents-GH/job-advisor"
-      }
-    ],
-    description:
-      "A resume and job advisory tool powered by Azure AI Foundry's ResumeAgent. Analyzes job postings and recommends the best-fit resume from a candidate's portfolio. Built with React, Tailwind CSS, and Netlify Functions for serverless API calls with service principal authentication.",
-    tags: [
-      "React", "Tailwind CSS", "Netlify Functions", "Azure AI Foundry",
-      "Foundry Agents", "Service Principal Auth", "Serverless", "JavaScript (ES6+)"
     ]
   },
   {
