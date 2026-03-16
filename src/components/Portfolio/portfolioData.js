@@ -14,8 +14,8 @@ const portfolioData = [
       "A multi-format document intelligence platform with Agentic RAG. Processes PDFs, Word docs, and images through Azure Document Intelligence, generates embeddings, and stores them in Cosmos DB for semantic search. Features a Flask API hosted on an Azure VM with hybrid search (BM25 + vector) powered by Azure AI Search, job-resume matching, and automated indexing.",
     tags: [
       "Python", "Flask", "Azure Document Intelligence", "Azure AI Search",
-      "Cosmos DB", "Embeddings", "Semantic Search", "Agentic RAG",
-      "Hybrid Search (BM25 + Vector)", "Docker", "Azure VM", "REST API"
+      "Cosmos DB", "Embeddings", "Semantic Search", "Agentic RAG", "Neo4j Aura",
+      "Hybrid Search (BM25 + Vector)", "Docker", "Azure VM", "REST API", "Knowledge Graphs"
     ]
   },
   {
@@ -33,8 +33,8 @@ const portfolioData = [
       "A full-stack AI-powered resume matching and chat platform. Features an intelligent chat interface backed by Azure AI Foundry agents, resume-to-job matching via Azure AI Search (hybrid BM25 + vector), and a Python Flask API proxy hosted on an Azure VM. Built with React and Material UI with a clean light theme.",
     tags: [
       "React", "Material UI", "Python", "Flask", "Azure AI Foundry",
-      "Azure AI Search", "Azure OpenAI", "Cosmos DB", "Embeddings",
-      "Hybrid Search", "VM API Proxy", "REST API", "LLM Integration"
+      "Azure AI Search", "Azure OpenAI", "Neo4j Aura", "Cosmos DB", "Embeddings",
+      "Hybrid Search", "VM API Proxy", "REST API", "LLM Integration", "Knowledge Graphs"
     ]
   },
   {
