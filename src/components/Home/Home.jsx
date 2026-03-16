@@ -17,7 +17,7 @@ const Home = () => {
           <div className="hero-text">
             <h1>Welcome</h1>
             <p>
-              I'm <b>Troy Lorents</b>, a senior full-stack software developer with a passion for building modern products that solve real problems. With a background in Business Law and 8+ years of software engineering experience, I design, develop, and deploy web, mobile, and AI-powered solutions — from enterprise workflow apps to intelligent agents and document intelligence platforms.<br /><br />
+              I'm <b>Troy Lorents</b>, a senior full-stack software developer with a passion for building modern products that solve real problems. With a background in Business Law and 8+ years of software engineering experience, I design, develop, and deploy web, mobile, and AI-powered solutions, from enterprise workflow apps to intelligent agents and document intelligence platforms.<br /><br />
               I specialize in React.js, .NET, Python, and cloud platforms, with deep experience in Azure AI Foundry agents, RAG pipelines, semantic search, and LLM integrations. I'm always building with new tech, whether that's agentic AI, React Native/Expo apps, or hybrid vector search systems. I enjoy working on teams that value rapid iteration, innovation, and real-world impact.
             </p>
           </div>
