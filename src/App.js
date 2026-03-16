@@ -28,7 +28,7 @@ const App = () => (
         <Contact />
       </section>
       <footer className="footer">
-        ©2025 Troy Lorents
+        ©2026 Troy Lorents
       </footer>
     </main>
     <AIAssistant />

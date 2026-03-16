@@ -3,13 +3,13 @@ export const workExperience = [
     title: "Founder & Developer",
     company: "AutomateFlows.io",
     years: "September 2024 – Present",
-    summary: "Founded an AI automation services business delivering intelligent automation solutions for small businesses using Azure AI and modern web technologies.",
+    summary: "Founded an AI automation services business delivering intelligent automation solutions for small businesses using Azure AI Foundry, modern web technologies, and agentic AI.",
     details: [
-      "Built and deployed production Azure AI agents for automated customer service using Azure OpenAI endpoints and conversational AI.",
+      "Built and deployed production Azure AI Foundry agents (PersonalAssistant, ResumeAgent, ResumeMatcherAgent) with Cosmos DB, Web Search, and Memory Store tool integrations.",
       "Developed a full-stack SaaS platform with React, TypeScript, Tailwind CSS, and Netlify serverless functions for AI-powered business automation.",
+      "Built a document intelligence platform with Agentic RAG, Azure Document Intelligence, embeddings, and Azure AI Search (hybrid BM25 + vector) for semantic resume matching.",
       "Integrated Stripe payment processing for subscription-based automation services (Starter, Professional, Enterprise tiers).",
-      "Created AI-driven automation solutions for customer service, data entry, appointment scheduling, email management, and report generation.",
-      "Implemented serverless architecture using Netlify Functions for scalable API endpoints and webhook integrations.",
+      "Implemented serverless architecture using Netlify Functions with service principal authentication for Azure AI Foundry API calls.",
       "Designed responsive, modern landing pages with Framer Motion animations and conversion-optimized user experiences."
     ]
   },
@@ -26,7 +26,8 @@ export const workExperience = [
       "Developed and hosted cloud-native REST APIs and web/mobile apps using AWS (EC2, Lambda, Elastic Beanstalk, API Gateway, IAM, CloudWatch, DynamoDB, Amplify), containerized with Docker.",
       "Streamlined HR, IT, and faculty workflows using ServiceNow, Plumsail, Power BI, WordPress, and Airtable; developed advanced Splunk queries for network monitoring.",
       "Created PowerShell and WPF tools with Active Directory and Airtable integration for IT asset management and network scans.",
-      "Launched a production-ready AI assistant (Python, Flask, React, OpenAI API) with doc Q&A, keyword extraction, vector search, and web scraping."
+      "Launched a production-ready AI assistant (Python, Flask, React, OpenAI API) with doc Q&A, keyword extraction, vector search, and web scraping.",
+      "Built and deployed a Flask API on Azure VM with Docker for document intelligence, semantic search, and job-resume matching using Azure AI Search and embeddings."
     ]
   },
   {

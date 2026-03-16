@@ -1,5 +1,59 @@
 const portfolioData = [
   {
+    name: "Doc Intelligence Hub",
+    link: "",
+    github: [
+      {
+        label: "GitHub Repo",
+        url: "https://github.com/TroyJLorents-GH/doc-intel-hub"
+      }
+    ],
+    status: "in-progress",
+    progress: 90,
+    description:
+      "A multi-format document intelligence platform with Agentic RAG. Processes PDFs, Word docs, and images through Azure Document Intelligence, generates embeddings, and stores them in Cosmos DB for semantic search. Features a Flask API hosted on an Azure VM with hybrid search (BM25 + vector) powered by Azure AI Search, job-resume matching, and automated indexing.",
+    tags: [
+      "Python", "Flask", "Azure Document Intelligence", "Azure AI Search",
+      "Cosmos DB", "Embeddings", "Semantic Search", "Agentic RAG",
+      "Hybrid Search (BM25 + Vector)", "Docker", "Azure VM", "REST API"
+    ]
+  },
+  {
+    name: "Resume Match AI",
+    link: "",
+    github: [
+      {
+        label: "GitHub Repo",
+        url: "https://github.com/TroyJLorents-GH/openai-mll"
+      }
+    ],
+    status: "in-progress",
+    progress: 95,
+    description:
+      "A full-stack AI-powered resume matching and chat platform. Features an intelligent chat interface backed by Azure AI Foundry agents, resume-to-job matching via Azure AI Search (hybrid BM25 + vector), and a Python Flask API proxy hosted on an Azure VM. Built with React and Material UI with a clean light theme.",
+    tags: [
+      "React", "Material UI", "Python", "Flask", "Azure AI Foundry",
+      "Azure AI Search", "Azure OpenAI", "Cosmos DB", "Embeddings",
+      "Hybrid Search", "VM API Proxy", "REST API", "LLM Integration"
+    ]
+  },
+  {
+    name: "Job Advisor",
+    link: "",
+    github: [
+      {
+        label: "GitHub Repo",
+        url: "https://github.com/TroyJLorents-GH/job-advisor"
+      }
+    ],
+    description:
+      "A resume and job advisory tool powered by Azure AI Foundry's ResumeAgent. Analyzes job postings and recommends the best-fit resume from a candidate's portfolio. Built with React, Tailwind CSS, and Netlify Functions for serverless API calls with service principal authentication.",
+    tags: [
+      "React", "Tailwind CSS", "Netlify Functions", "Azure AI Foundry",
+      "Foundry Agents", "Service Principal Auth", "Serverless", "JavaScript (ES6+)"
+    ]
+  },
+  {
     name: "Enterprise Student Assignment System",
     link: "https://studentsystem-web-central-hma3gmcbgtdqe9hb.centralus-01.azurewebsites.net/",
     github: [
@@ -9,7 +63,7 @@ const portfolioData = [
       }
     ],
     description:
-      "A comprehensive full-stack admin dashboard for managing student assignments, grader applications, and course schedules. Complements the Student Hiring System by providing administrators with bulk operations, inline editing, and document status tracking. Built with clean architecture using .NET 8.0 Web API backend and Blazor Server for real-time UI updates via SignalR. Features Azure SQL database integration and deployed on Azure App Services with Application Insights monitoring.",
+      "A comprehensive full-stack admin dashboard for managing student assignments, grader applications, and course schedules. Built with clean architecture using .NET 8.0 Web API backend and Blazor Server for real-time UI updates via SignalR. Features Azure SQL database integration and deployed on Azure App Services with Application Insights monitoring.",
     tags: [
       "C# (ASP.NET Core 8.0)", ".NET 8.0", "Blazor Server", "SignalR", "Entity Framework Core",
       "Dapper", "ADO.NET", "Clean Architecture", "Azure SQL Database", "Azure App Services",
@@ -33,54 +87,54 @@ const portfolioData = [
     description:
       "A full-stack application to streamline student hiring and automate HR workflows for a university. Features a .NET Core Web API backend and a React frontend, both deployed on Azure. Includes secure authentication, advanced UI with MUI X Pro, and automated integration with Microsoft/Google tools.",
     tags: [
-      "C# (ASP.NET Core Web API)", ".NET Core", "Swagger", "Authentication: CAS SSO, JWT",  "Entity Framework", "React.js", "Material UI / MUI X Pro", "React Router",
+      "C# (ASP.NET Core Web API)", ".NET Core", "Swagger", "Authentication: CAS SSO, JWT", "Entity Framework", "React.js", "Material UI / MUI X Pro", "React Router",
       "JavaScript (ES6+)", "HTML5", "CSS3/SCSS", "SQL (SQL Server, PostgreSQL, Redshift)", "Azure", "fetch", "Power Automate"
     ]
   },
   {
-  name: "Student Hiring System (Python + React)",
-  link: "https://blue-moss-0cf2b2f10.1.azurestaticapps.net",
-  github: [
-    {
-      label: "Backend (Py – FastAPI)",
-      url: "https://github.com/TroyJLorents-GH/StudentApi-py"
-    },
-    {
-      label: "Frontend (React)",
-      url: "https://github.com/TroyJLorents-GH/ui-student-py"
-    }
-  ],
-  description:
-    "A full-stack student hiring and workflow automation app. Rewritten with a Python (FastAPI) backend and a modern React frontend for easier cross-platform hosting, faster deployment, and improved developer productivity. Features secure authentication (ASU CAS SSO, JWT), OpenAPI/Swagger auto-docs, and Power Automate integration. Deployed with Azure App Service, Static Web Apps, and GitHub Actions CI/CD.",
-  tags: [
-    "Python 3.x", "FastAPI", "Uvicorn", "SQLAlchemy", 
-    "SQL Server", "Azure SQL", "PostgreSQL", "Redshift", 
-    "Authentication: CAS SSO, JWT", "Swagger/OpenAPI", 
-    "React.js (ES6+)", "Material UI / MUI X Pro", "React Router", 
-    "Axios", "fetch", "React Context", "CSS3/SCSS", "Power Automate", 
-    "React Testing Library", "Jest", "Azure", "GitHub"
-  ]
+    name: "Student Hiring System (Python + React)",
+    link: "https://blue-moss-0cf2b2f10.1.azurestaticapps.net",
+    github: [
+      {
+        label: "Backend (Py – FastAPI)",
+        url: "https://github.com/TroyJLorents-GH/StudentApi-py"
+      },
+      {
+        label: "Frontend (React)",
+        url: "https://github.com/TroyJLorents-GH/ui-student-py"
+      }
+    ],
+    description:
+      "A full-stack student hiring and workflow automation app. Rewritten with a Python (FastAPI) backend and a modern React frontend for easier cross-platform hosting, faster deployment, and improved developer productivity. Features secure authentication (ASU CAS SSO, JWT), OpenAPI/Swagger auto-docs, and Power Automate integration. Deployed with Azure App Service, Static Web Apps, and GitHub Actions CI/CD.",
+    tags: [
+      "Python 3.x", "FastAPI", "Uvicorn", "SQLAlchemy",
+      "SQL Server", "Azure SQL", "PostgreSQL", "Redshift",
+      "Authentication: CAS SSO, JWT", "Swagger/OpenAPI",
+      "React.js (ES6+)", "Material UI / MUI X Pro", "React Router",
+      "Axios", "fetch", "React Context", "CSS3/SCSS", "Power Automate",
+      "React Testing Library", "Jest", "Azure", "GitHub"
+    ]
   },
   {
-      name: "NextStep - Career Guidance and Job Discovery Web App",
-      link: "https://job-tracker-frontend-ekxsmomdlq-uw.a.run.app/",
-      github: [
-        {
-          label: "GitHub Repo",
-          url: "https://github.com/TroyJLorents-GH/tanstack-job-tracker"
-        }
-      ],
-      description:
-        "A completed job tracking and dashboard application. Search for jobs across LinkedIn, Indeed, Glassdoor, ZipRecruiter all in one place. Hosted on GC with user data persisted in a Supabase PostgreSQL database. Built with React, TypeScript, and TanStack libraries, it includes interactive filtering, sorting, and data visualization with a polished, responsive UI.",
-      tags: [
-        "React.js", "TypeScript", "TanStack Table", "TanStack Query",
-        "SCSS", "JavaScript (ES6+)", "Responsive UI", "Data Visualization",
-        "Google Cloud Run", "Supabase", "PostgreSQL"
-      ]
-    },
+    name: "NextStep - Career Guidance and Job Discovery Web App",
+    link: "https://job-tracker-frontend-ekxsmomdlq-uw.a.run.app/",
+    github: [
+      {
+        label: "GitHub Repo",
+        url: "https://github.com/TroyJLorents-GH/tanstack-job-tracker"
+      }
+    ],
+    description:
+      "A completed job tracking and dashboard application. Search for jobs across LinkedIn, Indeed, Glassdoor, ZipRecruiter all in one place. Hosted on GC with user data persisted in a Supabase PostgreSQL database. Built with React, TypeScript, and TanStack libraries, it includes interactive filtering, sorting, and data visualization with a polished, responsive UI.",
+    tags: [
+      "React.js", "TypeScript", "TanStack Table", "TanStack Query",
+      "SCSS", "JavaScript (ES6+)", "Responsive UI", "Data Visualization",
+      "Google Cloud Run", "Supabase", "PostgreSQL"
+    ]
+  },
   {
     name: "InsightAI",
-    link: "https://insightai-openai.streamlit.app/", // If you have a live demo, add the URL; otherwise, leave blank
+    link: "https://insightai-openai.streamlit.app/",
     github: [
       {
         label: "GitHub Repo",
@@ -96,40 +150,20 @@ const portfolioData = [
     ]
   },
   {
-    name: "OpenAI LLM (In Progress)",
-    link: "", // Add live demo link if you have one, else leave blank
-    github: [
-      {
-        label: "GitHub Repo",
-        url: "https://github.com/TroyJLorents-GH/openai-mll"
-      }
-    ],
-    status: "in-progress",
-    progress: 90,
-    description:
-      "A hands-on playground for experimenting with OpenAI's GPT models, including prompt engineering, API integration, and real-time responses. This project features a streamlined Python backend and CLI for fast prototyping, as well as environment management with python-dotenv. Great for AI workflow demos and testing new LLM features.",
-    tags: [
-      "Python", "OpenAI API", "OpenAI GPT-4", "GPT-5", "gpt-4o-mini", "gpt-4.1-mini", "gpt-3.5-turbo","Prompt Engineering", 
-    "python-dotenv", "LLM Playground", "Session Persistence", "PyMuPDF (fitz)",
-    "React", "JavaScript", "JSX", "CSS-in-JS", 
-    "Flask", "State Management", "Error/Threat Handling", "Chat Interface Design"
-    ]
-  },
-  {
     name: "React Native Scheduler (In Progress)",
-    link: "", // Add your demo/testflight link here in the future if you want!
+    link: "",
     github: [
       {
         label: "GitHub Repo",
         url: "https://github.com/TroyJLorents-GH/react-native-scheduler"
       }
     ],
-  status: "in-progress",
+    status: "in-progress",
     progress: 85,
     description:
-      "A mobile app for scheduling, calendar management, and to-do tracking, built with React Native and Expo. Integrates with Google Calendar, supports reminders, and features an intuitive modern UI, and is an Productivity App that users will actually want to use daily! Currently in development, aiming for both iOS and Android release.",
+      "A mobile app for scheduling, calendar management, and to-do tracking, built with React Native and Expo SDK 55. Integrates with Google Calendar, supports reminders, and features an intuitive modern UI. Currently in development, aiming for both iOS and Android release.",
     tags: [
-      "React Native", "Expo", "JavaScript (ES6+)", "Google Calendar API", "OpenWeather API",
+      "React Native", "Expo SDK 55", "JavaScript (ES6+)", "Google Calendar API", "OpenWeather API",
       "Mobile App", "Scheduling", "Reminders", "UI/UX", "Cross-Platform", "iOS", "Android"
     ]
   },
@@ -147,7 +181,7 @@ const portfolioData = [
     description:
       "A custom chatroom application using GraphQL for queries, mutations, and subscriptions. Built with React + Apollo Client on the frontend and a GraphQL backend to handle real-time messaging. Includes room creation, message history, and live updates.",
     tags: [
-      "React.js", "Apollo Client", "GraphQL", "Subscriptions", "Superbase", "Node.js",
+      "React.js", "Apollo Client", "GraphQL", "Subscriptions", "Supabase", "Node.js",
       "JavaScript (ES6+)", "Chat Application", "Real-time Updates", "UI/UX"
     ]
   }
