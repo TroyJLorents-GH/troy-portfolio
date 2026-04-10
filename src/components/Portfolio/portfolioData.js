@@ -1,5 +1,41 @@
 const portfolioData = [
   {
+    name: "Agent OS",
+    link: "",
+    github: [
+      {
+        label: "GitHub Repo",
+        url: "https://github.com/TroyJLorents-GH/agent-os"
+      }
+    ],
+    status: "in-progress",
+    progress: 80,
+    description:
+      "A dashboard-style AI workspace with 6 agents, 9 tools, and 10 pages. Features voice input, scheduled agent runs, budget tracking, and an integrated terminal. Built with React, TypeScript, and Tailwind CSS. Vision: a Neural Architect platform with multi-model support, agent cards, document workflows, and vector search.",
+    tags: [
+      "React", "TypeScript", "Tailwind CSS", "Azure AI Foundry", "Multi-Agent Systems",
+      "Voice Input", "Scheduled Agents", "Budget Tracking", "Terminal", "Vite"
+    ]
+  },
+  {
+    name: "Job Nexus",
+    link: "",
+    github: [
+      {
+        label: "GitHub Repo",
+        url: "https://github.com/TroyJLorents-GH/job-nexus"
+      }
+    ],
+    status: "in-progress",
+    progress: 70,
+    description:
+      "A combined job search application that unifies job tracking, JobSpy web scraping, resume matching, and AI chat into a single platform. Features Firebase Auth (Google, Email/Password, Email Link), multi-user data isolation, and responsive design. Deployed on Vercel.",
+    tags: [
+      "React 19", "TypeScript", "Tailwind CSS", "TanStack (Table, Query, Router)",
+      "Firebase Auth", "Vercel", "JobSpy", "AI Chat", "Vite", "Responsive Design"
+    ]
+  },
+  {
     name: "Doc Intelligence Hub",
     link: "",
     github: [
@@ -11,11 +47,11 @@ const portfolioData = [
     status: "in-progress",
     progress: 90,
     description:
-      "A multi-format document intelligence platform with Agentic RAG. Processes PDFs, Word docs, and images through Azure Document Intelligence, generates embeddings, and stores them in Cosmos DB for semantic search. Features a Flask API hosted on an Azure VM with hybrid search (BM25 + vector) powered by Azure AI Search, job-resume matching, and automated indexing.",
+      "A multi-format document intelligence platform with Agentic RAG. Processes PDFs, Word docs, and images through Azure Document Intelligence, generates embeddings, and stores them in Cosmos DB for semantic search. Features a Flask API hosted on an Azure VM with hybrid search (BM25 + vector) powered by Azure AI Search, Graphiti knowledge graphs via Neo4j, job-resume matching, and automated indexing.",
     tags: [
       "Python", "Flask", "Azure Document Intelligence", "Azure AI Search",
       "Cosmos DB", "Embeddings", "Semantic Search", "Agentic RAG", "Neo4j Aura",
-      "Hybrid Search (BM25 + Vector)", "Docker", "Azure VM", "REST API", "Knowledge Graphs"
+      "Graphiti Knowledge Graphs", "Hybrid Search (BM25 + Vector)", "Docker", "Azure VM", "REST API"
     ]
   },
   {
@@ -35,6 +71,56 @@ const portfolioData = [
       "React", "Material UI", "Python", "Flask", "Azure AI Foundry",
       "Azure AI Search", "Azure OpenAI", "Neo4j Aura", "Cosmos DB", "Embeddings",
       "Hybrid Search", "VM API Proxy", "REST API", "LLM Integration", "Knowledge Graphs"
+    ]
+  },
+  {
+    name: "Peptide Tracker",
+    link: "",
+    github: [
+      {
+        label: "GitHub Repo",
+        url: "https://github.com/TroyJLorents-GH/peptide-app"
+      }
+    ],
+    description:
+      "A peptide tracking, calculator, and serum concentration web app. Features dosage calculations, injection logging, and concentration tracking with a polished UI built on MUI X Pro components.",
+    tags: [
+      "React", "Material UI / MUI X Pro", "TypeScript", "Calculators",
+      "Health & Fitness", "Responsive Design"
+    ]
+  },
+  {
+    name: "Window Commander",
+    link: "",
+    github: [
+      {
+        label: "GitHub Repo",
+        url: "https://github.com/TroyJLorents-GH/window-commander"
+      }
+    ],
+    status: "in-progress",
+    progress: 60,
+    description:
+      "A phone-controlled desktop window manager with voice push-to-talk. Consists of a Python desktop agent that manages windows and a companion Expo mobile app for remote control and voice commands.",
+    tags: [
+      "Python", "React Native", "Expo", "Voice Control", "Desktop Automation",
+      "Window Management", "Push-to-Talk", "WebSocket"
+    ]
+  },
+  {
+    name: "Job Advisor",
+    link: "",
+    github: [
+      {
+        label: "GitHub Repo",
+        url: "https://github.com/TroyJLorents-GH/job-advisor"
+      }
+    ],
+    description:
+      "A resume and job advisory tool powered by Azure AI Foundry's ResumeAgent. Analyzes job postings and recommends the best-fit resume from a candidate's portfolio. Built with React, Tailwind CSS, and Netlify Functions with service principal authentication.",
+    tags: [
+      "React", "Tailwind CSS", "Netlify Functions", "Azure AI Foundry",
+      "Foundry Agents", "Service Principal Auth", "Serverless", "JavaScript (ES6+)"
     ]
   },
   {

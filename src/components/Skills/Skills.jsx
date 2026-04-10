@@ -22,7 +22,7 @@ const skillsData = [
       "Azure (App Service, Blob Storage, SQL Database, Static Web Apps)", "Azure AI Foundry", "Azure Cosmos DB", "Azure AI Search", "Azure Document Intelligence",
       "GCP (Cloud Run, Firestore)",
       "AWS (Lambda, DynamoDB, CloudWatch, EC2, S3, API Gateway, Amplify, Elastic Beanstalk, ECS Fargate)",
-      "Supabase (PostgreSQL, Auth, Storage, Edge Functions)", "Netlify (Functions, Serverless)"
+      "Firebase (Auth, Firestore)", "Supabase (PostgreSQL, Auth, Storage, Edge Functions)", "Vercel", "Netlify (Functions, Serverless)"
     ]
   },
   {
@@ -34,7 +34,7 @@ const skillsData = [
   {
     label: "Data / Reporting",
     items: [
-      "SQL Server", "PostgreSQL", "MySQL", "MongoDB", "Cosmos DB", "Power BI", "Redshift", "Splunk", "Elastic", "Supabase"
+      "SQL Server", "PostgreSQL", "MySQL", "MongoDB", "Cosmos DB", "Neo4j", "Power BI", "Redshift", "Splunk", "Elastic", "Supabase"
     ]
   },
   {
@@ -43,7 +43,8 @@ const skillsData = [
       "Machine Learning", "OpenAI API", "Azure AI Foundry Agents", "Anthropic Claude API", "OpenAI SDK",
       "RAG (Retrieval-Augmented Generation)", "Embeddings & Vector Search", "Semantic Search",
       "Vector Databases (Pinecone, FAISS, ChromaDB)", "Azure OpenAI", "Azure AI Search (Hybrid BM25 + Vector)",
-      "Azure Document Intelligence", "LLM Application Development", "LLM Integration", "Prompt Engineering"
+      "Azure Document Intelligence", "Neo4j / Graphiti Knowledge Graphs", "Multi-Agent Systems",
+      "LLM Application Development", "LLM Integration", "Prompt Engineering"
     ]
   },
   {
