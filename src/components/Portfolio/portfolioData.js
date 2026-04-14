@@ -1,15 +1,13 @@
 const portfolioData = [
   {
     name: "Agent OS",
-    link: "",
+    link: "https://pjf-ai-commandcenter.netlify.app/",
     github: [
       {
         label: "GitHub Repo",
         url: "https://github.com/TroyJLorents-GH/agent-os"
       }
     ],
-    status: "in-progress",
-    progress: 80,
     description:
       "A dashboard-style AI workspace with 6 agents, 9 tools, and 10 pages. Features voice input, scheduled agent runs, budget tracking, and an integrated terminal. Built with React, TypeScript, and Tailwind CSS. Vision: a Neural Architect platform with multi-model support, agent cards, document workflows, and vector search.",
     tags: [
@@ -19,15 +17,13 @@ const portfolioData = [
   },
   {
     name: "Job Nexus",
-    link: "",
+    link: "https://job-nexus-delta.vercel.app/",
     github: [
       {
         label: "GitHub Repo",
         url: "https://github.com/TroyJLorents-GH/job-nexus"
       }
     ],
-    status: "in-progress",
-    progress: 70,
     description:
       "A combined job search application that unifies job tracking, JobSpy web scraping, resume matching, and AI chat into a single platform. Features Firebase Auth (Google, Email/Password, Email Link), multi-user data isolation, and responsive design. Deployed on Vercel.",
     tags: [
@@ -63,8 +59,6 @@ const portfolioData = [
         url: "https://github.com/TroyJLorents-GH/openai-mll"
       }
     ],
-    status: "in-progress",
-    progress: 95,
     description:
       "A full-stack AI-powered resume matching and chat platform. Features an intelligent chat interface backed by Azure AI Foundry agents, resume-to-job matching via Azure AI Search (hybrid BM25 + vector), and a Python Flask API proxy hosted on an Azure VM. Built with React and Material UI with a clean light theme.",
     tags: [
@@ -75,7 +69,7 @@ const portfolioData = [
   },
   {
     name: "Peptide Tracker",
-    link: "",
+    link: "https://peptide-iq.vercel.app/",
     github: [
       {
         label: "GitHub Repo",
@@ -98,8 +92,6 @@ const portfolioData = [
         url: "https://github.com/TroyJLorents-GH/window-commander"
       }
     ],
-    status: "in-progress",
-    progress: 60,
     description:
       "A phone-controlled desktop window manager with voice push-to-talk. Consists of a Python desktop agent that manages windows and a companion Expo mobile app for remote control and voice commands.",
     tags: [
