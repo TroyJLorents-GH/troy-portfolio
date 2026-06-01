@@ -42,7 +42,7 @@ $glass-rim: 0 0 8px rgba(0, 0, 0, 0.03), 0 2px 6px rgba(0, 0, 0, 0.08),
       font-size: 1.15rem;
       color: #f0f1f6;
       cursor: pointer;
-      // Purple-tinted glass — matches the Portfolio/Work cards
+      // Purple-tinted glass, matches the Portfolio/Work cards
       border: 1px solid rgba(255, 255, 255, 0.08);
       background: linear-gradient(
         150deg,
@@ -65,7 +65,7 @@ $glass-rim: 0 0 8px rgba(0, 0, 0, 0.03), 0 2px 6px rgba(0, 0, 0, 0.08),
         transform: scale(0.99) translateY(1px);
       }
 
-      // Open category — cyan tint + glow so it reads as selected (matches cards)
+      // Open category. Cyan tint + glow so it reads as selected (matches cards)
       &.active {
         color: #fff;
         border-color: rgba(6, 188, 238, 0.55);

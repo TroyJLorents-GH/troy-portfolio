@@ -62,7 +62,7 @@ const skillsData = [
 ];
 
 const Skills = () => {
-  // Array of booleans — multiple sections can stay open (unchanged behavior).
+  // Array of booleans. Multiple sections can stay open (unchanged behavior).
   const [openSections, setOpenSections] = useState(Array(skillsData.length).fill(false));
 
   const handleToggle = (idx) => {

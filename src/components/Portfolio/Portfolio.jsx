@@ -9,7 +9,7 @@ const PortfolioCard = ({ project }) => {
     const card = cardRef.current;
     if (!card) return;
 
-    // Glare only — track cursor for the sheen. Skip on touch devices.
+    // Glare only. Track cursor for the sheen. Skip on touch devices.
     const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
     if (!finePointer.matches) return;
 

@@ -71,7 +71,7 @@ $muted: #b8b7c7;
   border: 1px solid rgba(255, 255, 255, 0.09);
   transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 
-  // Corner brackets (top-left + bottom-right) — appear on hover / expand
+  // Corner brackets (top-left + bottom-right), appear on hover / expand
   &::before,
   &::after {
     content: "";
