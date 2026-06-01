@@ -44,9 +44,13 @@ const PortfolioCard = ({ project }) => {
 
         <div className="portfolio-card-header">
           <h3>
-            <a href={project.link} target="_blank" rel="noopener noreferrer">
-              {project.name}
-            </a>
+            {project.link ? (
+              <a href={project.link} target="_blank" rel="noopener noreferrer">
+                {project.name}
+              </a>
+            ) : (
+              project.name
+            )}
           </h3>
           <div className="portfolio-links">
             {/* Live Site Button */}
