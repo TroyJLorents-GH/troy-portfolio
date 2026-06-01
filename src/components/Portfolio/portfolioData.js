@@ -1,5 +1,21 @@
 const portfolioData = [
   {
+    name: "useknockout — Image Processing API",
+    link: "https://useknockout.com/",
+    github: [
+      { label: "GitHub", url: "https://github.com/useknockout/api" },
+      { label: "PyPI", url: "https://pypi.org/project/useknockout/" },
+      { label: "npm", url: "https://www.npmjs.com/package/@useknockout/node" }
+    ],
+    description:
+      "An open-source image-processing API exposing 23 endpoints across 5 state-of-the-art open-weight models — background removal, 4x upscaling, face restoration, colorization, and inpainting — behind a single HTTP interface. Runs on Modal serverless GPU with scale-to-zero, spinning up on demand and costing nothing while idle. Ships first-party clients for the full stack: a Python SDK, a Node.js SDK, a React SDK with ready-made hooks and components, and a CLI, plus a live in-browser Hugging Face Gradio demo. MIT licensed.",
+    tags: [
+      "Python", "Modal", "Serverless GPU", "REST API", "Background Removal", "4x Upscaling",
+      "Face Restoration", "Colorization", "Inpainting", "Python SDK", "Node.js SDK", "React SDK",
+      "CLI", "Hugging Face Gradio", "Open-Weight Models", "MIT License"
+    ]
+  },
+  {
     name: "Agent OS",
     link: "https://pjf-ai-commandcenter.netlify.app/",
     github: [
