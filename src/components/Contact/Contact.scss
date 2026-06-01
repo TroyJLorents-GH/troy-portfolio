@@ -32,7 +32,7 @@
       opacity: 0.85;
       transition: color 0.18s, opacity 0.18s;
       &:hover {
-        color: #ffd700;
+        color: #8ad8ff;
         opacity: 1;
       }
     }
@@ -49,23 +49,37 @@
   flex-direction: column;
   gap: 1.1rem;
 
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: #b8b7c7;
+  }
+
   input, textarea {
+    font-family: inherit; // textareas default to monospace otherwise
     background: #25242a;
-    border: none;
+    border: 1.5px solid transparent; // reserve space so focus doesn't shift layout
     border-radius: 7px;
     padding: 0.9rem 1rem;
     font-size: 1rem;
     color: #fff;
     outline: none;
     resize: none;
-    transition: border 0.16s;
+    transition: border-color 0.16s;
     box-shadow: 0 1px 8px #19182a1a;
     &::placeholder {
-      color: #b9b7c7;
+      color: #8b8a99;
       opacity: 1;
     }
     &:focus {
-      border: 1.5px solid #06bcee;
+      border-color: #06bcee;
     }
   }
   textarea {
@@ -85,8 +99,8 @@
     cursor: pointer;
     transition: background 0.16s, color 0.16s;
     &:hover {
-      background: #ffd700;
-      color: #232227;
+      background: #3fd0ff;
+      color: #0e1020;
     }
   }
 }

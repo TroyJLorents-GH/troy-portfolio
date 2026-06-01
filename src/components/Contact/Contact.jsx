@@ -142,10 +142,22 @@ const Contact = () => {
       </div>
       <div className="contact-right">
         <form ref={refForm} onSubmit={sendEmail} className="contact-form">
-          <input type="text" name="name" placeholder="Name" required />
-          <input type="email" name="email" placeholder="Email" required />
-          <input type="text" name="subject" placeholder="Subject" required />
-          <textarea name="message" placeholder="Message" required></textarea>
+          <div className="field">
+            <label htmlFor="contact-name">Name</label>
+            <input id="contact-name" type="text" name="name" placeholder="Your name" required />
+          </div>
+          <div className="field">
+            <label htmlFor="contact-email">Email</label>
+            <input id="contact-email" type="email" name="email" placeholder="you@example.com" required />
+          </div>
+          <div className="field">
+            <label htmlFor="contact-subject">Subject</label>
+            <input id="contact-subject" type="text" name="subject" placeholder="What's this about?" required />
+          </div>
+          <div className="field">
+            <label htmlFor="contact-message">Message</label>
+            <textarea id="contact-message" name="message" placeholder="Your message…" required></textarea>
+          </div>
           <button type="submit" className="flat-button">SEND</button>
         </form>
       </div>
