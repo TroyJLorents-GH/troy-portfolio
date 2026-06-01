@@ -24,14 +24,61 @@
 }
 
 .portfolio-card {
-  background: #232237;
-  border-radius: 16px;
-  box-shadow: 0 4px 32px 0 #67676b33;
+  position: relative;
+  border-radius: 18px;
   padding: 2rem 2.3rem 1.7rem 2.3rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-  transition: box-shadow 0.2s;
+  overflow: hidden;
+  isolation: isolate;
+
+  // Glassmorphism: translucent fill + blur + lit edge
+  background: linear-gradient(
+    150deg,
+    rgba(54, 52, 84, 0.55) 0%,
+    rgba(28, 27, 46, 0.55) 100%
+  );
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow: 0 10px 40px -12px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
+
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.3s ease, border-color 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: rgba(6, 188, 238, 0.45);
+    box-shadow: 0 18px 54px -14px rgba(6, 188, 238, 0.35),
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+  }
+
+  // Cursor-tracking glare, driven by --mouse-x / --mouse-y from JS
+  &__sheen {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background: radial-gradient(
+      400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      rgba(255, 255, 255, 0.08),
+      transparent 40%
+    );
+  }
+
+  &:hover &__sheen {
+    opacity: 1;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
 }
 
 .portfolio-card-header {
@@ -51,25 +98,6 @@
         color: #06bcee;
         text-decoration: underline;
       }
-    }
-  }
-}
-
-.portfolio-links {
-  display: flex;
-  gap: 0.7rem;
-  .repo-link {
-    color: #ffd700;
-    background: #ffd70022;
-    border-radius: 8px;
-    padding: 0.27em 0.9em;
-    font-size: 0.99em;
-    font-weight: 600;
-    transition: background 0.18s;
-    text-decoration: none;
-    &:hover {
-      background: #ffd70066;
-      color: #232237;
     }
   }
 }
@@ -139,6 +167,7 @@
 
 .portfolio-links {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.7rem;
   .live-link {
     color: #fff;
@@ -149,26 +178,27 @@
     font-weight: 700;
     text-decoration: none;
     border: 2px solid #06bcee;
-    transition: background 0.18s, color 0.18s;
+    transition: background 0.18s, color 0.18s, border-color 0.18s;
     &:hover {
-      background: #232237;
+      background: transparent;
       color: #06bcee;
-      border: 2px solid #ffd700;
+      border-color: #06bcee;
     }
   }
   .repo-link {
-    color: #ffd700;
-    background: #ffd70022;
+    color: #d6d8e5;
+    background: rgba(255, 255, 255, 0.06);
     border-radius: 8px;
     padding: 0.27em 0.9em;
     font-size: 0.99em;
     font-weight: 600;
     text-decoration: none;
-    border: none;
-    transition: background 0.18s;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    transition: background 0.18s, border-color 0.18s, color 0.18s;
     &:hover {
-      background: #ffd70066;
-      color: #232237;
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.3);
+      color: #fff;
     }
   }
 }

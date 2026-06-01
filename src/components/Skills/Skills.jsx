@@ -62,7 +62,7 @@ const skillsData = [
 ];
 
 const Skills = () => {
-  // Instead of a single open index, keep an array of booleans:
+  // Array of booleans — multiple sections can stay open (unchanged behavior).
   const [openSections, setOpenSections] = useState(Array(skillsData.length).fill(false));
 
   const handleToggle = (idx) => {
@@ -73,14 +73,19 @@ const Skills = () => {
 
   return (
     <section className="skills-section">
-      <div className="skills-title" ><b>Technical Skills</b></div>
+      <div className="skills-title"><b>Technical Skills</b></div>
       <div className="skills-list">
         {skillsData.map((cat, idx) => (
           <div key={cat.label} className="skills-category">
-            <div className="skills-label" onClick={() => handleToggle(idx)}>
+            <button
+              type="button"
+              className={`skills-label ${openSections[idx] ? "active" : ""}`}
+              onClick={() => handleToggle(idx)}
+              aria-expanded={openSections[idx]}
+            >
               {cat.label}
               <span className="collapse-icon">{openSections[idx] ? "−" : "+"}</span>
-            </div>
+            </button>
             {openSections[idx] && (
               <div className="skills-chips">
                 {cat.items.map((item) => (
