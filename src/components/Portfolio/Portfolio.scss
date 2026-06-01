@@ -128,6 +128,52 @@
   margin-bottom: 0.2em;
 }
 
+// ── In-progress status + progress bar ───────────────────────────────────────
+.in-progress-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.28em 0.85em;
+  border-radius: 9999px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: #ffce85;
+  background: rgba(245, 176, 65, 0.14);
+  border: 1px solid rgba(245, 176, 65, 0.4);
+}
+
+.progress-bar-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  flex: 1;
+  min-width: 110px;
+  max-width: 240px;
+}
+
+.progress-bar-bg {
+  flex: 1;
+  height: 7px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #06bcee, #6c4cf0);
+}
+
+.progress-bar-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #b8b7c7;
+  white-space: nowrap;
+}
+
 @media (max-width: 850px) {
   .portfolio-root {
     padding: 1rem 2rem;
