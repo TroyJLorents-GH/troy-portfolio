@@ -6,7 +6,7 @@ const socials = [
   { icon: "ri-mail-line", href: "mailto:troy.j.lorents@gmail.com", title: "Email" },
   { icon: "ri-github-line", href: "https://github.com/TroyJLorents-GH", title: "GitHub" },
   { icon: "ri-linkedin-box-line", href: "https://www.linkedin.com/in/troy-lorents/", title: "LinkedIn" },
-  { icon: "ri-profile-line", href: "/assets/Troy Lorents_Resume_2026.pdf", title: "Resume" },
+  { icon: "ri-profile-line", href: "/assets/Troy_Lorents_Resume_2026.pdf", title: "Resume" },
 ];
 
 const Home = () => {
