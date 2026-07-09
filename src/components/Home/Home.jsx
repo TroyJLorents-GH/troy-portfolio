@@ -62,7 +62,7 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.38, duration: 0.6 }}
           >
-            Senior Full-Stack Software Developer
+            Senior Full-Stack & AI Engineer · Founder, useKnockout & Automate Flows
           </motion.p>
 
           <motion.p
@@ -71,12 +71,11 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.45, duration: 0.6 }}
           >
-            I design, develop, and deploy web, mobile, and AI-powered solutions, from
-            enterprise workflow apps to intelligent agents and document intelligence
-            platforms. Background in Business Law plus 8+ years of software engineering.
-            I specialize in React.js, .NET, Python, and cloud platforms, with deep
-            experience in Azure AI Foundry agents, RAG pipelines, semantic search, and
-            LLM integrations.
+            I build AI agents, multi-agent systems, and RAG pipelines on Azure AI
+            Foundry, OpenAI, and Claude — backed by 8+ years shipping full-stack
+            products in React, .NET, and Python. Founder of useKnockout, a
+            commercial image-processing API with paying customers, and Automate
+            Flows, an AI automation consultancy for small businesses.
           </motion.p>
 
           <motion.div
@@ -135,3 +134,4 @@ const Home = () => {
 };
 
 export default Home;
+  
