@@ -72,7 +72,7 @@ const Home = () => {
             transition={{ delay: 0.45, duration: 0.6 }}
           >
             I build AI agents, multi-agent systems, and RAG pipelines on Azure AI
-            Foundry, OpenAI, and Claude — backed by 8+ years shipping full-stack
+            Foundry, OpenAI, and Claude, backed by 8+ years shipping full-stack
             products in React, .NET, and Python. Founder of useKnockout, a
             commercial image-processing API with paying customers, and Automate
             Flows, an AI automation consultancy for small businesses.

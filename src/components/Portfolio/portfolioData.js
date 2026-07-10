@@ -1,6 +1,7 @@
 const portfolioData = [
   {
     name: "useknockout: Image Processing API",
+    featured: true,
     link: "https://useknockout.com/",
     github: [
       { label: "GitHub", url: "https://github.com/useknockout/api" },
@@ -17,6 +18,7 @@ const portfolioData = [
   },
   {
     name: "Agent OS",
+    featured: true,
     link: "https://pjf-ai-commandcenter.netlify.app/",
     github: [
       {
@@ -49,6 +51,7 @@ const portfolioData = [
   },
   {
     name: "Doc Intelligence Hub",
+    featured: true,
     link: "",
     github: [
       {

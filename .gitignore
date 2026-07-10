@@ -32,3 +32,6 @@ yarn-error.log*
 # Editor
 .vscode/
 .gstack/
+
+# Playwright MCP screenshot artifacts
+.playwright-mcp/

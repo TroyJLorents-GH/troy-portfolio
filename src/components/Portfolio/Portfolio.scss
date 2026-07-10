@@ -1,8 +1,48 @@
 .portfolio-root {
-  max-width: 950px;
+  max-width: 1000px;
   margin: 3rem auto 0 auto;
-  padding: 1rem 1vw 2rem 1vw;
+  padding: 1rem 1.5rem 2rem 1.5rem;
   color: #fff;
+}
+
+// Section subheadings inside Portfolio (Featured / More Projects)
+.portfolio-subhead {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin: 2.2rem 0 1.1rem 0;
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #a08df5;
+
+  &::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(108, 76, 240, 0.5), transparent);
+  }
+
+  &:first-of-type {
+    margin-top: 1.4rem;
+  }
+}
+
+// Featured: three spotlight cards side by side
+.portfolio-featured {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  align-items: stretch;
+}
+
+// More projects: compact two-column grid
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.1rem;
+  align-items: stretch;
 }
 
 .portfolio-title {
@@ -78,6 +118,59 @@
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
+    height: 100%;
+  }
+
+  // Tags sit at the card bottom so grid rows line up
+  .portfolio-tags {
+    margin-top: auto;
+  }
+
+  // Featured spotlight cards: slightly brighter edge, clamped copy
+  &--featured {
+    border-color: rgba(6, 188, 238, 0.28);
+
+    .portfolio-description {
+      display: -webkit-box;
+      -webkit-line-clamp: 6;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  }
+
+  // Compact grid cards: tighter padding and type, clamped description
+  &--compact {
+    padding: 1.35rem 1.5rem 1.25rem 1.5rem;
+
+    .portfolio-card__content {
+      gap: 0.8rem;
+    }
+
+    .portfolio-card-header h3 {
+      font-size: 1.08rem;
+    }
+
+    .portfolio-links {
+      .live-link,
+      .repo-link {
+        font-size: 0.85em;
+        padding: 0.22em 0.8em;
+      }
+    }
+
+    .portfolio-description {
+      margin-top: 0.3em;
+      font-size: 0.93em;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .tag-chip {
+      font-size: 0.82em;
+      padding: 0.32em 0.9em;
+    }
   }
 }
 
@@ -126,6 +219,13 @@
   font-weight: 500;
   border: 1px solid #06bcee22;
   margin-bottom: 0.2em;
+
+  // Overflow count chip (+N more)
+  &--more {
+    color: #a08df5;
+    background: rgba(108, 76, 240, 0.12);
+    border-color: rgba(108, 76, 240, 0.3);
+  }
 }
 
 // ── In-progress status + progress bar ───────────────────────────────────────
@@ -174,12 +274,21 @@
   white-space: nowrap;
 }
 
+@media (max-width: 1024px) {
+  .portfolio-featured {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 850px) {
   .portfolio-root {
     padding: 1rem 2rem;
   }
   .portfolio-title {
     font-size: 2rem;
+  }
+  .portfolio-grid {
+    grid-template-columns: 1fr;
   }
 }
 

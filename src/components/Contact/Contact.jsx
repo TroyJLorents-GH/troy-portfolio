@@ -73,7 +73,7 @@
 //           <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/troy-lorents/">
 //             <FontAwesomeIcon icon={faLinkedin} className="icon" />
 //           </a>
-//           <a target="_blank" rel="noreferrer" href="mailto:troy.j.lorents@gmail.com">
+//           <a target="_blank" rel="noreferrer" href="mailto:troy.j.lorents91@gmail.com">
 //             <FontAwesomeIcon icon={faEnvelope} className="icon" />
 //           </a>
 //         </p>
@@ -135,7 +135,7 @@ const Contact = () => {
           <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/troy-lorents/">
             <FontAwesomeIcon icon={faLinkedin} className="icon" />
           </a>
-          <a target="_blank" rel="noreferrer" href="mailto:troy.j.lorents@gmail.com">
+          <a target="_blank" rel="noreferrer" href="mailto:troy.j.lorents91@gmail.com">
             <FontAwesomeIcon icon={faEnvelope} className="icon" />
           </a>
         </p>
