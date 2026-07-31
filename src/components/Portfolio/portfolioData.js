@@ -34,6 +34,24 @@ const portfolioData = [
     ]
   },
   {
+    name: "nano-harness",
+    featured: true,
+    link: "",
+    github: [
+      {
+        label: "GitHub Repo",
+        url: "https://github.com/TroyJLorents-GH/nano-harness"
+      }
+    ],
+    description:
+      "A minimal coding-agent harness: the loop, tool set, and context management that turn an LLM into something which completes real work inside a repository. Roughly 970 non-blank lines across five files, small enough to read end to end in one sitting. Scores 59.6% (53 of 89) on the full Terminal-Bench 2.0 suite with Claude Opus 4.8, self-run through Harbor with every task in its own Docker container and errored trials counted as failures. Three tools only (a persistent bash shell, line-sliced file reads, and unique-match edits), native tool calling instead of ReAct prompting, prompt caching, and a provider-agnostic interface covering Anthropic, OpenAI, and any OpenAI-compatible server. MIT licensed.",
+    tags: [
+      "Python", "Coding Agent", "Agent Harness", "Terminal-Bench 2.0", "Anthropic API",
+      "OpenAI API", "Native Tool Use", "Prompt Caching", "Context Management",
+      "Persistent Shell", "Docker", "Benchmarking", "MIT License"
+    ]
+  },
+  {
     name: "Job Nexus",
     link: "https://job-nexus-delta.vercel.app/",
     github: [
@@ -51,7 +69,6 @@ const portfolioData = [
   },
   {
     name: "Doc Intelligence Hub",
-    featured: true,
     link: "",
     github: [
       {
