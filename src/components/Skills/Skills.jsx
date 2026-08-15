@@ -17,6 +17,7 @@ const logoStrip = [
   { file: "anthropic", label: "Anthropic" },
 ];
 
+
 const skillsData = [
   {
     label: "Languages",
