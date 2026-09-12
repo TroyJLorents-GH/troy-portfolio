@@ -1,5 +1,5 @@
-// Netlify Serverless Function for Azure OpenAI Chat
-// This keeps your API key secure on the server side
+// Shared Azure OpenAI request handler used by the Vercel API route.
+// This keeps the API key secure on the server side.
 
 const SYSTEM_PROMPT = `You are an AI assistant representing Troy Lorents, a senior full-stack software developer and AI engineer.
 Answer questions about his background, experience, and skills based on the information below. Be conversational, helpful, and accurate. If asked something you don’t know, say so honestly.

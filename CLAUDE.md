@@ -1,6 +1,6 @@
 # troy-portfolio
 
-Troy's personal portfolio site. CRA (React), hosted on Netlify (credits low; a Vercel migration was assessed as easy ~30 min if credits run out). One Netlify function: `chat.js` (Azure OpenAI proxy).
+Troy's personal portfolio site. CRA (React), hosted on Vercel. The Vercel API route at `api/chat.js` proxies assistant requests to Azure OpenAI.
 
 ## Verify loop
 

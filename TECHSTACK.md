@@ -11,7 +11,7 @@ type: techstack
 - **SCSS / Sass** — component and global styling (`.scss` files compiled via the `sass` package).
 - **CSS** — global `index.css`.
 - **HTML** — CRA shell (`public/index.html`).
-- **Node.js (CommonJS)** — the Netlify serverless function (`netlify/functions/chat.js`).
+- **Node.js (CommonJS)** — the Vercel Function (`api/chat.js` and `api/chat-core.js`).
 
 ## Frameworks & Core Libraries
 
@@ -61,17 +61,17 @@ type: techstack
 - **Create React App / react-scripts 5** — `start`, `build`, `test`, `eject` scripts. Wraps webpack, Babel, ESLint, Jest.
 - **ESLint** — configured via `eslintConfig` in `package.json` (`react-app`, `react-app/jest` presets).
 - **Browserslist** — production/development target config in `package.json`.
-- **Netlify build** — `netlify.toml` sets `command = "npm run build"`, `publish = "build"`, and `functions = "netlify/functions"`.
+- **Vercel build** — Vercel builds the Create React App and serves the `build` output alongside the `/api/chat` function.
 - **deno.lock** present in the repo root (Deno lockfile), likely from tooling; the app build itself is Node/npm-based.
 
 ## External APIs / Services
 
-- **Azure OpenAI** (chat completions REST endpoint) — called server-side from `netlify/functions/chat.js` using `api-key` auth. Powers the AI assistant. Endpoint and key supplied via `AZURE_OPENAI_ENDPOINT` / `AZURE_OPENAI_KEY` env vars.
+- **Azure OpenAI** (chat completions REST endpoint) — called server-side from `api/chat-core.js` using `api-key` auth. Powers the AI assistant. Endpoint and key supplied via `AZURE_OPENAI_ENDPOINT` / `AZURE_OPENAI_KEY` env vars.
 - **EmailJS** — third-party email delivery service invoked from the client (Contact form).
-- **Netlify Functions** — serverless runtime hosting the `chat` backend; `/api/*` is redirected to `/.netlify/functions/:splat`.
+- **Vercel Functions** — serverless runtime hosting the `/api/chat` backend.
 
 ## Plugins / Config Files
 
-- `netlify.toml` — build, functions directory, and API redirect.
+- `api/chat.js` — Vercel Function entrypoint for the AI assistant.
 - `.env.example` — documents Azure OpenAI env vars.
 - `package.json` — eslintConfig + browserslist.

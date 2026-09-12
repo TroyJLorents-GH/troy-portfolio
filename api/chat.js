@@ -1,4 +1,4 @@
-const { handler } = require('../netlify/functions/chat');
+const { handler } = require('./chat-core');
 
 module.exports = async function chat(req, res) {
   const result = await handler({

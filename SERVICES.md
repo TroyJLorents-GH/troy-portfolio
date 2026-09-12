@@ -5,29 +5,25 @@ type: services
 
 # Hosted Services — troy-portfolio
 
-## Netlify (hosting + serverless functions)
+## Vercel (hosting + serverless function)
 
-Detected from `netlify.toml` in the project root.
-
-- **Static site hosting** — serves the Create React App production build.
-  - Build command: `npm run build`
-  - Publish directory: `build`
-- **Netlify Functions (serverless)** — functions directory: `netlify/functions`.
-  - `chat.js` — the AI assistant backend that proxies to Azure OpenAI.
-- **Redirect rule** — `/api/*` → `/.netlify/functions/:splat` (status 200), so the client calls `/api/chat`.
-- **Environment variables** (set in the Netlify dashboard for the deployed function):
+- **Static site hosting** — serves the Create React App production build from `build`.
+- **Vercel Function** — `api/chat.js` handles `/api/chat` and proxies to Azure OpenAI.
+- **Server environment variables** (set in the Vercel project settings):
   - `AZURE_OPENAI_ENDPOINT`
   - `AZURE_OPENAI_KEY`
-
-The Portfolio data references a Netlify-hosted deployment of a related project (`pjf-ai-commandcenter.netlify.app`), confirming Netlify is the deploy target for this account.
+- **Build-time EmailJS variables** (set for Production and Preview):
+  - `REACT_APP_EMAILJS_PUBLIC_KEY`
+  - `REACT_APP_EMAILJS_SERVICE_ID`
+  - `REACT_APP_EMAILJS_TEMPLATE_ID`
 
 ## Third-party APIs consumed (not hosting, but external dependencies)
 
 These are external services the app calls, not where the site is hosted:
 
-- **Azure OpenAI** — chat completions, called from the Netlify function (server-side).
+- **Azure OpenAI** — chat completions, called from the Vercel Function (server-side).
 - **EmailJS** — client-side email delivery for the Contact form.
 
 ---
 
-No other external hosting providers (Vercel, Cloudflare, GitHub Pages, etc.) detected for this project. Netlify is the sole hosting/deployment service.
+Netlify is not required for this portfolio's hosting or backend.

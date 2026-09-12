@@ -7,7 +7,7 @@ type: readme
 
 A modern, single-page personal portfolio for Troy Lorents (Senior Full-Stack Software Developer / AI Engineer). It showcases his bio, technical skills, work history, and projects, and includes a floating AI chat assistant that answers questions about his professional background. The assistant is backed by a serverless function that proxies requests to Azure OpenAI, keeping the API key off the client.
 
-The app is a Create React App (CRA) project, deployed to Netlify with the chat backend running as a Netlify serverless function.
+The app is a Create React App (CRA) project deployed to Vercel, with the chat backend running as a Vercel Function.
 
 ## Features
 
@@ -21,7 +21,7 @@ The app is a Create React App (CRA) project, deployed to Netlify with the chat b
   - Opens/closes via a floating button with a pulse animation.
   - Renders responses as Markdown (`react-markdown`).
   - Shows suggested starter questions, a typing indicator, and inline error handling.
-  - Sends the running conversation to `/api/chat`, which a Netlify redirect maps to the `chat` serverless function. That function injects a detailed system prompt about Troy and calls Azure OpenAI's chat completions endpoint.
+  - Sends the running conversation to `/api/chat`, a Vercel Function that injects a detailed system prompt about Troy and calls Azure OpenAI's chat completions endpoint.
 - **Downloadable assets** — resume and certifications PDFs served from `public/assets`.
 
 ## Architecture
@@ -33,9 +33,7 @@ Browser (React SPA, CRA build)
   └── AIAssistant
         │  POST /api/chat  { messages: [...] }
         ▼
-   Netlify redirect  /api/*  ->  /.netlify/functions/:splat
-        ▼
-   netlify/functions/chat.js  (serverless)
+   api/chat.js  (Vercel Function)
         │  injects SYSTEM_PROMPT, appends max_completion_tokens etc.
         │  reads AZURE_OPENAI_ENDPOINT + AZURE_OPENAI_KEY from env
         ▼
@@ -45,7 +43,7 @@ Browser (React SPA, CRA build)
 Key points:
 
 - **Two different secret models.** EmailJS credentials are public-by-design client keys exposed via `REACT_APP_*` build-time env vars (used directly in the browser). The Azure OpenAI key is a true secret and never reaches the client — it lives only in the serverless function's environment.
-- **The system prompt lives in the function** (`netlify/functions/chat.js`), embedded as the `SYSTEM_PROMPT` constant. It contains Troy's full professional background and strict guardrails (only answer questions about Troy; refuse coding help, personal advice, interview prep, etc.). See `chat-assistant-system-prompt.md` in the project root for the extracted prompt.
+- **The system prompt lives in the function handler** (`api/chat-core.js`), embedded as the `SYSTEM_PROMPT` constant. It contains Troy's full professional background and strict guardrails (only answer questions about Troy; refuse coding help, personal advice, interview prep, etc.). See `chat-assistant-system-prompt.md` in the project root for the extracted prompt.
 - **Chat backend is Azure OpenAI direct**, not an Azure AI Foundry agent. The UI labels it "Powered by Azure AI Foundry," but the function posts to a standard Azure OpenAI chat completions endpoint with `api-key` auth.
 - **Routing.** `react-router-dom` wraps the app in `BrowserRouter`, but the site is effectively one page using anchor links (`#about`, `#skills`, etc.) for in-page navigation.
 
@@ -67,18 +65,18 @@ npm run build
 npm test
 ```
 
-> Note: `npm start` runs only the React dev server. The `/api/chat` endpoint is provided by the Netlify function. To exercise the AI assistant locally, run the site through the Netlify CLI (`netlify dev`) so the function and the `/api/*` redirect are available, or deploy to Netlify.
+> Note: `npm start` runs only the React dev server. To exercise `/api/chat` locally with the Vercel Function, use `vercel dev` or a Vercel Preview deployment.
 
 ## Configuration / Environment Variables
 
-### Serverless function (server-side secret — Netlify env)
+### Serverless function (server-side secret — Vercel environment)
 
 | Variable | Purpose |
 |----------|---------|
 | `AZURE_OPENAI_ENDPOINT` | Full Azure OpenAI chat completions URL, e.g. `https://<resource>.openai.azure.com/openai/deployments/<deployment>/chat/completions?api-version=2024-02-15-preview` |
 | `AZURE_OPENAI_KEY` | Azure OpenAI API key (sent as the `api-key` header) |
 
-`.env.example` documents these. Copy it to `.env.local` for local use and set the real values in the Netlify dashboard for deployment.
+`.env.example` documents these. Copy it to `.env.local` for local use and set the real values in the Vercel project settings for deployment.
 
 ### Client (EmailJS — build-time `REACT_APP_*` vars)
 
@@ -94,10 +92,9 @@ These are referenced in `src/components/Contact/Contact.jsx`. They are embedded 
 
 ```
 troy-portfolio/
-├── netlify.toml                 # Build + functions config, /api/* redirect
-├── netlify/
-│   └── functions/
-│       └── chat.js              # Azure OpenAI proxy + SYSTEM_PROMPT
+├── api/
+│   ├── chat.js                  # Vercel API route adapter
+│   └── chat-core.js             # Azure OpenAI proxy + SYSTEM_PROMPT
 ├── public/
 │   ├── index.html               # CRA HTML shell
 │   ├── manifest.json, robots.txt, favicon, logos
@@ -124,9 +121,8 @@ troy-portfolio/
 ## Notes
 
 - **Content is data-driven.** To add/update projects or jobs, edit `src/components/Portfolio/portfolioData.js` and `src/components/Work/workExperienceData.js` — no component changes needed.
-- **Updating the AI assistant's knowledge** means editing the `SYSTEM_PROMPT` string in `netlify/functions/chat.js` (and keeping the extracted prompt doc in sync).
+- **Updating the AI assistant's knowledge** means editing the `SYSTEM_PROMPT` string in `api/chat-core.js` (and keeping the extracted prompt doc in sync).
 - **Icons** come from two sources: FontAwesome (React components, used in the Contact section) and Remix Icon (`ri-*` classes, used in the Home hero — loaded via a stylesheet in `public/index.html`).
-- **Debug logging.** The chat function currently emits `console.log` debug lines about credential presence and Azure response status; consider removing these for production.
 - **CORS.** The chat function returns `Access-Control-Allow-Origin: *`; tighten this for production if desired.
 - `eject` is available via `npm run eject` (irreversible CRA operation — not recommended).
 ```
