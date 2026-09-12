@@ -43,7 +43,7 @@ Browser (React SPA, CRA build)
 Key points:
 
 - **Two different secret models.** EmailJS credentials are public-by-design client keys exposed via `REACT_APP_*` build-time env vars (used directly in the browser). The Azure OpenAI key is a true secret and never reaches the client — it lives only in the serverless function's environment.
-- **The system prompt lives in the function handler** (`api/chat-core.js`), embedded as the `SYSTEM_PROMPT` constant. It contains Troy's full professional background and strict guardrails (only answer questions about Troy; refuse coding help, personal advice, interview prep, etc.). See `chat-assistant-system-prompt.md` in the project root for the extracted prompt.
+- **The system prompt lives in the internal function handler** (`server/chat-core.js`), embedded as the `SYSTEM_PROMPT` constant. It contains Troy's full professional background and strict guardrails (only answer questions about Troy; refuse coding help, personal advice, interview prep, etc.). See `chat-assistant-system-prompt.md` in the project root for the extracted prompt.
 - **Chat backend is Azure OpenAI direct**, not an Azure AI Foundry agent. The UI labels it "Powered by Azure AI Foundry," but the function posts to a standard Azure OpenAI chat completions endpoint with `api-key` auth.
 - **Routing.** `react-router-dom` wraps the app in `BrowserRouter`, but the site is effectively one page using anchor links (`#about`, `#skills`, etc.) for in-page navigation.
 
@@ -93,8 +93,9 @@ These are referenced in `src/components/Contact/Contact.jsx`. They are embedded 
 ```
 troy-portfolio/
 ├── api/
-│   ├── chat.js                  # Vercel API route adapter
-│   └── chat-core.js             # Azure OpenAI proxy + SYSTEM_PROMPT
+│   └── chat.js                  # Vercel API route adapter
+├── server/
+│   └── chat-core.js             # Internal Azure OpenAI proxy + SYSTEM_PROMPT
 ├── public/
 │   ├── index.html               # CRA HTML shell
 │   ├── manifest.json, robots.txt, favicon, logos
@@ -121,7 +122,7 @@ troy-portfolio/
 ## Notes
 
 - **Content is data-driven.** To add/update projects or jobs, edit `src/components/Portfolio/portfolioData.js` and `src/components/Work/workExperienceData.js` — no component changes needed.
-- **Updating the AI assistant's knowledge** means editing the `SYSTEM_PROMPT` string in `api/chat-core.js` (and keeping the extracted prompt doc in sync).
+- **Updating the AI assistant's knowledge** means editing the `SYSTEM_PROMPT` string in `server/chat-core.js` (and keeping the extracted prompt doc in sync).
 - **Icons** come from two sources: FontAwesome (React components, used in the Contact section) and Remix Icon (`ri-*` classes, used in the Home hero — loaded via a stylesheet in `public/index.html`).
 - **CORS.** The chat function returns `Access-Control-Allow-Origin: *`; tighten this for production if desired.
 - `eject` is available via `npm run eject` (irreversible CRA operation — not recommended).

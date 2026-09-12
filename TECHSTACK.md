@@ -11,7 +11,7 @@ type: techstack
 - **SCSS / Sass** — component and global styling (`.scss` files compiled via the `sass` package).
 - **CSS** — global `index.css`.
 - **HTML** — CRA shell (`public/index.html`).
-- **Node.js (CommonJS)** — the Vercel Function (`api/chat.js` and `api/chat-core.js`).
+- **Node.js (CommonJS)** — the Vercel Function (`api/chat.js`) and its internal handler (`server/chat-core.js`).
 
 ## Frameworks & Core Libraries
 
@@ -68,7 +68,7 @@ type: techstack
 
 ## External APIs / Services
 
-- **Azure OpenAI** (chat completions REST endpoint) — called server-side from `api/chat-core.js` using `api-key` auth. Powers the AI assistant. Endpoint and key supplied via `AZURE_OPENAI_ENDPOINT` / `AZURE_OPENAI_KEY` env vars.
+- **Azure OpenAI** (chat completions REST endpoint) — called server-side from `server/chat-core.js` using `api-key` auth. Powers the AI assistant. Endpoint and key supplied via `AZURE_OPENAI_ENDPOINT` / `AZURE_OPENAI_KEY` env vars.
 - **EmailJS** — third-party email delivery service invoked from the client (Contact form).
 - **Vercel Functions** — serverless runtime hosting the `/api/chat` backend.
 

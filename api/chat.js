@@ -1,4 +1,4 @@
-const { handler } = require('./chat-core');
+const { handler } = require('../server/chat-core');
 
 module.exports = async function chat(req, res) {
   const result = await handler({
