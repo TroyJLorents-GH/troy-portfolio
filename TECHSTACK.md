@@ -24,6 +24,7 @@ type: techstack
 | **framer-motion** | ^12.40.0 | Animations in the hero / Home section (intro transitions, hover/tap, scroll indicator). |
 | **react-markdown** | ^10.1.0 | Renders AI assistant chat responses as Markdown. |
 | **sass** | ^1.89.2 | Compiles SCSS stylesheets. |
+| **tailwindcss** | ^3.4.17 | Compiles the static portfolio's utility classes at build time. |
 
 ## UI / Icons
 
@@ -62,6 +63,7 @@ type: techstack
 - **ESLint** — configured via `eslintConfig` in `package.json` (`react-app`, `react-app/jest` presets).
 - **Browserslist** — production/development target config in `package.json`.
 - **Vercel build** — Vercel builds the Create React App and serves the `build` output alongside the `/api/chat` function.
+- **Tailwind CSS compiler** — scans `public/index.html` and `src/` using `tailwind.config.js`; no runtime Tailwind CDN is used.
 - **deno.lock** present in the repo root (Deno lockfile), likely from tooling; the app build itself is Node/npm-based.
 
 ## External APIs / Services
@@ -73,5 +75,6 @@ type: techstack
 ## Plugins / Config Files
 
 - `api/chat.js` — Vercel Function entrypoint for the AI assistant.
+- `tailwind.config.js` — content paths and the portfolio color/spacing tokens.
 - `.env.example` — documents Azure OpenAI env vars.
 - `package.json` — eslintConfig + browserslist.
