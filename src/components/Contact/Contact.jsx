@@ -95,7 +95,7 @@
 
 
 import "./Contact.scss";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
@@ -103,9 +103,16 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 const Contact = () => {
   const refForm = useRef();
+  const [sending, setSending] = useState(false);
+  const [status, setStatus] = useState('');
+  const submitting = useRef(false);
 
   const sendEmail = (e) => {
     e.preventDefault();
+    if (submitting.current) return;
+    submitting.current = true;
+    setSending(true);
+    setStatus('');
 
     emailjs
       .sendForm(
@@ -116,13 +123,13 @@ const Contact = () => {
       )
       .then(
         () => {
-          alert("Message successfully sent! I will get back to you within 1 to 2 business days.");
-          window.location.reload(false);
+          setStatus("Message successfully sent! I will get back to you within 1 to 2 business days.");
+          refForm.current.reset();
         },
         () => {
-          alert("Failed to send the message, please try again");
+          setStatus("Your message could not be sent. Please try again; your message is still here.");
         }
-      );
+      ).finally(() => { submitting.current = false; setSending(false); });
   };
 
   return (
@@ -132,10 +139,10 @@ const Contact = () => {
         <p>
           Thank you for checking out my portfolio.<br /><br />
           Feel free to reach out with any questions, comments, or opportunities.<br /><br />
-          <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/troy-lorents/">
+          <a aria-label="Troy on LinkedIn" target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/troy-lorents/">
             <FontAwesomeIcon icon={faLinkedin} className="icon" />
           </a>
-          <a target="_blank" rel="noreferrer" href="mailto:troy.j.lorents91@gmail.com">
+          <a aria-label="Email Troy using your mail app" href="mailto:troy.j.lorents91@gmail.com">
             <FontAwesomeIcon icon={faEnvelope} className="icon" />
           </a>
         </p>
@@ -158,7 +165,8 @@ const Contact = () => {
             <label htmlFor="contact-message">Message</label>
             <textarea id="contact-message" name="message" placeholder="Your message…" required></textarea>
           </div>
-          <button type="submit" className="flat-button">SEND</button>
+          <button type="submit" className="flat-button" disabled={sending}>{sending ? 'SENDING…' : 'SEND MESSAGE'}</button>
+          <p className="contact-status" role="status">{status}</p>
         </form>
       </div>
     </div>

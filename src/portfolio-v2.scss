@@ -1,0 +1,39 @@
+#contact-widget .contact-container{max-width:none;margin:32px 0 0;padding:0;gap:64px}
+#contact-widget .contact-left{max-width:400px;min-width:0}
+#contact-widget .contact-left h1{font-family:Oswald,sans-serif;font-size:clamp(40px,4vw,60px);font-weight:700;letter-spacing:-.02em;text-transform:uppercase;color:var(--light)}
+#contact-widget .contact-left p{font-size:16px;line-height:1.8;color:var(--muted)}
+#contact-widget .contact-left .icon{color:var(--accent)}
+#contact-widget .contact-right{min-width:0}
+#contact-widget .contact-form input,#contact-widget .contact-form textarea{background:var(--surface);color:var(--light);border:1px solid var(--rules);border-radius:6px}
+#contact-widget .contact-form input:focus,#contact-widget .contact-form textarea:focus{border-color:var(--accent);outline:2px solid var(--accent);outline-offset:2px}
+#contact-widget .contact-form label{color:var(--muted)}
+#contact-widget .contact-form textarea{min-height:170px;resize:vertical}
+#contact-widget .contact-form .flat-button{background:var(--accent);color:var(--bg);letter-spacing:.06em;border-radius:30px;min-height:46px}
+#contact-widget .contact-form .flat-button:disabled{opacity:.6;cursor:wait}
+#contact-widget .contact-status{font-size:14px;line-height:1.6;color:var(--light)}
+#assistant-widget .ai-chat-button{background:var(--accent);color:var(--bg);box-shadow:0 0 0 5px #269af926,0 8px 28px #0006;border:2px solid #a8d8ff;font-size:14px;font-weight:700;width:70px;border-radius:50%;height:70px;right:24px;bottom:24px}
+#assistant-widget .ai-chat-button > .agent-avatar{width:54px;height:54px}
+#assistant-widget .ai-chat-button.open{width:52px;height:52px;font-size:24px}
+#assistant-widget .pulse-ring{display:none}
+#assistant-widget .ai-chat-window{background:var(--bg);color:var(--light);border:1px solid var(--rules);border-radius:16px;bottom:106px;right:24px;width:420px;max-width:calc(100vw - 32px);height:610px;max-height:calc(100dvh - 130px);animation:none}
+#assistant-widget .chat-header{background:var(--accent);color:var(--bg);padding:18px;border-radius:0;flex-shrink:0}
+#assistant-widget .suggestions-container{background:var(--bg);border-color:var(--rules);padding:12px 16px;flex-shrink:0}
+#assistant-widget .suggestions-label{color:var(--muted)}
+#assistant-widget .suggestion-btn{background:var(--surface);border-color:var(--rules);color:var(--light)}
+#assistant-widget .suggestion-btn:hover{background:var(--accent);color:var(--bg);transform:none}
+#assistant-widget .chat-messages{background:var(--bg);min-height:70px;padding:16px}
+#assistant-widget .message.assistant .message-content{background:var(--surface);color:var(--light);max-width:85%;box-shadow:none}
+#assistant-widget .message.user .message-content{background:var(--accent);color:var(--bg);max-width:85%;box-shadow:none}
+#assistant-widget .message-content a{color:var(--accent);text-decoration:underline}
+#assistant-widget .message.user .message-content a{color:var(--bg)}
+#assistant-widget .message-avatar{background:var(--surface);width:24px;height:24px;font-size:16px;box-shadow:none}
+#assistant-widget .chat-input-container{background:var(--surface);border-color:var(--rules);flex-shrink:0;padding:12px}
+#assistant-widget .chat-input{background:var(--bg);color:var(--light);border-color:var(--rules);min-width:0}
+#assistant-widget .chat-input:focus{border-color:var(--accent)}
+#assistant-widget .chat-input:disabled{background:var(--bg)}
+#assistant-widget .send-button{background:var(--accent);color:var(--bg)}
+#assistant-widget .send-button:disabled{background:var(--rules);color:var(--muted)}
+#assistant-widget .typing-indicator span{background:var(--accent)}
+#assistant-widget .chat-messages::-webkit-scrollbar-thumb{background:var(--accent)}
+@media(max-width:850px){#contact-widget .contact-container{gap:24px}#contact-widget .contact-left{max-width:none}}
+@media(max-width:600px){#assistant-widget .ai-chat-window{right:16px;bottom:82px}#assistant-widget .ai-chat-button{right:16px;bottom:16px}#assistant-widget .chat-header .ai-icon{display:none}#assistant-widget .chat-header{padding:12px 16px}#assistant-widget .suggestion-btn{padding:7px 10px;font-size:11px}}

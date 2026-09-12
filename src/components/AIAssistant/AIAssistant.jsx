@@ -2,18 +2,36 @@ import React, { useState, useRef, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import './AIAssistant.scss';
 
+const AgentAvatar = () => (
+  <svg className="agent-avatar" viewBox="0 0 64 64" fill="none" aria-hidden="true" focusable="false">
+    <path d="M32 16V9" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+    <circle cx="32" cy="7" r="4" fill="currentColor" />
+    <rect x="9" y="17" width="46" height="37" rx="15" fill="#111816" stroke="currentColor" strokeWidth="2" />
+    <rect x="16" y="25" width="32" height="18" rx="8" fill="#269af9" fillOpacity=".18" />
+    <path d="M23 32v4m18-4v4" stroke="#a8d8ff" strokeWidth="4" strokeLinecap="round" />
+    <path d="M27 46h10" stroke="#a8d8ff" strokeWidth="3" strokeLinecap="round" />
+    <path d="M5 30v10m54-10v10" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
+  </svg>
+);
+
 const AIAssistant = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
     {
       role: 'assistant',
-      content: "👋 Hi! I'm an AI assistant trained on Troy's professional background. Ask me anything about his experience, skills, or projects!"
+      content: "Hi! I'm Troy's professional AI assistant. I'm here to answer questions about his background, experience, skills, and projects."
     }
   ]);
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
   const chatContainerRef = useRef(null);
+  const inputRef = useRef(null);
+  const toggleRef = useRef(null);
+
+  useEffect(() => {
+    if (isOpen) inputRef.current?.focus();
+  }, [isOpen]);
 
   // Auto-scroll to bottom when messages change
   useEffect(() => {
@@ -90,19 +108,23 @@ const AIAssistant = () => {
       <button
         className={`ai-chat-button ${isOpen ? 'open' : ''}`}
         onClick={() => setIsOpen(!isOpen)}
-        aria-label="AI Assistant"
+        ref={toggleRef}
+        aria-label={isOpen ? 'Close Ask About Troy' : 'Ask About Troy'}
+        aria-expanded={isOpen}
+        aria-controls="troy-assistant-panel"
+        title={isOpen ? 'Close assistant' : 'Ask About Troy'}
       >
-        {isOpen ? '✕' : '🤖'}
+        {isOpen ? '✕' : <AgentAvatar />}
         {!isOpen && <span className="pulse-ring"></span>}
       </button>
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="ai-chat-window">
+        <div className="ai-chat-window" id="troy-assistant-panel" role="dialog" aria-label="Ask About Troy" onKeyDown={event => { if(event.key === 'Escape') { setIsOpen(false); toggleRef.current?.focus(); } }}>
           {/* Header */}
           <div className="chat-header">
             <div className="header-content">
-              <span className="ai-icon">🤖</span>
+              <span className="ai-icon"><AgentAvatar /></span>
               <div>
                 <h3>Ask About Troy</h3>
                 <p>Powered by Azure AI Foundry</p>
@@ -136,11 +158,11 @@ const AIAssistant = () => {
           )}
 
           {/* Messages Container */}
-          <div className="chat-messages" ref={chatContainerRef}>
+          <div className="chat-messages" ref={chatContainerRef} role="log" aria-live="polite" aria-label="Conversation">
             {messages.map((message, index) => (
               <div key={index} className={`message ${message.role}`}>
                 <div className="message-avatar">
-                  {message.role === 'assistant' ? '🤖' : '👤'}
+                  {message.role === 'assistant' ? <AgentAvatar /> : '👤'}
                 </div>
                 <div className="message-content">
                   <ReactMarkdown>{message.content}</ReactMarkdown>
@@ -151,7 +173,7 @@ const AIAssistant = () => {
             {/* Typing Indicator */}
             {isLoading && (
               <div className="message assistant typing">
-                <div className="message-avatar">🤖</div>
+                <div className="message-avatar"><AgentAvatar /></div>
                 <div className="message-content">
                   <div className="typing-indicator">
                     <span></span>
@@ -167,6 +189,8 @@ const AIAssistant = () => {
           <div className="chat-input-container">
             <input
               type="text"
+              ref={inputRef}
+              aria-label="Ask about Troy's experience"
               className="chat-input"
               placeholder="Ask about Troy's experience..."
               value={inputValue}
@@ -176,6 +200,7 @@ const AIAssistant = () => {
             />
             <button
               className="send-button"
+              aria-label="Send question"
               onClick={() => handleSendMessage()}
               disabled={isLoading || !inputValue.trim()}
             >

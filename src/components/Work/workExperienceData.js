@@ -14,20 +14,19 @@ export const workExperience = [
     ]
   },
   {
-    title: "Web Application Developer",
+    title: "Web Application Developer (Full-Stack & AI)",
     company: "ASU – School of Computing and Augmented Intelligence",
-    years: "July 2024 – Present",
-    summary: "Designed, developed, and deployed a secure full-stack student hiring platform and data pipeline for the Fulton Schools of Engineering.",
+    years: "June 2024 – Present",
+    summary: "Own full-stack applications, AI services, and cloud infrastructure across ASU. Built SAMS for 300+ users, cut hiring processing time by approximately 80%, and reduced student-project hosting costs by 93%.",
     details: [
-      "Designed, developed, and deployed a full-stack student hiring application with secure UI/UX using React.js, Material UI, Bootstrap, and an ASP.NET Core Web API backend with Entity Framework Core (later rewritten in Python for cloud hosting) and SQL Server.",
-      "Implemented email-password authentication, protected dashboards, and secure role-based access. Deployed on Azure (App Service, SQL Database, blob storage) with automated pipelines.",
-      "Built an enterprise-scale data pipeline integrating Microsoft Forms, Google Sheets, Power Automate, and Amazon Redshift, transforming application and class data with daily sync to SQL Server.",
-      "Automated hiring for ~900 student roles per term using Adobe Sign, Airtable, Power Automate, and Google Apps Script, reducing HR overhead by 100+ hours per cycle.",
-      "Developed and hosted cloud-native REST APIs and web/mobile apps using AWS (EC2, Lambda, Elastic Beanstalk, API Gateway, IAM, CloudWatch, DynamoDB, Amplify), containerized with Docker.",
-      "Streamlined HR, IT, and faculty workflows using ServiceNow, Plumsail, Power BI, WordPress, and Airtable; developed advanced Splunk queries for network monitoring.",
-      "Created PowerShell and WPF tools with Active Directory and Airtable integration for IT asset management and network scans.",
-      "Launched a production-ready AI assistant (Python, Flask, React, OpenAI API) with doc Q&A, keyword extraction, vector search, and web scraping.",
-      "Built and deployed a Flask API on Azure VM with Docker for document intelligence, semantic search, and job-resume matching using Azure AI Search and embeddings."
+      "Designed and built SAMS, an end-to-end student hiring platform, owning the database, backend, and React/TypeScript frontend. Replaced a 150-200-hour manual process for hiring TAs, IAs, and graders; serves 300+ users and cut processing time by approximately 80%.",
+      "Lead the rollout to other ASU schools, backed by HR leadership and the Dean of the Ira A. Fulton Schools of Engineering, with pilots underway at other colleges.",
+      "Re-architected student-project hosting onto a single EC2 Windows Server instance with container isolation for each team, supporting 200+ .NET projects across four classes. Reduced the monthly AWS bill from $850 to $60, a 93% reduction.",
+      "Built production AI services with Python, FastAPI, Azure AI Foundry, and LLM APIs, including document ingestion, vector search, RAG, model routing, and tool-calling workflows. Added a conversational hiring chatbot for live users.",
+      "Designed and maintained SQL Server, PostgreSQL, and Cosmos DB data models for transactional and AI workloads, including schemas across hundreds of tables and queries over millions of rows.",
+      "Built FastAPI and .NET Core Web API services connected through webhooks and API pipelines. Implemented OAuth 2.0, CAS SSO, and role-based access control across enterprise applications and AI services.",
+      "Deployed and operated services across AWS and Azure using containers, CI/CD, CloudWatch monitoring, Pytest, load testing, and deployment validation. Used Azure DevOps, App Service, Static Web Apps, and API Management for delivery.",
+      "Automated cross-team workflows with Power Automate, Power Apps, SQL, Airtable, and Microsoft Forms to reduce manual handoffs."
     ]
   },
   {

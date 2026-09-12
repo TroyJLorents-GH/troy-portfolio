@@ -61,7 +61,8 @@ AZURE CLOUD PLATFORM & DEVOPS (Proficient):
 - Azure Document Intelligence: Multi-format OCR, document processing, layout analysis
 
 PROFESSIONAL EXPERIENCE:
-- 8+ years of software engineering experience
+- 9+ years of software engineering experience
+- Founder of useKnockout, a commercial image-processing API with paying customers
 - Founder of AutomateFlows.io — AI automation services for small businesses
 - Web Application Developer at ASU School of Computing and Augmented Intelligence (SCAI)
 - Former Software Engineer at Zywave Inc. (insurance tech)
@@ -269,10 +270,6 @@ exports.handler = async (event, context) => {
     const AZURE_OPENAI_ENDPOINT = process.env.AZURE_OPENAI_ENDPOINT;
     const AZURE_OPENAI_KEY = process.env.AZURE_OPENAI_KEY;
 
-    // DEBUG: Log what we're getting (remove this after debugging)
-    console.log('DEBUG: Endpoint exists?', !!AZURE_OPENAI_ENDPOINT);
-    console.log('DEBUG: Key exists?', !!AZURE_OPENAI_KEY);
-    console.log('DEBUG: Endpoint:', AZURE_OPENAI_ENDPOINT ? AZURE_OPENAI_ENDPOINT.substring(0, 50) + '...' : 'MISSING');
 
     if (!AZURE_OPENAI_ENDPOINT || !AZURE_OPENAI_KEY) {
       console.error('Missing Azure OpenAI credentials');
@@ -289,13 +286,13 @@ exports.handler = async (event, context) => {
     ];
 
     // Call Azure OpenAI API
-    console.log('DEBUG: Calling Azure OpenAI...');
     const response = await fetch(AZURE_OPENAI_ENDPOINT, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'api-key': AZURE_OPENAI_KEY
       },
+      signal: AbortSignal.timeout(30000),
       body: JSON.stringify({
         messages: apiMessages,
         max_completion_tokens: 500,
@@ -306,12 +303,9 @@ exports.handler = async (event, context) => {
       })
     });
 
-    console.log('DEBUG: Azure response status:', response.status);
 
     if (!response.ok) {
-      const errorText = await response.text();
-      console.error('Azure OpenAI API error:', response.status, errorText);
-      console.error('Full error details:', errorText);
+      console.error('Azure OpenAI API error:', response.status);
       return {
         statusCode: 500,
         body: JSON.stringify({ error: 'AI service error' })

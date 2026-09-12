@@ -1,44 +1,578 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Troy Lorents, Senior Full-Stack & AI Engineer. AI agents, multi-agent systems, and RAG pipelines on Azure AI Foundry, OpenAI, and Claude. Founder of useKnockout and Automate Flows."
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+<html lang="en" class="scroll-smooth" data-portfolio-v2="true">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Troy Lorents - Senior Full-Stack & AI Engineer</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Oswald:wght@700&display=swap" rel="stylesheet">
+<style>
+  @view-transition {
+    navigation: auto;
+  }
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>Troy Lorents | Full-Stack & AI Engineer</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+  :root {
+    --bg: #111816;
+    --light: #f4f5ef;
+    --accent: #269af9;
+    --surface: #1b2420;
+    --muted: #a6afa8;
+    --rules: #334038;
+  }
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+  body {
+    background-color: var(--bg);
+    color: var(--light);
+    font-family: 'Manrope', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+  .font-display {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    line-height: 0.92;
+  }
+
+  /* Focus states */
+  *:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  /* Accordion logic */
+  .accordion-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease-out;
+  }
+  .accordion-group.is-open .accordion-content {
+    grid-template-rows: 1fr;
+  }
+  .accordion-inner {
+    overflow: hidden;
+  }
+
+section { scroll-margin-top: 90px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto !important; } *, *::before, *::after { transition: none !important; animation: none !important; } }
+
+/* Motion study v2: a project-led sequence. All content is visible without JS. */
+html {scroll-behavior:auto}
+.fade-up {opacity:1!important;transform:none!important;transition:none!important}
+.page-shell {overflow-x:clip}
+.eyebrow {font-size:12px;letter-spacing:.12em;font-weight:600;color:var(--accent);text-transform:uppercase}
+.eyebrow span {color:var(--muted)}
+.hero-v2 {padding-top:138px;padding-bottom:32px}
+.hero-grid {display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;padding:62px 0 76px}
+.hero-title {font-size:clamp(58px,6.2vw,94px);letter-spacing:-.04em;line-height:1.02}
+.hero-title span {color:var(--accent)}
+.hero-description {color:var(--muted);max-width:490px;line-height:1.75;margin-top:28px;font-size:17px}
+.hero-project-wrap {perspective:1200px}
+.hero-project {background:var(--surface);border:1px solid var(--rules);transform-origin:center center}
+.hero-project img {display:block;width:100%;height:auto}
+.project-chrome,.stage-top {display:flex;justify-content:space-between;gap:12px;padding:16px;font-size:11px;letter-spacing:.04em;color:var(--muted)}
+.hero-project figcaption {padding:16px;color:var(--muted);font-size:12px}
+.hero-bottom {display:flex;justify-content:space-between;gap:20px;font-size:10px;letter-spacing:.08em;color:var(--muted)}
+.hero-bottom a {color:var(--accent)}
+.work-v2 {padding-top:100px;padding-bottom:60px}
+.section-heading {margin-bottom:60px}
+.section-heading h2 {font-size:clamp(34px,4vw,62px);line-height:1.08;margin-top:20px}
+.section-heading h2 span {color:var(--muted)}
+.story-layout {display:grid;grid-template-columns:1.2fr 1fr;gap:8%;position:relative;align-items:start}
+.story-stage {display:none}
+.motion-story .story-stage {display:block;position:sticky;top:130px;border:1px solid var(--rules);background:var(--surface)}
+.stage-panels {display:grid;aspect-ratio:1.42;overflow:hidden;position:relative}
+.stage-panel {grid-area:1/1;min-width:0;display:flex;flex-direction:column;justify-content:center;background:var(--surface)}
+.stage-panel:not(:first-child) {visibility:hidden;opacity:0}
+.stage-panel img {width:100%;height:auto;display:block}
+.stage-panel>p {font-size:11px;letter-spacing:.06em;color:var(--muted);padding:20px}
+.architecture {padding:32px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:20px}
+.architecture small {font-size:10px;letter-spacing:.1em;color:var(--muted)}
+.architecture strong {font-family:Oswald,sans-serif;font-size:clamp(22px,2.4vw,38px);line-height:1.2}
+.architecture strong span {color:var(--accent)}
+.architecture p {font-size:16px;color:var(--muted)}
+.architecture-clients {display:flex;justify-content:center;gap:8px;flex-wrap:wrap;font-size:12px}
+.architecture-clients span {border:1px solid var(--rules);padding:10px 14px}
+.connector {color:var(--accent);line-height:1}
+.stage-track {height:3px;background:var(--rules)}
+.stage-progress {height:100%;background:var(--accent);transform:scaleX(0);transform-origin:left}
+.story-step {min-height:70vh;display:flex;flex-direction:column;justify-content:center;padding:50px 0;border-top:1px solid var(--rules)}
+.story-step h3 {font-size:clamp(30px,3.2vw,44px);line-height:1.1;margin:24px 0}
+.story-step>p:not(.eyebrow) {color:var(--muted);font-size:17px;line-height:1.75}
+.story-step>a {margin-top:28px;font-size:13px;color:var(--accent);text-underline-offset:5px;text-decoration:underline}
+.mobile-project,.mobile-system {display:block;margin-top:24px}
+.mobile-system {padding:24px;background:var(--surface);border:1px solid var(--rules);line-height:2;font-size:13px}
+.motion-story .mobile-project,.motion-story .mobile-system {display:none}
+.story-layout:not(.motion-story) {display:block}
+#impact {background:var(--light);color:var(--bg);position:relative;margin-top:30px;padding-top:100px;padding-bottom:100px}
+#impact .text-light,#impact .text-accent {color:var(--bg)}
+#impact .text-muted {color:#4e5b52}
+#impact .bg-surface {background:transparent;border-color:#c1cbbd}
+#impact .metric-card {border-top:2px solid var(--bg)}
+#impact .impact-line {height:3px;background:var(--bg);transform-origin:left;margin-bottom:42px}
+#skills {padding-top:110px}
+#skills summary {list-style:none}
+#skills summary::-webkit-details-marker {display:none}
+#skills details summary>span:last-child {white-space:nowrap}
+#skills details[open] summary>span:last-child>span {display:inline-block;transform:rotate(45deg)}
+.scroll-progress {position:fixed;top:0;left:0;right:0;height:3px;background:var(--accent);transform:scaleX(0);transform-origin:left;z-index:60;pointer-events:none}
+.skip-link {position:fixed;left:20px;top:-80px;z-index:80;background:var(--accent);color:var(--bg);padding:12px}
+.skip-link:focus {top:10px}
+@media(max-width:1023px) {.hero-grid {grid-template-columns:1fr;gap:48px;padding:40px 0}.hero-v2 {padding-top:110px}.hero-title {font-size:clamp(46px,10vw,92px)}.hero-project-wrap {max-width:680px}.hero-bottom {margin-top:20px;flex-wrap:wrap}.story-step {min-height:0;padding:48px 0}.story-layout {display:block}.work-v2 {padding-top:70px}.stage-panels {aspect-ratio:1.3}}
+@media(prefers-reduced-motion:reduce) {.hero-project,.metric-card,#skills details {transform:none!important;opacity:1!important}.story-stage {display:none!important}.story-layout {display:block!important}.mobile-project,.mobile-system {display:block!important}.story-step {min-height:0}.scroll-progress {display:none}}
+
+
+/* Full portfolio content, preserving the approved visual system. */
+.full-section{padding:90px 64px;border-bottom:1px solid var(--rules)}
+.section-intro{max-width:650px;color:var(--muted);line-height:1.8;margin-top:24px}
+.full-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.feature-card{padding:36px;border:1px solid var(--rules);background:var(--surface)}
+.feature-card h3{font-size:clamp(30px,3vw,46px);margin:28px 0 20px}
+.feature-card p{line-height:1.8;color:var(--muted)}
+.feature-card a,.archive-links a,.credential-links a,.contact-links a{display:inline-block;color:var(--accent);padding:12px 0;text-decoration:underline;text-underline-offset:5px}
+.feature-card .feature-number{font-size:64px;color:var(--accent);line-height:1}
+.archive-tools{display:flex;align-items:center;gap:24px;margin-bottom:32px;flex-wrap:wrap}
+.archive-tools input{background:var(--surface);border:1px solid var(--rules);color:var(--light);padding:16px 20px;width:min(100%,520px)}
+.archive-card{border-top:1px solid var(--rules);padding:28px 0;min-width:0}
+.archive-card summary{cursor:pointer;display:flex;justify-content:space-between;gap:20px;align-items:center;font-size:21px;font-weight:600;line-height:1.4}
+.archive-card summary::after{content:'+';color:var(--accent);font-size:28px}.archive-card[open] summary::after{content:'−'}
+.archive-card .project-copy{max-width:900px;line-height:1.8;color:var(--muted);margin:20px 0}
+.archive-links{display:flex;gap:24px;flex-wrap:wrap}
+.project-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}.project-tags span{font-size:11px;padding:6px 10px;border:1px solid var(--rules);color:var(--muted)}
+.project-status{font-size:11px;color:var(--accent);margin-bottom:10px;letter-spacing:.07em;text-transform:uppercase}
+.career-row{display:grid;grid-template-columns:210px 1fr;gap:32px;padding:32px 0;border-top:1px solid var(--rules)}
+.career-row h3{font-size:24px;margin-bottom:8px}.career-row p,.career-row li{color:var(--muted);line-height:1.8}.career-row summary{cursor:pointer;color:var(--accent);padding:16px 0}.career-row ul{list-style:disc;padding-left:20px}.career-row li{padding:5px 0}
+.education-card{border-top:1px solid var(--rules);padding:28px 0}.education-card h3{font-size:25px;margin-bottom:12px}.education-card p{color:var(--muted);line-height:1.7}
+.credential-list{margin-top:30px;display:grid;grid-template-columns:1fr 1fr;gap:0 32px}.credential-list li{padding:14px 0;border-bottom:1px solid var(--rules);font-size:14px;line-height:1.7;color:var(--muted)}
+.contact-block{background:var(--light);color:var(--bg)}.contact-block .eyebrow{color:#43572d}.contact-block h2{font-size:clamp(48px,7vw,100px);margin:28px 0}.contact-block p{max-width:620px;line-height:1.8;color:#435047}.contact-links{display:flex;flex-wrap:wrap;gap:24px;margin-top:24px}.contact-links a{color:var(--bg)}
+.hero-project video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}.hero-project button{border:1px solid var(--rules);padding:8px 14px;color:var(--light);font-size:12px;margin:0 16px 16px}.preview-note{font-size:12px!important;opacity:.8;margin-top:24px}
+[hidden]{display:none!important}a,summary{overflow-wrap:anywhere}
+@media(max-width:767px){.full-section{padding:64px 24px}.full-grid,.credential-list{grid-template-columns:1fr}.career-row{grid-template-columns:1fr;gap:10px}.feature-card{padding:24px}.archive-card summary{font-size:18px}.hero-grid{gap:30px}.contact-links{gap:12px 24px}}
+
+.engineering-hero{padding:130px 64px 60px}.engineering-intro{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:end;margin-bottom:56px}.engineering-intro h1{font-size:clamp(64px,7vw,100px);line-height:1.02;margin-top:24px;letter-spacing:-.025em}.engineering-intro h1 span{color:var(--accent)}.engineering-intro-copy{max-width:560px;font-size:17px;line-height:1.65;color:var(--muted)}.engineering-positioning{color:var(--light)}.engineering-founder{font-size:14px;line-height:1.7;margin-top:14px}.engineering-actions{display:flex;gap:24px;align-items:center;flex-wrap:wrap;margin-top:24px;font-size:14px}.engineering-actions>a:last-child{color:var(--light)}
+.engineering-story{background:var(--bg);border:1px solid var(--rules);position:relative}.engineering-toolbar{display:flex;justify-content:space-between;gap:16px;align-items:center;font-size:10px;letter-spacing:.1em;padding:16px 24px;border-bottom:1px solid var(--rules);color:var(--muted)}.engineering-toolbar a{color:var(--accent)}.engineering-layout{display:grid;grid-template-columns:28% 72%}.engineering-guide{padding:28px 24px;border-right:1px solid var(--rules)}.engineering-guide h2{font-size:30px;line-height:1.1;margin:18px 0}.engineering-guide h2 span{color:var(--muted)}.engineering-guide>p:not(.eyebrow){font-size:13px;line-height:1.8;color:var(--muted)}.engineering-guide .eyebrow{font-size:9px}.engineering-source-links{display:flex;gap:18px;flex-wrap:wrap;margin-top:22px;font-size:11px;color:var(--accent)}.engineering-tabs{display:none;margin-top:24px}.engineering-tabs button{display:grid;grid-template-columns:24px 1fr;gap:3px 8px;text-align:left;width:100%;padding:12px;border-left:2px solid transparent;font-size:11px;color:var(--muted)}.engineering-tabs button strong{font-size:13px;font-weight:600;color:var(--light)}.engineering-tabs button>span{grid-column:2;font-size:10px}.engineering-tabs button[aria-selected=true]{background:var(--surface);border-left-color:var(--accent);color:var(--accent)}.engineering-tabs button[aria-selected=true] strong{color:var(--accent)}
+.engineering-panels{min-width:0}.engineering-panel{background:var(--surface);display:flex;flex-direction:column;min-height:470px}.engineering-panel+article{border-top:1px solid var(--rules)}.engineering-panel>header{display:flex;gap:16px;justify-content:space-between;padding:14px 20px;border-bottom:1px solid var(--rules);color:var(--muted);font:10px/1.5 monospace;overflow-wrap:anywhere}.editor-dots{white-space:nowrap;opacity:.5;letter-spacing:3px}.engineering-panel-body{padding:24px 28px;flex:1;min-width:0}.engineering-panel-body>.eyebrow{font-size:10px}.engineering-panel h3{font-size:23px;line-height:1.3;margin:10px 0 20px;letter-spacing:-.025em}.engineering-panel>footer{color:var(--muted);font-size:10px;line-height:1.5;padding:12px 20px;border-top:1px solid var(--rules)}.engineering-explanation{font-size:13px;line-height:1.7;color:var(--muted);margin:20px 0 0}.engineering-flow{display:flex;flex-wrap:wrap;gap:14px;font-size:10px;align-items:center;color:var(--accent);margin-top:20px}.engineering-flow>span{color:var(--muted)}.engineering-flow code{font-size:13px}
+.schema-card{border:1px solid var(--rules);background:var(--bg);margin-top:24px}.schema-title{font:600 16px monospace;padding:16px;border-bottom:1px solid var(--rules)}.schema-title span{color:var(--muted)}.schema-title small{float:right;font:9px/20px 'Manrope',sans-serif;color:var(--accent)}.schema-row{display:grid;grid-template-columns:1.3fr .8fr 1fr;gap:10px;padding:11px 16px;font:12px/1.4 monospace;border-bottom:1px solid var(--rules)}.schema-row:last-child{border:0}.schema-row span{color:var(--muted)}.schema-row em{color:var(--accent);font:8px/1.8 'Manrope',sans-serif;font-style:normal;text-align:right}.schema-row:nth-child(3),.schema-row:nth-child(4){background:var(--surface)}
+.engineering-code{font:12px/1.8 ui-monospace,SFMono-Regular,Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere;border:1px solid var(--rules);padding:18px;background:var(--bg);color:var(--light)}.code-accent{color:var(--accent)}.code-comment{color:var(--muted)}.endpoint-bar{display:flex;gap:14px;align-items:center;font:11px/1.5 monospace;padding:10px 12px;margin-bottom:12px;border:1px solid var(--rules)}.endpoint-bar b{color:var(--accent)}.endpoint-bar code{overflow-wrap:anywhere}.ui-dependencies{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:22px 0 0;font-size:11px}.ui-dependencies span{padding:8px 10px;border:1px solid var(--rules)}.ui-dependencies b{color:var(--accent)}
+.lookup-demo{background:var(--light);color:var(--bg);padding:22px}.lookup-heading{display:flex;justify-content:space-between;gap:12px;align-items:center}.lookup-heading strong{font-size:20px}.lookup-heading small{font-size:9px;letter-spacing:.08em}.lookup-demo>p{font-size:12px;margin-top:6px;color:#435047}.lookup-fields{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}.lookup-fields label{font-size:11px;font-weight:600}.lookup-fields select{display:block;width:100%;min-width:0;margin-top:7px;border:1px solid #99a199;padding:10px 8px;background:#fff;color:var(--bg);font:12px 'Manrope',sans-serif;min-height:42px}.lookup-fields select:disabled{opacity:.55;background:#e5e8e0}.lookup-result{padding:14px;border:1px solid #bcc5b5;font-size:12px;line-height:1.6;min-height:50px}.lookup-result.is-complete{background:#dceeff;border-color:#2879bd}.lookup-demo button{margin-top:16px;font-size:11px;text-decoration:underline;text-underline-offset:4px}.lookup-demo :focus-visible{outline-color:#1767a7}.engineering-progress{height:3px;background:var(--rules);display:none}.engineering-progress div{height:100%;background:var(--accent);transform:scaleX(.25);transform-origin:left}.engineering-scroll-hint{display:none}
+.engineering-enhanced .engineering-tabs{display:block}.engineering-enhanced .engineering-panel{height:535px;min-height:0}.engineering-enhanced .engineering-panel[hidden]{display:none}.engineering-enhanced .engineering-progress{display:block}.engineering-enhanced .engineering-scroll-hint{display:block}.engineering-enhanced .engineering-panel+article{border-top:0}
+@media(max-width:1023px),(max-height:749px){.engineering-hero{padding:110px 24px 48px}.engineering-intro{gap:24px;margin-bottom:36px}.engineering-intro h1{font-size:64px}.engineering-layout{grid-template-columns:1fr}.engineering-guide{border-right:0;border-bottom:1px solid var(--rules)}.engineering-guide h2{font-size:34px}.engineering-panel{min-height:0}.engineering-panel-body{padding:24px}.engineering-toolbar{font-size:9px;padding:14px 16px}}
+@media(max-width:639px){.engineering-intro{grid-template-columns:1fr}.engineering-intro h1{font-size:68px}.engineering-intro-copy{font-size:16px}.engineering-toolbar{gap:12px;letter-spacing:.03em}.engineering-panel h3{font-size:22px}.engineering-code{font-size:11px;padding:12px}.schema-row{grid-template-columns:1.2fr .7fr 1fr;padding:10px;font-size:11px}.schema-title{padding:12px;font-size:14px}.schema-title small{font-size:8px}.engineering-panel>header{padding:12px;font-size:9px;gap:8px}.editor-dots{display:none}.lookup-demo{padding:16px}.lookup-fields{gap:12px}.engineering-guide{padding:24px}.engineering-guide .eyebrow{font-size:10px}}
+@media(prefers-reduced-motion:reduce){.engineering-layout{grid-template-columns:1fr}.engineering-guide{border-right:0;border-bottom:1px solid var(--rules)}.engineering-panel{min-height:0}}
+
+.engineering-enhanced .engineering-panel-body{padding:16px 28px}.engineering-enhanced .engineering-panel h3{margin:8px 0 14px}.engineering-enhanced .lookup-demo{padding:16px}.engineering-enhanced .lookup-fields{margin:14px 0;gap:10px}.engineering-enhanced .lookup-fields select{min-height:36px;padding:8px}.engineering-enhanced .lookup-result{min-height:40px;padding:10px}.engineering-enhanced .lookup-demo button{margin-top:8px}.engineering-enhanced .engineering-explanation{margin-top:12px}
+.hero-name{font-size:15px;font-weight:600;color:var(--muted);margin-bottom:12px}.hero-role{font-size:clamp(26px,2.5vw,36px);line-height:1.2;font-weight:700;letter-spacing:-.03em;color:var(--light)}.hero-founder-line{font-size:13px;line-height:1.6;color:var(--accent);margin-top:12px}.engineering-intro{align-items:center}.engineering-intro h1{margin-top:28px;font-size:clamp(60px,6.5vw,92px)}
+</style>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          bg: '#111816',
+          light: '#f4f5ef',
+          accent: '#269af9',
+          surface: '#1b2420',
+          muted: '#a6afa8',
+          rules: '#334038'
+        },
+        spacing: {
+          'desktop': '64px',
+          'mobile': '24px'
+        }
+      }
+    }
+  }
+</script>
+</head>
+<body>
+<div class="page-shell min-h-screen selection:bg-accent selection:text-bg">
+
+  <a id="skip-content" href="#work" class="skip-link">Skip to work</a><div class="scroll-progress" aria-hidden="true"></div>
+<!-- Top Navigation -->
+  <nav class="fixed top-0 left-0 w-full z-40 bg-bg border-b border-rules px-mobile md:px-desktop py-4">
+    <div class="max-w-[1440px] mx-auto flex items-center justify-between">
+      <a href="#" id="nav-home-logo" class="font-display text-xl tracking-wide text-light hover:text-accent transition-colors">
+        TL.
+      </a>
+      <ul class="hidden lg:flex items-center gap-5 text-sm font-semibold tracking-wide">
+        <li><a href="#work" id="nav-work-link" class="text-muted hover:text-accent transition-colors">WORK</a></li>
+        <li><a href="#impact" id="nav-impact-link" class="text-muted hover:text-accent transition-colors">IMPACT</a></li>
+        <li><a href="#skills" id="nav-skills-link" class="text-muted hover:text-accent transition-colors">THE STACK</a></li>
+        <li><a id="nav-projects" href="#projects" class="text-muted hover:text-accent">PROJECTS</a></li>
+        <li><a id="nav-experience" href="#experience" class="text-muted hover:text-accent">EXPERIENCE</a></li>
+        <li><a id="nav-education" href="#education" class="text-muted hover:text-accent">EDUCATION</a></li>
+        <li><a href="#contact" id="nav-contact-link" class="text-muted hover:text-accent transition-colors">CONTACT</a></li>
+      </ul>
+      <details class="lg:hidden relative"><summary class="cursor-pointer text-sm py-2">Menu</summary><div class="absolute top-full right-0 bg-bg border border-rules p-5 grid gap-4 min-w-40"><a id="mobile-work" href="#work">Work</a><a id="mobile-impact" href="#impact">Impact</a><a id="mobile-skills" href="#skills">The stack</a><a id="mobile-projects" href="#projects">All projects</a><a id="mobile-experience" href="#experience">Experience</a><a id="mobile-education" href="#education">Education</a><a id="mobile-contact" href="#contact">Contact</a></div></details>
+<div class="flex items-center gap-4">
+        <a href="https://github.com/TroyJLorents-GH" id="nav-github" aria-label="GitHub profile" target="_blank" rel="noopener noreferrer" class="text-muted hover:text-accent transition-colors">
+          <iconify-icon icon="simple-icons:github" class="text-xl"></iconify-icon>
+        </a>
+        <a href="https://www.linkedin.com/in/troy-lorents/" id="nav-linkedin" aria-label="LinkedIn profile" target="_blank" rel="noopener noreferrer" class="text-muted hover:text-accent transition-colors">
+          <iconify-icon icon="simple-icons:linkedin" class="text-xl"></iconify-icon>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-[1440px] mx-auto relative">
+
+    <!-- Hero Section -->
+<section id="hero" class="engineering-hero border-b border-rules">
+  <div class="engineering-intro">
+    <div><p class="hero-name">Troy Lorents</p><p class="hero-role">Senior Full-Stack<br>&amp; AI Engineer</p><p class="hero-founder-line">Founder, useKnockout &amp; Automate Flows</p><h1 class="font-display">FROM DATA.<br>TO <span>DONE.</span></h1></div>
+    <div class="engineering-intro-copy"><p class="engineering-positioning">I build AI agents, multi-agent systems, and RAG pipelines on Azure AI Foundry, OpenAI, and Claude, backed by 9+ years shipping full-stack products in React, .NET, and Python.</p><p class="engineering-founder">Founder of useKnockout, a commercial image-processing API with paying customers, and Automate Flows, an AI automation consultancy for small businesses.</p><div class="engineering-actions"><a id="cta-work" href="#work" class="bg-accent text-bg rounded-full px-6 py-3 font-semibold">Explore my work ↘</a><a id="cta-resume" href="/assets/Lorents%20Troy%20-%20Resume.pdf" target="_blank" rel="noopener noreferrer">Resume ↗</a></div></div>
+  </div>
+  <div class="engineering-story">
+    <div class="engineering-toolbar"><span>ONE WORKFLOW. EVERY LAYER.</span><span class="engineering-scroll-hint">SCROLL TO BUILD ↓</span><a id="hero-skip" href="#work">Skip to projects ↗</a></div>
+    <div class="engineering-layout">
+      <aside class="engineering-guide"><p class="eyebrow">SOURCE-BASED WALKTHROUGH</p><h2 class="font-display">A CLASS LOOKUP.<br><span>A COMPLETE STACK.</span></h2><p>A small workflow from my student-hiring project, traced from its data model to its React interface.</p><div class="engineering-tabs" role="tablist" aria-label="Explore engineering layers"><button id="layer-tab-0" role="tab" aria-controls="layer-0" aria-selected="true" tabindex="0">01 <strong>Database</strong><span>Model the information</span></button><button id="layer-tab-1" role="tab" aria-controls="layer-1" aria-selected="false" tabindex="-1">02 <strong>Python API</strong><span>Make the data useful</span></button><button id="layer-tab-2" role="tab" aria-controls="layer-2" aria-selected="false" tabindex="-1">03 <strong>React interface</strong><span>Connect the interaction</span></button><button id="layer-tab-3" role="tab" aria-controls="layer-3" aria-selected="false" tabindex="-1">04 <strong>Working experience</strong><span>Try the finished flow</span></button></div><div class="engineering-source-links"><a id="hero-python-source" href="https://github.com/TroyJLorents-GH/StudentApi-py" target="_blank" rel="noopener noreferrer">Python source ↗</a><a id="hero-react-source" href="https://github.com/TroyJLorents-GH/ui-student-py" target="_blank" rel="noopener noreferrer">React source ↗</a></div></aside>
+      <div class="engineering-panels">
+        <article id="layer-0" class="engineering-panel" aria-labelledby="layer-title-0"><header><span class="editor-dots" aria-hidden="true">● ● ●</span><span>models / class_schedule.py</span><span>01 / 04</span></header><div class="engineering-panel-body"><p class="eyebrow">DATABASE / SQLALCHEMY</p><h3 id="layer-title-0">Give the workflow a foundation.</h3><div class="schema-card"><div class="schema-title"><span>dbo.</span>ClassSchedule <small>SCHEMA EXCERPT</small></div><div class="schema-row"><b>ClassNum</b><span>String</span><em>PRIMARY KEY</em></div><div class="schema-row"><b>Term</b><span>String</span><em>FILTER BY TERM</em></div><div class="schema-row"><b>Subject</b><span>String</span><em>RETURN TO UI</em></div><div class="schema-row"><b>CatalogNum</b><span>Integer</span><em></em></div><div class="schema-row"><b>Title</b><span>String</span><em></em></div></div><p class="engineering-explanation">Course records hold the term, subject, and class information. The same fields carry through the API and into the interface.</p><div class="engineering-flow"><span>COURSE RECORDS</span><b>→</b><span>FILTER BY TERM</span><b>→</b><span>SUBJECTS</span></div></div><footer>Real model fields. Simplified schema view.</footer></article>
+        <article id="layer-1" class="engineering-panel" aria-labelledby="layer-title-1"><header><span class="editor-dots" aria-hidden="true">● ● ●</span><span>routes / class_schedule.py</span><span>02 / 04</span></header><div class="engineering-panel-body"><p class="eyebrow">BACKEND / FASTAPI</p><h3 id="layer-title-1">Expose exactly what the UI needs.</h3><div class="endpoint-bar"><b>GET</b><code>/api/class/subjects?term=2261</code></div><pre class="engineering-code"><code><span class="code-comment"># Source excerpt; imports omitted</span>
+<span class="code-accent">@router.get</span>("/subjects", response_model=List[str])
+<span class="code-accent">def</span> get_subjects(
+    term: str = Query(...),
+    db: Session = Depends(get_db)
+):
+    <span class="code-accent">return</span> list({
+        c.Subject
+        <span class="code-accent">for</span> c <span class="code-accent">in</span> db.query(ClassSchedule.Subject)
+        .filter_by(Term=term)
+    })</code></pre><p class="engineering-explanation">A Python endpoint filters the course model by term and returns the available subjects.</p><div class="engineering-flow"><span>DEMO RESPONSE</span><code>["CSE", "SER"]</code></div></div><footer>Source-based excerpt, line-wrapped for display. Response is fictional demo data.</footer></article>
+        <article id="layer-2" class="engineering-panel" aria-labelledby="layer-title-2"><header><span class="editor-dots" aria-hidden="true">● ● ●</span><span>components / ClassLookupCascade.js</span><span>03 / 04</span></header><div class="engineering-panel-body"><p class="eyebrow">FRONTEND / REACT</p><h3 id="layer-title-2">Turn a response into an interaction.</h3><pre class="engineering-code"><code><span class="code-comment">// Inside fetchSubjects</span>
+<span class="code-accent">const</span> response = <span class="code-accent">await</span> fetch(
+  `${baseUrl}/api/class/subjects?term=${selectedTerm}`
+);
+<span class="code-accent">if</span> (!response.ok)
+  <span class="code-accent">throw new</span> Error('Failed to fetch subjects');
+
+<span class="code-accent">const</span> data = <span class="code-accent">await</span> response.json();
+setSubjects(data);</code></pre><div class="ui-dependencies"><span>Term</span><b>→</b><span>Subject</span><b>→</b><span>Catalog #</span><b>→</b><span>Class</span></div><p class="engineering-explanation">React stores the result and reveals dependent fields. Each selection unlocks the next step in the class lookup.</p></div><footer>Source-based React excerpt, line-wrapped for display. Material UI in the original app.</footer></article>
+        <article id="layer-3" class="engineering-panel" aria-labelledby="layer-title-3"><header><span class="editor-dots" aria-hidden="true">● ● ●</span><span>SAMS / Class Lookup</span><span>04 / 04</span></header><div class="engineering-panel-body"><p class="eyebrow">PRODUCT / TRY THE FLOW</p><h3 id="layer-title-3">The code becomes something usable.</h3><div class="lookup-demo"><div class="lookup-heading"><strong>Class Lookup</strong><small>DEMO WORKSPACE</small></div><p>Select a term, then follow the course lookup.</p><div class="lookup-fields"><label>Term<select id="demo-term"><option value="">Select term</option><option value="2261">Summer 2026</option></select></label><label>Subject<select id="demo-subject" disabled><option value="">Select subject</option><option value="CSE">CSE</option><option value="SER">SER</option></select></label><label>Catalog #<select id="demo-catalog" disabled><option value="">Select catalog</option></select></label><label>Class Number<select id="demo-class" disabled><option value="">Select class</option></select></label></div><div id="demo-result" class="lookup-result" aria-live="polite">Choose a term to begin.</div><button type="button" id="demo-reset">Reset demo ↺</button></div><p class="engineering-explanation">The same data travels all the way to the user. Try the selectors above; nothing is sent to an external service.</p></div><footer>Interactive reconstruction of the source component. Fictional records; not the production application.</footer></article>
+      </div>
+    </div>
+    <div class="engineering-progress" aria-hidden="true"><div></div></div>
+  </div>
+</section>
+<!-- Selected Work: inspired by 21st Sticky Scroll Reveal, using native page scroll -->
+<section id="work" class="work-v2 px-mobile md:px-desktop border-b border-rules">
+ <div class="section-heading"><p class="eyebrow">01 / SELECTED WORK</p><h2 class="font-display">THE PRODUCT.<br><span>AND EVERYTHING BEHIND IT.</span></h2></div>
+ <div class="story-layout">
+  <div class="story-stage" aria-hidden="true">
+   <div class="stage-top"><span>useKnockout / Product anatomy</span><span class="stage-count">01 / 03</span></div>
+   <div class="stage-panels">
+    <div class="stage-panel" data-panel="0"><img src="https://useknockout.com/assets/canvas/effects.png" alt="" width="1529" height="912"><p>THE INTERFACE / Canvas, layers, effects</p></div>
+    <div class="stage-panel" data-panel="1"><div class="architecture"><small>THE INTEGRATION</small><div class="architecture-clients"><span>Python</span><span>Node.js</span><span>React</span><span>CLI</span></div><div class="connector">↓</div><strong>ONE HTTP INTERFACE</strong><div class="connector">↓</div><div class="architecture-clients"><span>Remove</span><span>Restore</span><span>Upscale</span></div><small>Conceptual system view, not live telemetry</small></div></div>
+    <div class="stage-panel" data-panel="2"><div class="architecture"><small>THE INFRASTRUCTURE</small><strong>SERVERLESS<br><span>GPU PROCESSING.</span></strong><div class="architecture-clients"><span>Request</span><span>Process</span><span>Return</span></div><p>On-demand execution.<br>Scale to zero when idle.</p><small>Modal / Python / HTTP</small></div></div>
+   </div>
+   <div class="stage-track"><div class="stage-progress"></div></div>
+  </div>
+  <div class="story-steps">
+   <article class="story-step" data-step="0"><p class="eyebrow">01 / MAKE IT USEFUL</p><h3 class="font-display">A REAL PRODUCT.<br>NOT JUST AN ENDPOINT.</h3><p>Remove backgrounds, compose layers, apply effects, and export a finished asset in the browser. The interface makes the underlying image-processing tools usable.</p><img class="mobile-project" src="https://useknockout.com/assets/canvas/effects.png" alt="useKnockout Canvas editor and layer effects" width="1529" height="912" loading="lazy"><a id="project-live" href="https://useknockout.com/" target="_blank" rel="noopener noreferrer">Explore useKnockout ↗</a></article>
+   <article class="story-step" data-step="1"><p class="eyebrow">02 / CONNECT THE STACK</p><h3 class="font-display">ONE API.<br>MULTIPLE WAYS IN.</h3><p>The image-processing API exposes a single HTTP interface, with Python, Node.js, and React SDKs plus a CLI. Integration is part of the product, not an afterthought.</p><div class="mobile-system">Python / Node.js / React / CLI<br>↓<br>HTTP API → Image-processing models</div><a id="project-api" href="https://github.com/useknockout/api" target="_blank" rel="noopener noreferrer">Explore the API repository ↗</a></article>
+   <article class="story-step" data-step="2"><p class="eyebrow">03 / OWN THE DELIVERY</p><h3 class="font-display">BUILT TO RUN.<br>NOT JUST TO DEMO.</h3><p>Python image-processing workloads run on Modal serverless GPUs. Compute starts on demand and scales to zero when idle, connecting the user-facing product to its deployment model.</p><div class="mobile-system">Request → GPU processing → Result<br>Scale to zero when idle</div><a id="next-impact" href="#impact">Next: engineering impact at ASU ↓</a></article>
+  </div>
+ </div>
+</section>
+<section id="more-selected" class="full-section"><div class="section-heading"><p class="eyebrow">MORE SELECTED WORK</p><h2 class="font-display">DIFFERENT CHALLENGES.<br><span>END-TO-END OWNERSHIP.</span></h2></div><div class="full-grid">
+<article class="feature-card"><p class="eyebrow">02 / ENTERPRISE SYSTEMS</p><h3 class="font-display">LESS ADMIN.<br>MORE IMPACT.</h3><div class="feature-number font-display">300+</div><p>Users served by SAMS at ASU. An end-to-end student hiring platform connecting the database, APIs, authentication, and React interface.</p><a id="selected-asu" href="https://github.com/TroyJLorents-GH/StudentApi-py" target="_blank" rel="noopener noreferrer">Explore the Python repository ↗</a><br><a id="selected-asu-impact" href="#impact">See the impact ↓</a></article>
+<article class="feature-card"><p class="eyebrow">03 / AI WORKSPACES</p><h3 class="font-display">AGENTS WITH<br>A WORKSPACE.</h3><p>A dashboard-style AI workspace with 6 agents, 9 tools, and 10 pages. Features voice input, scheduled agent runs, budget tracking, and an integrated terminal. Built with React, TypeScript, and Tailwind CSS. Vision: a Neural Architect platform with multi-model support, agent cards, document workflows, and vector search.</p><div class="project-tags"><span>React</span><span>TypeScript</span><span>Tailwind CSS</span><span>Azure AI Foundry</span><span>Multi-Agent Systems</span></div><a id="selected-agent-os" href="https://github.com/TroyJLorents-GH/agent-os" target="_blank" rel="noopener noreferrer">Explore Agent OS ↗</a></article></div></section>
+    <!-- ASU Proof Section -->
+    <section id="impact" class="py-20 px-mobile md:px-desktop border-b border-rules">
+      <div class="impact-line" aria-hidden="true"></div><div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <div class="lg:col-span-5 fade-up">
+          <h2 class="font-display text-4xl md:text-5xl text-light mb-4">ASU IMPACT</h2>
+          <p class="text-muted mb-2">Web Application Developer (Full-Stack & AI)</p>
+          <p class="text-accent text-sm font-semibold uppercase tracking-wider mb-8">June 2024 – Present</p>
+          <p class="text-muted max-w-md">
+            Own full-stack applications, AI services, and cloud infrastructure at ASU. Built SAMS across the database, API, and React/TypeScript frontend, and streamlined hiring and student-project hosting.
+          </p>
+        </div>
+
+        <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 fade-up" style="transition-delay: 150ms;">
+          <div class="metric-card border border-rules bg-surface p-6 rounded-sm">
+            <div class="text-accent font-display text-4xl mb-2">300+</div>
+            <p class="text-light font-semibold mb-1">SAMS Users</p>
+            <p class="text-muted text-sm">Supported on custom internal tools.</p>
+          </div>
+          <div class="metric-card border border-rules bg-surface p-6 rounded-sm">
+            <div class="text-accent font-display text-4xl mb-2">~80%</div>
+            <p class="text-light font-semibold mb-1">Processing Time Reduction</p>
+            <p class="text-muted text-sm">Replaced 150-200 hours of manual work.</p>
+          </div>
+          <div class="metric-card border border-rules bg-surface p-6 rounded-sm">
+            <div class="flex items-baseline gap-2 mb-2">
+              <span class="text-muted font-display text-2xl line-through">$850</span>
+              <span class="text-accent font-display text-4xl">$60</span>
+            </div>
+            <p class="text-light font-semibold mb-1">Monthly AWS Hosting</p>
+            <p class="text-muted text-sm">Optimized cloud infrastructure costs.</p>
+          </div>
+          <div class="metric-card border border-rules bg-surface p-6 rounded-sm">
+            <div class="text-accent font-display text-4xl mb-2">200+</div>
+            <p class="text-light font-semibold mb-1">Student .NET Projects</p>
+            <p class="text-muted text-sm">Hosted with container isolation per team.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- Technical Skills Section -->
+    <section id="skills" class="py-20 px-mobile md:px-desktop border-b border-rules">
+      <div class="mb-16 fade-up">
+        <p class="eyebrow mb-5">03 / THE TOOLS BEHIND THE WORK</p><h2 class="font-display text-5xl md:text-7xl text-light">THE STACK</h2>
+      </div>
+
+      <div class="w-full border-b border-rules"><details class="border-t border-rules py-5" open>
+<summary class="cursor-pointer flex items-center justify-between gap-4 py-2"><span class="font-display text-2xl md:text-4xl">Languages</span><span class="text-muted text-sm">7 skills <span aria-hidden="true">+</span></span></summary>
+<div class="pt-6 pb-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3"><div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><img src="/assets/logos/python.svg" alt="" loading="lazy" class="w-6 h-6 shrink-0 object-contain"><span class="text-sm font-semibold">Python</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><img src="/assets/logos/csharp.svg" alt="" loading="lazy" class="w-6 h-6 shrink-0 object-contain"><span class="text-sm font-semibold">C#/.NET</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><img src="/assets/logos/typescript.svg" alt="" loading="lazy" class="w-6 h-6 shrink-0 object-contain"><span class="text-sm font-semibold">TypeScript</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">JavaScript (ES6)</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">HTML5</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">CSS3</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">SQL</span></div></div></details>
+<details class="border-t border-rules py-5">
+<summary class="cursor-pointer flex items-center justify-between gap-4 py-2"><span class="font-display text-2xl md:text-4xl">Frameworks &amp; Technologies</span><span class="text-muted text-sm">23 skills <span aria-hidden="true">+</span></span></summary>
+<div class="pt-6 pb-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3"><div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><img src="/assets/logos/csharp.svg" alt="" loading="lazy" class="w-6 h-6 shrink-0 object-contain"><span class="text-sm font-semibold">.NET</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><img src="/assets/logos/csharp.svg" alt="" loading="lazy" class="w-6 h-6 shrink-0 object-contain"><span class="text-sm font-semibold">ASP.NET</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">Entity Framework</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">MVC</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><img src="/assets/logos/python.svg" alt="" loading="lazy" class="w-6 h-6 shrink-0 object-contain"><span class="text-sm font-semibold">Python (FastAPI, Flask, Django)</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><img src="/assets/logos/nodejs.svg" alt="" loading="lazy" class="w-6 h-6 shrink-0 object-contain"><span class="text-sm font-semibold">Node.js</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">Express.js</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><img src="/assets/logos/react.svg" alt="" loading="lazy" class="w-6 h-6 shrink-0 object-contain"><span class="text-sm font-semibold">React.js</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><img src="/assets/logos/react.svg" alt="" loading="lazy" class="w-6 h-6 shrink-0 object-contain"><span class="text-sm font-semibold">React Native</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">Expo</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">TanStack (Table, Query, Router)</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">GraphQL</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">Apollo Server &amp; Client</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">GraphQL Subscriptions</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">Nest.js</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">Bootstrap</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">Tailwind CSS</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">Material UI</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">SCSS</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">WordPress</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">Tkinter</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">Streamlit</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">Vite</span></div></div></details>
+<details class="border-t border-rules py-5">
+<summary class="cursor-pointer flex items-center justify-between gap-4 py-2"><span class="font-display text-2xl md:text-4xl">Cloud</span><span class="text-muted text-sm">11 skills <span aria-hidden="true">+</span></span></summary>
+<div class="pt-6 pb-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3"><div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><img src="/assets/logos/azure.svg" alt="" loading="lazy" class="w-6 h-6 shrink-0 object-contain"><span class="text-sm font-semibold">Azure (App Service, Blob Storage, SQL Database, Static Web Apps)</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><img src="/assets/logos/azure.svg" alt="" loading="lazy" class="w-6 h-6 shrink-0 object-contain"><span class="text-sm font-semibold">Azure AI Foundry</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><img src="/assets/logos/azure.svg" alt="" loading="lazy" class="w-6 h-6 shrink-0 object-contain"><span class="text-sm font-semibold">Azure Cosmos DB</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><img src="/assets/logos/azure.svg" alt="" loading="lazy" class="w-6 h-6 shrink-0 object-contain"><span class="text-sm font-semibold">Azure AI Search</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><img src="/assets/logos/azure.svg" alt="" loading="lazy" class="w-6 h-6 shrink-0 object-contain"><span class="text-sm font-semibold">Azure Document Intelligence</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">GCP (Cloud Run, Firestore)</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><img src="/assets/logos/aws.svg" alt="" loading="lazy" class="w-6 h-6 shrink-0 object-contain"><span class="text-sm font-semibold">AWS (Lambda, DynamoDB, CloudWatch, EC2, S3, API Gateway, Amplify, Elastic Beanstalk, ECS Fargate)</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">Firebase (Auth, Firestore)</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><img src="/assets/logos/supabase.svg" alt="" loading="lazy" class="w-6 h-6 shrink-0 object-contain"><span class="text-sm font-semibold">Supabase (PostgreSQL, Auth, Storage, Edge Functions)</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">Vercel</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">Netlify (Functions, Serverless)</span></div></div></details>
+<details class="border-t border-rules py-5">
+<summary class="cursor-pointer flex items-center justify-between gap-4 py-2"><span class="font-display text-2xl md:text-4xl">DevOps / Tools</span><span class="text-muted text-sm">12 skills <span aria-hidden="true">+</span></span></summary>
+<div class="pt-6 pb-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3"><div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">Git</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">GitHub Actions</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><img src="/assets/logos/azure.svg" alt="" loading="lazy" class="w-6 h-6 shrink-0 object-contain"><span class="text-sm font-semibold">Azure DevOps</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><img src="/assets/logos/docker.svg" alt="" loading="lazy" class="w-6 h-6 shrink-0 object-contain"><span class="text-sm font-semibold">Docker</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">Octopus</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">VS Code</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">PyCharm</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">Bash</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">Swagger</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">Insomnia</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">Postman</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><img src="/assets/logos/anthropic.svg" alt="" loading="lazy" class="w-6 h-6 shrink-0 object-contain"><span class="text-sm font-semibold">Claude Code</span></div></div></details>
+<details class="border-t border-rules py-5">
+<summary class="cursor-pointer flex items-center justify-between gap-4 py-2"><span class="font-display text-2xl md:text-4xl">Data / Reporting</span><span class="text-muted text-sm">11 skills <span aria-hidden="true">+</span></span></summary>
+<div class="pt-6 pb-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3"><div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">SQL Server</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><img src="/assets/logos/postgresql.svg" alt="" loading="lazy" class="w-6 h-6 shrink-0 object-contain"><span class="text-sm font-semibold">PostgreSQL</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">MySQL</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">MongoDB</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">Cosmos DB</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">Neo4j</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">Power BI</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">Redshift</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">Splunk</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">Elastic</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><img src="/assets/logos/supabase.svg" alt="" loading="lazy" class="w-6 h-6 shrink-0 object-contain"><span class="text-sm font-semibold">Supabase</span></div></div></details>
+<details class="border-t border-rules py-5">
+<summary class="cursor-pointer flex items-center justify-between gap-4 py-2"><span class="font-display text-2xl md:text-4xl">AI / ML</span><span class="text-muted text-sm">17 skills <span aria-hidden="true">+</span></span></summary>
+<div class="pt-6 pb-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3"><div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">Machine Learning</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><img src="/assets/logos/openai.svg" alt="" loading="lazy" class="w-6 h-6 shrink-0 object-contain"><span class="text-sm font-semibold">OpenAI API</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><img src="/assets/logos/azure.svg" alt="" loading="lazy" class="w-6 h-6 shrink-0 object-contain"><span class="text-sm font-semibold">Azure AI Foundry Agents</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><img src="/assets/logos/anthropic.svg" alt="" loading="lazy" class="w-6 h-6 shrink-0 object-contain"><span class="text-sm font-semibold">Anthropic Claude API</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><img src="/assets/logos/openai.svg" alt="" loading="lazy" class="w-6 h-6 shrink-0 object-contain"><span class="text-sm font-semibold">OpenAI SDK</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">RAG (Retrieval-Augmented Generation)</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">Embeddings &amp; Vector Search</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">Semantic Search</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">Vector Databases (Pinecone, FAISS, ChromaDB)</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><img src="/assets/logos/azure.svg" alt="" loading="lazy" class="w-6 h-6 shrink-0 object-contain"><span class="text-sm font-semibold">Azure OpenAI</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><img src="/assets/logos/azure.svg" alt="" loading="lazy" class="w-6 h-6 shrink-0 object-contain"><span class="text-sm font-semibold">Azure AI Search (Hybrid BM25 + Vector)</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><img src="/assets/logos/azure.svg" alt="" loading="lazy" class="w-6 h-6 shrink-0 object-contain"><span class="text-sm font-semibold">Azure Document Intelligence</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">Neo4j / Graphiti Knowledge Graphs</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">Multi-Agent Systems</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">LLM Application Development</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">LLM Integration</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">Prompt Engineering</span></div></div></details>
+<details class="border-t border-rules py-5">
+<summary class="cursor-pointer flex items-center justify-between gap-4 py-2"><span class="font-display text-2xl md:text-4xl">Automation / Workflow</span><span class="text-muted text-sm">10 skills <span aria-hidden="true">+</span></span></summary>
+<div class="pt-6 pb-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3"><div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">Power Automate</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">PowerApps</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">Google Apps Scripts</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">N8N</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">BluePrism</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">SharePoint</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">UI Path</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">Airtable</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">Plumsail</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">ServiceNow</span></div></div></details>
+<details class="border-t border-rules py-5">
+<summary class="cursor-pointer flex items-center justify-between gap-4 py-2"><span class="font-display text-2xl md:text-4xl">Other</span><span class="text-muted text-sm">5 skills <span aria-hidden="true">+</span></span></summary>
+<div class="pt-6 pb-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3"><div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">JIRA</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">Confluence</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">TinkerCad</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">Blender</span></div>
+<div class="border border-rules bg-surface p-3 flex items-center gap-3 min-w-0"><span class="text-sm font-semibold">Fusion 360/CAD</span></div></div></details></div>
+    </section>
+
+<section id="projects" class="full-section"><div class="section-heading"><p class="eyebrow">04 / PROJECT ARCHIVE</p><h2 class="font-display">THE REST OF<br><span>THE REPOSITORY.</span></h2><p class="section-intro">Products, APIs, experiments, and the engineering behind them. Expand any project for its full story and source links.</p></div><div class="archive-tools"><label for="project-search">Find a project</label><input id="project-search" type="search" placeholder="Search by name, technology, or keyword"><span id="project-count" aria-live="polite">16 projects</span></div><div id="project-list"><details class="archive-card" data-search="useknockout: image processing api an open-source image-processing api exposing 23 endpoints across 5 state-of-the-art open-weight models (background removal, 4x upscaling, face restoration, colorization, and inpainting) behind a single http interface. runs on modal serverless gpu with scale-to-zero, spinning up on demand and costing nothing while idle. ships first-party clients for the full stack: a python sdk, a node.js sdk, a react sdk with ready-made hooks and components, and a cli, plus a live in-browser hugging face gradio demo. mit licensed. python modal serverless gpu rest api background removal 4x upscaling face restoration colorization inpainting python sdk node.js sdk react sdk cli hugging face gradio open-weight models mit license"><summary>01 / useknockout: Image Processing API</summary><p class="project-copy">An open-source image-processing API exposing 23 endpoints across 5 state-of-the-art open-weight models (background removal, 4x upscaling, face restoration, colorization, and inpainting) behind a single HTTP interface. Runs on Modal serverless GPU with scale-to-zero, spinning up on demand and costing nothing while idle. Ships first-party clients for the full stack: a Python SDK, a Node.js SDK, a React SDK with ready-made hooks and components, and a CLI, plus a live in-browser Hugging Face Gradio demo. MIT licensed.</p><div class="archive-links"><a id="archive-live-0" href="https://useknockout.com/" target="_blank" rel="noopener noreferrer">Visit project ↗</a><a id="archive-repo-0-0" href="https://github.com/useknockout/api" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a id="archive-repo-0-1" href="https://pypi.org/project/useknockout/" target="_blank" rel="noopener noreferrer">PyPI ↗</a><a id="archive-repo-0-2" href="https://www.npmjs.com/package/@useknockout/node" target="_blank" rel="noopener noreferrer">npm ↗</a></div><div class="project-tags"><span>Python</span><span>Modal</span><span>Serverless GPU</span><span>REST API</span><span>Background Removal</span><span>4x Upscaling</span><span>Face Restoration</span><span>Colorization</span><span>Inpainting</span><span>Python SDK</span><span>Node.js SDK</span><span>React SDK</span><span>CLI</span><span>Hugging Face Gradio</span><span>Open-Weight Models</span><span>MIT License</span></div></details>
+<details class="archive-card" data-search="agent os a dashboard-style ai workspace with 6 agents, 9 tools, and 10 pages. features voice input, scheduled agent runs, budget tracking, and an integrated terminal. built with react, typescript, and tailwind css. vision: a neural architect platform with multi-model support, agent cards, document workflows, and vector search. react typescript tailwind css azure ai foundry multi-agent systems voice input scheduled agents budget tracking terminal vite"><summary>02 / Agent OS</summary><p class="project-copy">A dashboard-style AI workspace with 6 agents, 9 tools, and 10 pages. Features voice input, scheduled agent runs, budget tracking, and an integrated terminal. Built with React, TypeScript, and Tailwind CSS. Vision: a Neural Architect platform with multi-model support, agent cards, document workflows, and vector search.</p><div class="archive-links"><a id="archive-live-1" href="https://pjf-ai-commandcenter.netlify.app/" target="_blank" rel="noopener noreferrer">Visit project ↗</a><a id="archive-repo-1-0" href="https://github.com/TroyJLorents-GH/agent-os" target="_blank" rel="noopener noreferrer">GitHub Repo ↗</a></div><div class="project-tags"><span>React</span><span>TypeScript</span><span>Tailwind CSS</span><span>Azure AI Foundry</span><span>Multi-Agent Systems</span><span>Voice Input</span><span>Scheduled Agents</span><span>Budget Tracking</span><span>Terminal</span><span>Vite</span></div></details>
+<details class="archive-card" data-search="nano-harness a minimal coding-agent harness: the loop, tool set, and context management that turn an llm into something which completes real work inside a repository. roughly 970 non-blank lines across five files, small enough to read end to end in one sitting. scores 59.6% (53 of 89) on the full terminal-bench 2.0 suite with claude opus 4.8, self-run through harbor with every task in its own docker container and errored trials counted as failures. three tools only (a persistent bash shell, line-sliced file reads, and unique-match edits), native tool calling instead of react prompting, prompt caching, and a provider-agnostic interface covering anthropic, openai, and any openai-compatible server. mit licensed. python coding agent agent harness terminal-bench 2.0 anthropic api openai api native tool use prompt caching context management persistent shell docker benchmarking mit license"><summary>03 / nano-harness</summary><p class="project-copy">A minimal coding-agent harness: the loop, tool set, and context management that turn an LLM into something which completes real work inside a repository. Roughly 970 non-blank lines across five files, small enough to read end to end in one sitting. Scores 59.6% (53 of 89) on the full Terminal-Bench 2.0 suite with Claude Opus 4.8, self-run through Harbor with every task in its own Docker container and errored trials counted as failures. Three tools only (a persistent bash shell, line-sliced file reads, and unique-match edits), native tool calling instead of ReAct prompting, prompt caching, and a provider-agnostic interface covering Anthropic, OpenAI, and any OpenAI-compatible server. MIT licensed.</p><div class="archive-links"><a id="archive-repo-2-0" href="https://github.com/TroyJLorents-GH/nano-harness" target="_blank" rel="noopener noreferrer">GitHub Repo ↗</a></div><div class="project-tags"><span>Python</span><span>Coding Agent</span><span>Agent Harness</span><span>Terminal-Bench 2.0</span><span>Anthropic API</span><span>OpenAI API</span><span>Native Tool Use</span><span>Prompt Caching</span><span>Context Management</span><span>Persistent Shell</span><span>Docker</span><span>Benchmarking</span><span>MIT License</span></div></details>
+<details class="archive-card" data-search="job nexus a combined job search application that unifies job tracking, jobspy web scraping, resume matching, and ai chat into a single platform. features firebase auth (google, email/password, email link), multi-user data isolation, and responsive design. deployed on vercel. react 19 typescript tailwind css tanstack (table, query, router) firebase auth vercel jobspy ai chat vite responsive design"><summary>04 / Job Nexus</summary><p class="project-copy">A combined job search application that unifies job tracking, JobSpy web scraping, resume matching, and AI chat into a single platform. Features Firebase Auth (Google, Email/Password, Email Link), multi-user data isolation, and responsive design. Deployed on Vercel.</p><div class="archive-links"><a id="archive-live-3" href="https://job-nexus-delta.vercel.app/" target="_blank" rel="noopener noreferrer">Visit project ↗</a><a id="archive-repo-3-0" href="https://github.com/TroyJLorents-GH/job-nexus" target="_blank" rel="noopener noreferrer">GitHub Repo ↗</a></div><div class="project-tags"><span>React 19</span><span>TypeScript</span><span>Tailwind CSS</span><span>TanStack (Table, Query, Router)</span><span>Firebase Auth</span><span>Vercel</span><span>JobSpy</span><span>AI Chat</span><span>Vite</span><span>Responsive Design</span></div></details>
+<details class="archive-card" data-search="doc intelligence hub a multi-format document intelligence platform with agentic rag. processes pdfs, word docs, and images through azure document intelligence, generates embeddings, and stores them in cosmos db for semantic search. features a flask api hosted on an azure vm with hybrid search (bm25 + vector) powered by azure ai search, graphiti knowledge graphs via neo4j, job-resume matching, and automated indexing. python flask azure document intelligence azure ai search cosmos db embeddings semantic search agentic rag neo4j aura graphiti knowledge graphs hybrid search (bm25 + vector) docker azure vm rest api"><summary>05 / Doc Intelligence Hub</summary><p class="project-status">In development</p><p class="project-copy">A multi-format document intelligence platform with Agentic RAG. Processes PDFs, Word docs, and images through Azure Document Intelligence, generates embeddings, and stores them in Cosmos DB for semantic search. Features a Flask API hosted on an Azure VM with hybrid search (BM25 + vector) powered by Azure AI Search, Graphiti knowledge graphs via Neo4j, job-resume matching, and automated indexing.</p><div class="archive-links"><a id="archive-repo-4-0" href="https://github.com/TroyJLorents-GH/doc-intel-hub" target="_blank" rel="noopener noreferrer">GitHub Repo ↗</a></div><div class="project-tags"><span>Python</span><span>Flask</span><span>Azure Document Intelligence</span><span>Azure AI Search</span><span>Cosmos DB</span><span>Embeddings</span><span>Semantic Search</span><span>Agentic RAG</span><span>Neo4j Aura</span><span>Graphiti Knowledge Graphs</span><span>Hybrid Search (BM25 + Vector)</span><span>Docker</span><span>Azure VM</span><span>REST API</span></div></details>
+<details class="archive-card" data-search="resume match ai a full-stack ai-powered resume matching and chat platform. features an intelligent chat interface backed by azure ai foundry agents, resume-to-job matching via azure ai search (hybrid bm25 + vector), and a python flask api proxy hosted on an azure vm. built with react and material ui with a clean light theme. react material ui python flask azure ai foundry azure ai search azure openai neo4j aura cosmos db embeddings hybrid search vm api proxy rest api llm integration knowledge graphs"><summary>06 / Resume Match AI</summary><p class="project-copy">A full-stack AI-powered resume matching and chat platform. Features an intelligent chat interface backed by Azure AI Foundry agents, resume-to-job matching via Azure AI Search (hybrid BM25 + vector), and a Python Flask API proxy hosted on an Azure VM. Built with React and Material UI with a clean light theme.</p><div class="archive-links"><a id="archive-live-5" href="https://openai-llm.netlify.app/" target="_blank" rel="noopener noreferrer">Visit project ↗</a><a id="archive-repo-5-0" href="https://github.com/TroyJLorents-GH/openai-mll" target="_blank" rel="noopener noreferrer">GitHub Repo ↗</a></div><div class="project-tags"><span>React</span><span>Material UI</span><span>Python</span><span>Flask</span><span>Azure AI Foundry</span><span>Azure AI Search</span><span>Azure OpenAI</span><span>Neo4j Aura</span><span>Cosmos DB</span><span>Embeddings</span><span>Hybrid Search</span><span>VM API Proxy</span><span>REST API</span><span>LLM Integration</span><span>Knowledge Graphs</span></div></details>
+<details class="archive-card" data-search="peptide tracker a peptide tracking, calculator, and serum concentration web app. features dosage calculations, injection logging, and concentration tracking with a polished ui built on mui x pro components. react material ui / mui x pro typescript calculators health &amp; fitness responsive design"><summary>07 / Peptide Tracker</summary><p class="project-copy">A peptide tracking, calculator, and serum concentration web app. Features dosage calculations, injection logging, and concentration tracking with a polished UI built on MUI X Pro components.</p><div class="archive-links"><a id="archive-live-6" href="https://peptide-iq.vercel.app/" target="_blank" rel="noopener noreferrer">Visit project ↗</a><a id="archive-repo-6-0" href="https://github.com/TroyJLorents-GH/peptide-app" target="_blank" rel="noopener noreferrer">GitHub Repo ↗</a></div><div class="project-tags"><span>React</span><span>Material UI / MUI X Pro</span><span>TypeScript</span><span>Calculators</span><span>Health &amp; Fitness</span><span>Responsive Design</span></div></details>
+<details class="archive-card" data-search="window commander a phone-controlled desktop window manager with voice push-to-talk. consists of a python desktop agent that manages windows and a companion expo mobile app for remote control and voice commands. python react native expo voice control desktop automation window management push-to-talk websocket"><summary>08 / Window Commander</summary><p class="project-copy">A phone-controlled desktop window manager with voice push-to-talk. Consists of a Python desktop agent that manages windows and a companion Expo mobile app for remote control and voice commands.</p><div class="archive-links"><a id="archive-repo-7-0" href="https://github.com/TroyJLorents-GH/window-commander" target="_blank" rel="noopener noreferrer">GitHub Repo ↗</a></div><div class="project-tags"><span>Python</span><span>React Native</span><span>Expo</span><span>Voice Control</span><span>Desktop Automation</span><span>Window Management</span><span>Push-to-Talk</span><span>WebSocket</span></div></details>
+<details class="archive-card" data-search="job advisor a resume and job advisory tool powered by azure ai foundry's resumeagent. analyzes job postings and recommends the best-fit resume from a candidate's portfolio. built with react, tailwind css, and netlify functions with service principal authentication. react tailwind css netlify functions azure ai foundry foundry agents service principal auth serverless javascript (es6+)"><summary>09 / Job Advisor</summary><p class="project-copy">A resume and job advisory tool powered by Azure AI Foundry's ResumeAgent. Analyzes job postings and recommends the best-fit resume from a candidate's portfolio. Built with React, Tailwind CSS, and Netlify Functions with service principal authentication.</p><div class="archive-links"><a id="archive-repo-8-0" href="https://github.com/TroyJLorents-GH/job-advisor" target="_blank" rel="noopener noreferrer">GitHub Repo ↗</a></div><div class="project-tags"><span>React</span><span>Tailwind CSS</span><span>Netlify Functions</span><span>Azure AI Foundry</span><span>Foundry Agents</span><span>Service Principal Auth</span><span>Serverless</span><span>JavaScript (ES6+)</span></div></details>
+<details class="archive-card" data-search="enterprise student assignment system a comprehensive full-stack admin dashboard for managing student assignments, grader applications, and course schedules. built with clean architecture using .net 8.0 web api backend and blazor server for real-time ui updates via signalr. features azure sql database integration and deployed on azure app services with application insights monitoring. c# (asp.net core 8.0) .net 8.0 blazor server signalr entity framework core dapper ado.net clean architecture azure sql database azure app services application insights swagger/openapi xunit repository pattern dependency injection bootstrap 5 real-time updates crud operations sql server"><summary>10 / Enterprise Student Assignment System</summary><p class="project-copy">A comprehensive full-stack admin dashboard for managing student assignments, grader applications, and course schedules. Built with clean architecture using .NET 8.0 Web API backend and Blazor Server for real-time UI updates via SignalR. Features Azure SQL database integration and deployed on Azure App Services with Application Insights monitoring.</p><div class="archive-links"><a id="archive-live-9" href="https://studentsystem-web-central-hma3gmcbgtdqe9hb.centralus-01.azurewebsites.net/" target="_blank" rel="noopener noreferrer">Visit project ↗</a><a id="archive-repo-9-0" href="https://github.com/TroyJLorents-GH/NET_EnterpriseStudentSystem" target="_blank" rel="noopener noreferrer">Full-Stack (.NET + Blazor) ↗</a></div><div class="project-tags"><span>C# (ASP.NET Core 8.0)</span><span>.NET 8.0</span><span>Blazor Server</span><span>SignalR</span><span>Entity Framework Core</span><span>Dapper</span><span>ADO.NET</span><span>Clean Architecture</span><span>Azure SQL Database</span><span>Azure App Services</span><span>Application Insights</span><span>Swagger/OpenAPI</span><span>xUnit</span><span>Repository Pattern</span><span>Dependency Injection</span><span>Bootstrap 5</span><span>Real-time Updates</span><span>CRUD Operations</span><span>SQL Server</span></div></details>
+<details class="archive-card" data-search="student hiring system a full-stack application to streamline student hiring and automate hr workflows for a university. features a .net core web api backend and a react frontend, both deployed on azure. includes secure authentication, advanced ui with mui x pro, and automated integration with microsoft/google tools. c# (asp.net core web api) .net core swagger authentication: cas sso, jwt entity framework react.js material ui / mui x pro react router javascript (es6+) html5 css3/scss sql (sql server, postgresql, redshift) azure fetch power automate"><summary>11 / Student Hiring System</summary><p class="project-copy">A full-stack application to streamline student hiring and automate HR workflows for a university. Features a .NET Core Web API backend and a React frontend, both deployed on Azure. Includes secure authentication, advanced UI with MUI X Pro, and automated integration with Microsoft/Google tools.</p><div class="archive-links"><a id="archive-live-10" href="https://www.troystaticsite.com" target="_blank" rel="noopener noreferrer">Visit project ↗</a><a id="archive-repo-10-0" href="https://github.com/TroyJLorents-GH/MyStudentApi" target="_blank" rel="noopener noreferrer">Backend (.NET) ↗</a><a id="archive-repo-10-1" href="https://github.com/TroyJLorents-GH/student-ui" target="_blank" rel="noopener noreferrer">Frontend (React) ↗</a></div><div class="project-tags"><span>C# (ASP.NET Core Web API)</span><span>.NET Core</span><span>Swagger</span><span>Authentication: CAS SSO, JWT</span><span>Entity Framework</span><span>React.js</span><span>Material UI / MUI X Pro</span><span>React Router</span><span>JavaScript (ES6+)</span><span>HTML5</span><span>CSS3/SCSS</span><span>SQL (SQL Server, PostgreSQL, Redshift)</span><span>Azure</span><span>fetch</span><span>Power Automate</span></div></details>
+<details class="archive-card" data-search="student hiring system (python + react) a full-stack student hiring and workflow automation app. rewritten with a python (fastapi) backend and a modern react frontend for easier cross-platform hosting, faster deployment, and improved developer productivity. features secure authentication (asu cas sso, jwt), openapi/swagger auto-docs, and power automate integration. deployed with azure app service, static web apps, and github actions ci/cd. python 3.x fastapi uvicorn sqlalchemy sql server azure sql postgresql redshift authentication: cas sso, jwt swagger/openapi react.js (es6+) material ui / mui x pro react router axios fetch react context css3/scss power automate react testing library jest azure github"><summary>12 / Student Hiring System (Python + React)</summary><p class="project-copy">A full-stack student hiring and workflow automation app. Rewritten with a Python (FastAPI) backend and a modern React frontend for easier cross-platform hosting, faster deployment, and improved developer productivity. Features secure authentication (ASU CAS SSO, JWT), OpenAPI/Swagger auto-docs, and Power Automate integration. Deployed with Azure App Service, Static Web Apps, and GitHub Actions CI/CD.</p><div class="archive-links"><a id="archive-live-11" href="https://blue-moss-0cf2b2f10.1.azurestaticapps.net" target="_blank" rel="noopener noreferrer">Visit project ↗</a><a id="archive-repo-11-0" href="https://github.com/TroyJLorents-GH/StudentApi-py" target="_blank" rel="noopener noreferrer">Backend (Py – FastAPI) ↗</a><a id="archive-repo-11-1" href="https://github.com/TroyJLorents-GH/ui-student-py" target="_blank" rel="noopener noreferrer">Frontend (React) ↗</a></div><div class="project-tags"><span>Python 3.x</span><span>FastAPI</span><span>Uvicorn</span><span>SQLAlchemy</span><span>SQL Server</span><span>Azure SQL</span><span>PostgreSQL</span><span>Redshift</span><span>Authentication: CAS SSO, JWT</span><span>Swagger/OpenAPI</span><span>React.js (ES6+)</span><span>Material UI / MUI X Pro</span><span>React Router</span><span>Axios</span><span>fetch</span><span>React Context</span><span>CSS3/SCSS</span><span>Power Automate</span><span>React Testing Library</span><span>Jest</span><span>Azure</span><span>GitHub</span></div></details>
+<details class="archive-card" data-search="nextstep - career guidance and job discovery web app a completed job tracking and dashboard application. search for jobs across linkedin, indeed, glassdoor, ziprecruiter all in one place. hosted on gc with user data persisted in a supabase postgresql database. built with react, typescript, and tanstack libraries, it includes interactive filtering, sorting, and data visualization with a polished, responsive ui. react.js typescript tanstack table tanstack query scss javascript (es6+) responsive ui data visualization google cloud run supabase postgresql"><summary>13 / NextStep - Career Guidance and Job Discovery Web App</summary><p class="project-copy">A completed job tracking and dashboard application. Search for jobs across LinkedIn, Indeed, Glassdoor, ZipRecruiter all in one place. Hosted on GC with user data persisted in a Supabase PostgreSQL database. Built with React, TypeScript, and TanStack libraries, it includes interactive filtering, sorting, and data visualization with a polished, responsive UI.</p><div class="archive-links"><a id="archive-live-12" href="https://job-tracker-frontend-ekxsmomdlq-uw.a.run.app/" target="_blank" rel="noopener noreferrer">Visit project ↗</a><a id="archive-repo-12-0" href="https://github.com/TroyJLorents-GH/tanstack-job-tracker" target="_blank" rel="noopener noreferrer">GitHub Repo ↗</a></div><div class="project-tags"><span>React.js</span><span>TypeScript</span><span>TanStack Table</span><span>TanStack Query</span><span>SCSS</span><span>JavaScript (ES6+)</span><span>Responsive UI</span><span>Data Visualization</span><span>Google Cloud Run</span><span>Supabase</span><span>PostgreSQL</span></div></details>
+<details class="archive-card" data-search="insightai a document-aware ai chatbot demo that lets users upload files (pdf, word, excel, csv) and chat with an ai assistant powered by gpt-4. features document q&amp;a, summarization, content flagging, session history, pin/delete/resume chat, and openai moderation, all in a modern streamlit ui. python 3.13 streamlit openai gpt-4 document q&amp;a chatbot pymupdf (fitz) sqlite python-dotenv session persistence content moderation keyword extraction"><summary>14 / InsightAI</summary><p class="project-copy">A document-aware AI chatbot demo that lets users upload files (PDF, Word, Excel, CSV) and chat with an AI assistant powered by GPT-4. Features document Q&amp;A, summarization, content flagging, session history, pin/delete/resume chat, and OpenAI moderation, all in a modern Streamlit UI.</p><div class="archive-links"><a id="archive-live-13" href="https://insightai-openai.streamlit.app/" target="_blank" rel="noopener noreferrer">Visit project ↗</a><a id="archive-repo-13-0" href="https://github.com/TroyJLorents-GH/InsightAI" target="_blank" rel="noopener noreferrer">GitHub Repo ↗</a></div><div class="project-tags"><span>Python 3.13</span><span>Streamlit</span><span>OpenAI GPT-4</span><span>Document Q&amp;A</span><span>Chatbot</span><span>PyMuPDF (fitz)</span><span>SQLite</span><span>python-dotenv</span><span>Session Persistence</span><span>Content Moderation</span><span>Keyword Extraction</span></div></details>
+<details class="archive-card" data-search="react native scheduler (in progress) a mobile app for scheduling, calendar management, and to-do tracking, built with react native and expo sdk 55. integrates with google calendar, supports reminders, and features an intuitive modern ui. currently in development, aiming for both ios and android release. react native expo sdk 55 javascript (es6+) google calendar api openweather api mobile app scheduling reminders ui/ux cross-platform ios android"><summary>15 / React Native Scheduler (In Progress)</summary><p class="project-status">In development</p><p class="project-copy">A mobile app for scheduling, calendar management, and to-do tracking, built with React Native and Expo SDK 55. Integrates with Google Calendar, supports reminders, and features an intuitive modern UI. Currently in development, aiming for both iOS and Android release.</p><div class="archive-links"><a id="archive-repo-14-0" href="https://github.com/TroyJLorents-GH/react-native-scheduler" target="_blank" rel="noopener noreferrer">GitHub Repo ↗</a></div><div class="project-tags"><span>React Native</span><span>Expo SDK 55</span><span>JavaScript (ES6+)</span><span>Google Calendar API</span><span>OpenWeather API</span><span>Mobile App</span><span>Scheduling</span><span>Reminders</span><span>UI/UX</span><span>Cross-Platform</span><span>iOS</span><span>Android</span></div></details>
+<details class="archive-card" data-search="graphql chatroom (in progress) a custom chatroom application using graphql for queries, mutations, and subscriptions. built with react + apollo client on the frontend and a graphql backend to handle real-time messaging. includes room creation, message history, and live updates. react.js apollo client graphql subscriptions supabase node.js javascript (es6+) chat application real-time updates ui/ux"><summary>16 / GraphQL Chatroom (In Progress)</summary><p class="project-status">In development</p><p class="project-copy">A custom chatroom application using GraphQL for queries, mutations, and subscriptions. Built with React + Apollo Client on the frontend and a GraphQL backend to handle real-time messaging. Includes room creation, message history, and live updates.</p><div class="archive-links"><a id="archive-repo-15-0" href="https://github.com/TroyJLorents-GH/chat_application_FS_GQL" target="_blank" rel="noopener noreferrer">GitHub Repo ↗</a></div><div class="project-tags"><span>React.js</span><span>Apollo Client</span><span>GraphQL</span><span>Subscriptions</span><span>Supabase</span><span>Node.js</span><span>JavaScript (ES6+)</span><span>Chat Application</span><span>Real-time Updates</span><span>UI/UX</span></div></details></div><p id="project-empty" hidden>No matching projects. Try a different keyword.</p></section><section id="experience" class="full-section"><div class="section-heading"><p class="eyebrow">05 / EXPERIENCE</p><h2 class="font-display">BUILT IN THE REAL WORLD.<br><span>NOT JUST THE SANDBOX.</span></h2></div><article class="career-row"><p>September 2024 – Present</p><div><h3>Founder &amp; Developer</h3><p>AutomateFlows.io</p><p class="mt-4">Founded an AI automation services business delivering intelligent automation solutions for small businesses using Azure AI Foundry, modern web technologies, and agentic AI.</p><details><summary>Responsibilities &amp; contributions</summary><ul><li>Built and deployed production Azure AI Foundry agents (PersonalAssistant, ResumeAgent, ResumeMatcherAgent) with Cosmos DB, Web Search, and Memory Store tool integrations.</li><li>Developed a full-stack SaaS platform with React, TypeScript, Tailwind CSS, and Netlify serverless functions for AI-powered business automation.</li><li>Built a document intelligence platform with Agentic RAG, Azure Document Intelligence, embeddings, and Azure AI Search (hybrid BM25 + vector) for semantic resume matching.</li><li>Integrated Stripe payment processing for subscription-based automation services (Starter, Professional, Enterprise tiers).</li><li>Implemented serverless architecture using Netlify Functions with service principal authentication for Azure AI Foundry API calls.</li><li>Designed responsive, modern landing pages with Framer Motion animations and conversion-optimized user experiences.</li></ul></details></div></article>
+<article class="career-row"><p>June 2024 – Present</p><div><h3>Web Application Developer (Full-Stack &amp; AI)</h3><p>ASU – School of Computing and Augmented Intelligence</p><p class="mt-4">Own full-stack applications, AI services, and cloud infrastructure across ASU. Built SAMS for 300+ users, cut hiring processing time by approximately 80%, and reduced student-project hosting costs by 93%.</p><details><summary>Responsibilities &amp; contributions</summary><ul><li>Designed and built SAMS, an end-to-end student hiring platform, owning the database, backend, and React/TypeScript frontend. Replaced a 150-200-hour manual process for hiring TAs, IAs, and graders; serves 300+ users and cut processing time by approximately 80%.</li><li>Lead the rollout to other ASU schools, backed by HR leadership and the Dean of the Ira A. Fulton Schools of Engineering, with pilots underway at other colleges.</li><li>Re-architected student-project hosting onto a single EC2 Windows Server instance with container isolation for each team, supporting 200+ .NET projects across four classes. Reduced the monthly AWS bill from $850 to $60, a 93% reduction.</li><li>Built production AI services with Python, FastAPI, Azure AI Foundry, and LLM APIs, including document ingestion, vector search, RAG, model routing, and tool-calling workflows. Added a conversational hiring chatbot for live users.</li><li>Designed and maintained SQL Server, PostgreSQL, and Cosmos DB data models for transactional and AI workloads, including schemas across hundreds of tables and queries over millions of rows.</li><li>Built FastAPI and .NET Core Web API services connected through webhooks and API pipelines. Implemented OAuth 2.0, CAS SSO, and role-based access control across enterprise applications and AI services.</li><li>Deployed and operated services across AWS and Azure using containers, CI/CD, CloudWatch monitoring, Pytest, load testing, and deployment validation. Used Azure DevOps, App Service, Static Web Apps, and API Management for delivery.</li><li>Automated cross-team workflows with Power Automate, Power Apps, SQL, Airtable, and Microsoft Forms to reduce manual handoffs.</li></ul></details></div></article>
+<article class="career-row"><p>Dec 2019 – Jan 2024</p><div><h3>Software Engineer</h3><p>Zywave Inc.</p><p class="mt-4">Full-stack engineer specializing in Python, C#, AWS, React.js, and cloud-based healthcare applications.</p><details><summary>Responsibilities &amp; contributions</summary><ul><li>Built and maintained web/cloud healthcare apps using Python, SQL, AWS, and C# ASP.NET Core MVC; designed REST APIs and automated deployments with Octopus.</li><li>Enhanced system performance with async programming, GitLab CI/CD, and performance testing.</li><li>Led containerized app monitoring with Rancher; maintained API docs/testing with Swagger (OpenAPI).</li><li>Implemented secure JSON data exchanges and ensured regulatory compliance.</li><li>Conducted unit testing (Moq), bug fixes, and technical support via JIRA/Confluence.</li><li>Engaged in Agile/SCRUM cycles: daily standups, sprint planning, retros, and project intake.</li></ul></details></div></article>
+<article class="career-row"><p>Nov 2018 – June 2020</p><div><h3>Data Administrator</h3><p>Zywave Inc.</p><p class="mt-4">Managed data and ETL automations for insurance data partners.</p><details><summary>Responsibilities &amp; contributions</summary><ul><li>Managed a team of four: assigned tasks, onboarded/trained new members.</li><li>Automated ETL tasks using Python (OpenPyXL, Pandas), Excel macros/VBA.</li><li>Collaborated cross-functionally for QA on insurance data.</li></ul></details></div></article>
+<article class="career-row"><p>Jan 2017 – Nov 2018</p><div><h3>Account Executive</h3><p>RateFactory (Acquired by Zywave Inc.)</p><p class="mt-4">Managed broker/agent relationships and SaaS quoting tool sales.</p><details><summary>Responsibilities &amp; contributions</summary><ul><li>Managed relationships with brokers/agents to promote SaaS quoting tools.</li><li>Created/optimized outreach strategies, contract renewals, and onboarding flows.</li><li>Developed/tracked KPIs in Salesforce dashboards and reports.</li><li>Sourced leads, negotiated terms, and improved team sales via research and CRM insights.</li></ul></details></div></article></section><section id="education" class="full-section"><div class="section-heading"><p class="eyebrow">06 / EDUCATION &amp; LEARNING</p><h2 class="font-display">ENGINEERING FOUNDATION.<br><span>CONTINUOUS CURIOSITY.</span></h2></div><div class="full-grid"><article class="education-card"><h3>B.S. Software Engineering</h3><p>Ira A. Fulton Schools of Engineering<br>Arizona State University</p></article><article class="education-card"><h3>B.A. Business Law</h3><p>W. P. Carey School of Business<br>Arizona State University · May 2018</p></article></div><details class="mt-10"><summary class="cursor-pointer text-xl">Certifications &amp; learning credentials (13)</summary><ul class="credential-list"><li>Building Modern Python Applications on AWS</li><li>Data Collection and Processing with Python</li><li>Using Python to Access Web Data</li><li>Using Databases with Python</li><li>Python Data Structures</li><li>Programming for Everybody (Getting Started with Python)</li><li>Capstone: Retrieving, Processing, and Visualizing Data with Python</li><li>Python for Data Science and AI (IBM)</li><li>Protect Microsoft Foundry solutions by using Microsoft Defender for Cloud</li><li>Understand how Microsoft Defender for Cloud supports AI security and governance in Azure</li><li>Protect AI workloads with Microsoft Defender for Cloud</li><li>Configure and manage guardrails in Microsoft Foundry</li><li>Secure Microsoft Foundry environments</li></ul></details><div class="credential-links mt-6"><a id="credentials-pdf" href="/assets/Troy_Lorents_Certifications_page.pdf" target="_blank" rel="noopener noreferrer">View credentials and verification links ↗</a></div></section><section id="contact" class="full-section"><p class="eyebrow">LET'S TALK</p><div id="contact-widget"></div><noscript><p>Email <a href="mailto:troy.j.lorents91@gmail.com">troy.j.lorents91@gmail.com</a> to get in touch.</p></noscript></section>
+    <!-- Footer -->
+    <footer class="py-12 px-mobile md:px-desktop flex flex-col items-center justify-center text-center">
+      <h2 class="font-display text-3xl md:text-4xl text-light mb-6">READY TO BUILD?</h2>
+      <div class="flex flex-wrap justify-center gap-4 mb-12">
+        <a href="#work" id="footer-cta-work" class="inline-flex items-center justify-center bg-surface border border-rules text-light font-semibold rounded-full px-8 py-3 hover:border-accent hover:text-accent transition-colors">
+          View Projects
+        </a>
+        <a href="#contact" id="footer-cta-contact" class="inline-flex items-center justify-center bg-accent text-bg font-semibold rounded-full px-8 py-3 hover:bg-light transition-colors">
+          Get in Touch
+        </a>
+      </div>
+      <p class="text-muted text-sm">
+        © 2026 Troy Lorents. All rights reserved.
+      </p>
+    </footer>
+
+  </main>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script>
+// 21st references: Container Scroll Animation and Sticky Scroll Reveal.
+// Rebuilt with GSAP, native page scroll, and readable static fallbacks.
+document.addEventListener('DOMContentLoaded', () => {
+ const gs = window.gsap, ST = window.ScrollTrigger;
+ if (!gs || !ST) { initEngineeringHero(); return; }
+ gs.registerPlugin(ST);
+ initEngineeringHero(gs, ST);
+ const mm = gs.matchMedia();
+ mm.add('(prefers-reduced-motion: no-preference)', () => {
+  gs.fromTo('.scroll-progress',{scaleX:0},{scaleX:1,ease:'none',scrollTrigger:{start:0,end:'max',scrub:true}});
+  gs.fromTo('.impact-line',{scaleX:0},{scaleX:1,ease:'none',scrollTrigger:{trigger:'#impact',start:'top 85%',end:'top 35%',scrub:.4}});
+  gs.from('#impact .metric-card',{y:50,opacity:.25,stagger:.12,duration:.7,ease:'power2.out',scrollTrigger:{trigger:'#impact',start:'top 65%',once:true}});
+  document.querySelectorAll('#skills details').forEach(row => {
+   gs.from(row,{x:32,opacity:.3,duration:.55,ease:'power2.out',scrollTrigger:{trigger:row,start:'top 92%',once:true}});
+  });
+ });
+ mm.add('(min-width: 1024px) and (prefers-reduced-motion: no-preference)', context => {
+  const layout=document.querySelector('.story-layout');
+  layout.classList.add('motion-story');
+  const panels=gs.utils.toArray('.stage-panel');
+  const count=document.querySelector('.stage-count');
+  context.add('activate', index => {
+   gs.to(panels,{autoAlpha:0,y:18,duration:.25,overwrite:true});
+   gs.to(panels[index],{autoAlpha:1,y:0,duration:.45,overwrite:true});
+   count.textContent='0'+(index+1)+' / 03';
+  });
+  document.querySelectorAll('.story-step').forEach((step,index) => {
+   ST.create({trigger:step,start:'top 55%',end:'bottom 55%',onEnter:()=>context.activate(index),onEnterBack:()=>context.activate(index)});
+  });
+  gs.fromTo('.stage-progress',{scaleX:0},{scaleX:1,ease:'none',scrollTrigger:{trigger:'.story-steps',start:'top 55%',end:'bottom 55%',scrub:true}});
+  return ()=>{layout.classList.remove('motion-story');count.textContent='01 / 03';};
+ });
+ let refreshFrame;
+ const refresh=()=>{cancelAnimationFrame(refreshFrame);refreshFrame=requestAnimationFrame(()=>ST.refresh());};
+ document.querySelectorAll('#skills details').forEach(row=>row.addEventListener('toggle',refresh));
+ document.querySelectorAll('img').forEach(img=>{if(!img.complete)img.addEventListener('load',refresh,{once:true});});
+ if(document.fonts)document.fonts.ready.then(refresh);
+ refresh();
+});
+</script>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+ const input=document.querySelector('#project-search'), cards=[...document.querySelectorAll('.archive-card')];
+ input.addEventListener('input',()=>{let n=0;cards.forEach(c=>{c.hidden=!c.dataset.search.includes(input.value.trim().toLowerCase());if(!c.hidden)n++;});document.querySelector('#project-count').textContent=n+' project'+(n===1?'':'s');document.querySelector('#project-empty').hidden=n>0;window.ScrollTrigger?.refresh();});
+ document.querySelectorAll('details').forEach(d=>d.addEventListener('toggle',()=>window.ScrollTrigger?.refresh()));
+ document.querySelectorAll('nav details a').forEach(a=>a.addEventListener('click',()=>a.closest('details').open=false));
+});
+</script>
+<script>
+function initEngineeringHero(gs, ST) {
+ const story=document.querySelector('.engineering-story');
+ if(!story)return;
+ const panels=[...story.querySelectorAll('.engineering-panel')];
+ const tabs=[...story.querySelectorAll('[role="tab"]')];
+ const progress=story.querySelector('.engineering-progress div');
+ if(gs && ST){
+ const mm=gs.matchMedia();
+ mm.add('(min-width: 1024px) and (min-height: 750px) and (prefers-reduced-motion: no-preference)',()=>{
+  story.classList.add('engineering-enhanced');
+  let active=-1,scrollIndex=-1;
+  function show(index,animate=true){
+   if(index===active)return;
+   if(panels.some(p=>p.contains(document.activeElement)))return;
+   active=index;
+   panels.forEach((p,i)=>{p.hidden=i!==index;p.setAttribute('role','tabpanel');p.setAttribute('aria-labelledby','layer-tab-'+i);});
+   tabs.forEach((t,i)=>{t.setAttribute('aria-selected',String(i===index));t.tabIndex=i===index?0:-1;});
+   gs.to(progress,{scaleX:(index+1)/4,duration:animate?.22:0,overwrite:true});
+   if(animate)gs.fromTo(panels[index],{opacity:.3,y:12},{opacity:1,y:0,duration:.3,overwrite:true});
+  }
+  show(0,false);
+  const trigger=ST.create({trigger:story,start:'top 86px',end:()=>'+='+Math.min(1400,innerHeight*1.5),pin:true,pinSpacing:true,invalidateOnRefresh:true,onUpdate:self=>{const index=Math.min(3,Math.floor(self.progress*4));if(index!==scrollIndex){scrollIndex=index;show(index);}}});
+  const handlers=tabs.map((tab,i)=>{
+   const click=()=>show(i);
+   const key=event=>{let next=i;if(event.key==='ArrowRight'||event.key==='ArrowDown')next=(i+1)%4;else if(event.key==='ArrowLeft'||event.key==='ArrowUp')next=(i+3)%4;else if(event.key==='Home')next=0;else if(event.key==='End')next=3;else return;event.preventDefault();tabs[next].focus();show(next);};
+   tab.addEventListener('click',click);tab.addEventListener('keydown',key);return{tab,click,key};
+  });
+  return()=>{trigger.kill();handlers.forEach(({tab,click,key})=>{tab.removeEventListener('click',click);tab.removeEventListener('keydown',key);});gs.killTweensOf([...panels,progress]);gs.set([...panels,progress],{clearProps:'all'});story.classList.remove('engineering-enhanced');panels.forEach((p,i)=>{p.hidden=false;p.removeAttribute('role');p.setAttribute('aria-labelledby','layer-title-'+i);});};
+ });
+ }
+ const term=document.querySelector('#demo-term'),subject=document.querySelector('#demo-subject'),catalog=document.querySelector('#demo-catalog'),klass=document.querySelector('#demo-class'),result=document.querySelector('#demo-result');
+ const course={CSE:{catalog:'101',klass:'demo-001'},SER:{catalog:'201',klass:'demo-002'}};
+ function resetResult(message){result.textContent=message;result.classList.remove('is-complete');}
+ function resetSelect(select,label){select.replaceChildren(new Option(label,''));select.disabled=true;}
+ term.addEventListener('change',()=>{subject.value='';subject.disabled=!term.value;resetSelect(catalog,'Select catalog');resetSelect(klass,'Select class');resetResult(term.value?'Choose a subject.':'Choose a term to begin.');});
+ subject.addEventListener('change',()=>{resetSelect(catalog,'Select catalog');resetSelect(klass,'Select class');if(subject.value){catalog.add(new Option(course[subject.value].catalog,course[subject.value].catalog));catalog.disabled=false;}resetResult(subject.value?'Choose a catalog number.':'Choose a subject.');});
+ catalog.addEventListener('change',()=>{resetSelect(klass,'Select class');if(catalog.value){klass.add(new Option(course[subject.value].klass,course[subject.value].klass));klass.disabled=false;}resetResult(catalog.value?'Choose a class number.':'Choose a catalog number.');});
+ klass.addEventListener('change',()=>{if(klass.value){result.textContent='Class Details: '+subject.value+' '+catalog.value+' · Session A · '+klass.value+' (fictional demo record)';result.classList.add('is-complete');}else resetResult('Choose a class number.');});
+ document.querySelector('#demo-reset').addEventListener('click',()=>{term.value='';term.dispatchEvent(new Event('change'));});
+}
+
+</script>
+<div id="assistant-widget"></div>
+</body>
 </html>

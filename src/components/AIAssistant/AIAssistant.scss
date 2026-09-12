@@ -1,4 +1,8 @@
 // AI Chat Button (Floating)
+.agent-avatar { display: block; width: 100%; height: 100%; color: #a8d8ff; }
+.ai-chat-button > .agent-avatar { width: 46px; height: 46px; }
+.ai-icon > .agent-avatar { width: 36px; height: 36px; }
+.message-avatar > .agent-avatar { width: 28px; height: 28px; }
 .ai-chat-button {
   position: fixed;
   bottom: 30px;
