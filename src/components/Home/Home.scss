@@ -14,7 +14,8 @@ body {
   padding: 0;
 }
 
-html {
+// The scroll-driven redesign needs instant positioning during pin measurements.
+html:not([data-portfolio-v2="true"]) {
   scroll-behavior: smooth;
 }
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth" data-portfolio-v2="true">
+<html lang="en" data-portfolio-v2="true">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -492,9 +492,8 @@ document.addEventListener('DOMContentLoaded', () => {
   gs.fromTo('.stage-progress',{scaleX:0},{scaleX:1,ease:'none',scrollTrigger:{trigger:'.story-steps',start:'top 55%',end:'bottom 55%',scrub:true}});
   return ()=>{layout.classList.remove('motion-story');count.textContent='01 / 03';};
  });
- let refreshFrame;
- const refresh=()=>{cancelAnimationFrame(refreshFrame);refreshFrame=requestAnimationFrame(()=>ST.refresh());};
- document.querySelectorAll('#skills details').forEach(row=>row.addEventListener('toggle',refresh));
+ const refresh=refreshPortfolioLayout;
+ document.querySelectorAll('details').forEach(row=>row.addEventListener('toggle',refresh));
  document.querySelectorAll('img').forEach(img=>{if(!img.complete)img.addEventListener('load',refresh,{once:true});});
  if(document.fonts)document.fonts.ready.then(refresh);
  refresh();
@@ -504,12 +503,19 @@ document.addEventListener('DOMContentLoaded', () => {
 <script>
 document.addEventListener('DOMContentLoaded',()=>{
  const input=document.querySelector('#project-search'), cards=[...document.querySelectorAll('.archive-card')];
- input.addEventListener('input',()=>{let n=0;cards.forEach(c=>{c.hidden=!c.dataset.search.includes(input.value.trim().toLowerCase());if(!c.hidden)n++;});document.querySelector('#project-count').textContent=n+' project'+(n===1?'':'s');document.querySelector('#project-empty').hidden=n>0;window.ScrollTrigger?.refresh();});
- document.querySelectorAll('details').forEach(d=>d.addEventListener('toggle',()=>window.ScrollTrigger?.refresh()));
+ input.addEventListener('input',()=>{let n=0;cards.forEach(c=>{c.hidden=!c.dataset.search.includes(input.value.trim().toLowerCase());if(!c.hidden)n++;});document.querySelector('#project-count').textContent=n+' project'+(n===1?'':'s');document.querySelector('#project-empty').hidden=n>0;refreshPortfolioLayout();});
  document.querySelectorAll('nav details a').forEach(a=>a.addEventListener('click',()=>a.closest('details').open=false));
 });
 </script>
 <script>
+// Pin measurements require immediate scroll positioning. Batch layout changes
+// into one safe refresh after the browser has applied them.
+let portfolioRefreshFrame;
+function refreshPortfolioLayout() {
+ cancelAnimationFrame(portfolioRefreshFrame);
+ portfolioRefreshFrame=requestAnimationFrame(()=>window.ScrollTrigger?.refresh(true));
+}
+
 function initEngineeringHero(gs, ST) {
  const story=document.querySelector('.engineering-story');
  if(!story)return;
