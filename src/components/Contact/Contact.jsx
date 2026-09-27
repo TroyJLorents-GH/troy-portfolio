@@ -66,7 +66,7 @@
 //   return (
 //     <div className="contact-container">
 //       <div className="contact-left">
-//         <h1>Contact Me</h1>
+//         <h2>Let's build something.</h2>
 //         <p>
 //           Thank you for checking out my portfolio.<br /><br />
 //           Feel free to reach out with any questions, comments, or opportunities.<br /><br />
@@ -135,7 +135,7 @@ const Contact = () => {
   return (
     <div className="contact-container">
       <div className="contact-left">
-        <h1>Contact Me</h1>
+        <h2>Let’s build something.</h2>
         <p>
           Thank you for checking out my portfolio.<br /><br />
           Feel free to reach out with any questions, comments, or opportunities.<br /><br />
@@ -165,7 +165,7 @@ const Contact = () => {
             <label htmlFor="contact-message">Message</label>
             <textarea id="contact-message" name="message" placeholder="Your message…" required></textarea>
           </div>
-          <button type="submit" className="flat-button" disabled={sending}>{sending ? 'SENDING…' : 'SEND MESSAGE'}</button>
+          <button type="submit" className="flat-button" disabled={sending}>{sending ? 'Sending…' : 'Send message'}</button>
           <p className="contact-status" role="status">{status}</p>
         </form>
       </div>

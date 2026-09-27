@@ -61,7 +61,7 @@ AZURE CLOUD PLATFORM & DEVOPS (Proficient):
 - Azure Document Intelligence: Multi-format OCR, document processing, layout analysis
 
 PROFESSIONAL EXPERIENCE:
-- 9+ years of software engineering experience
+- 8+ years of software engineering experience
 - Founder of useKnockout, a commercial image-processing API with paying customers
 - Founder of AutomateFlows.io — AI automation services for small businesses
 - Web Application Developer at ASU School of Computing and Augmented Intelligence (SCAI)

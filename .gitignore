@@ -37,3 +37,6 @@ yarn-error.log*
 .playwright-mcp/
 
 .vercel
+
+# Cross-agent handoff notes (Claude/Codex)
+.agent-handoff/
