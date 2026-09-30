@@ -146,9 +146,8 @@ body.blueprint.bp-motion {
   .bp-toolbar { bottom: 12px; }
 }
 
-@media(max-width:1099px), (max-height:699px), (prefers-reduced-motion:reduce) {
-  body.blueprint .bp-chapter { display: none; }
-}
+// The chapter label only means something while the scroll scene runs.
+body.blueprint:not(.bp-motion) .bp-chapter { display: none; }
 @media(max-width:760px) {
   body.blueprint {
     .bp-intro { padding: 24px 24px 48px; }

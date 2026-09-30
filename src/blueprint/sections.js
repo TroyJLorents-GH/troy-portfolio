@@ -18,7 +18,7 @@ export const sections = [
 ];
 
 export const motion = {
-  width: 1280, height: 800, desktop: '(min-width: 1100px) and (min-height: 700px) and (prefers-reduced-motion: no-preference)',
+  width: 1280, height: 800, desktop: '(min-width: 1024px) and (min-height: 600px)', reduce: '(prefers-reduced-motion: reduce)',
   pixelsPerUnit: 300, readHold: 1.6, stepDuration: 1.6, handoff: .9,
   // true replays the full tilt back to the cover between every section; false keeps it for the opening only.
   tiltBetween: false, tilt: { rotationY: -32, rotationX: 14, rotation: -5, scale: .66, x: -45, y: -10 },

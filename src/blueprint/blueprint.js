@@ -88,8 +88,12 @@ export function initBlueprint() {
 
   let context, timeline, trigger, frame, restoreFrame, disposed = false, rebuilding = false;
   let manualSimple = new URLSearchParams(window.location.search).get('view') === 'simple';
+  // A reduced-motion preference starts in the stacked view; the visitor can still opt in to motion.
+  let manualMotion = false;
   let ranges = [], activeId = 'hero';
   const media = window.matchMedia(motion.desktop);
+  const reduce = window.matchMedia(motion.reduce);
+  const motionOn = () => media.matches && !manualSimple && (!reduce.matches || manualMotion);
   const simplify = toolbar.querySelector('.bp-simplify');
   const chapter = toolbar.querySelector('.bp-chapter');
   const stepItems = panels.flatMap(p => p.steps?.items || []);
@@ -127,12 +131,12 @@ export function initBlueprint() {
     });
     const previousId = readingPanel?.config.id || activeId;
     simplify.hidden = !media.matches;
-    simplify.textContent = manualSimple ? 'Motion view' : 'Simple view';
-    simplify.setAttribute('aria-pressed', String(manualSimple));
+    simplify.textContent = motionOn() ? 'Simple view' : 'Motion view';
+    simplify.setAttribute('aria-pressed', String(!motionOn()));
     rebuilding = true;
     clean();
     activeId = previousId;
-    if (manualSimple || !media.matches) {
+    if (!motionOn()) {
       rebuilding = false;
       if (restore && wasMotion) {
         cancelAnimationFrame(restoreFrame);
@@ -223,7 +227,7 @@ export function initBlueprint() {
         }
       });
       const update = () => {
-        if (rebuilding || !media.matches) return;
+        if (rebuilding || !motionOn()) return;
         const time = tl.time();
         const range = ranges.find(r => time >= r.read - .01 && time <= r.end + .01);
         activeId = range?.id || (time < ranges[0].read ? 'hero' : activeId);
@@ -282,7 +286,12 @@ export function initBlueprint() {
     window.history.pushState(null, '', `#${id}`);
     go(id, true);
   };
-  const onSimplify = () => { manualSimple = !manualSimple; setup(); };
+  const onSimplify = () => {
+    const wasMotion = motionOn();
+    manualSimple = wasMotion;
+    manualMotion = !wasMotion;
+    setup();
+  };
   const onHash = () => go(window.location.hash.slice(1) || 'hero');
   const onFocus = event => {
     if (!timeline) return;
@@ -326,6 +335,7 @@ export function initBlueprint() {
   window.addEventListener('resize', schedule);
   window.addEventListener('hashchange', onHash);
   media.addEventListener('change', onMediaChange);
+  reduce.addEventListener('change', onMediaChange);
   // Existing filtering/widget hooks use this single batched layout refresh.
   const previousRefresh = window.refreshPortfolioLayout;
   window.refreshPortfolioLayout = schedule;
@@ -371,6 +381,7 @@ export function initBlueprint() {
     window.removeEventListener('hashchange', onHash);
     window.removeEventListener('load', seekInitialHash);
     media.removeEventListener('change', onMediaChange);
+    reduce.removeEventListener('change', onMediaChange);
     window.refreshPortfolioLayout = previousRefresh;
     clean();
   };
