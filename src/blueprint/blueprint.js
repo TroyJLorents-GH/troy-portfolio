@@ -87,14 +87,25 @@ export function initBlueprint() {
   shell.append(toolbar);
 
   let context, timeline, trigger, frame, restoreFrame, disposed = false, rebuilding = false;
-  let manualSimple = new URLSearchParams(window.location.search).get('view') === 'simple';
+  // The visitor's own view choice is remembered per browser; storage can be unavailable, so it is optional.
+  const stored = key => { try { return window.localStorage.getItem(key); } catch { return null; } };
+  const store = (key, value) => { try { window.localStorage.setItem(key, value); } catch { /* choice lasts for this visit only */ } };
+  const savedView = stored('bp-view');
+  let manualSimple = new URLSearchParams(window.location.search).get('view') === 'simple' || savedView === 'simple';
   // A reduced-motion preference starts in the stacked view; the visitor can still opt in to motion.
-  let manualMotion = false;
+  let manualMotion = savedView === 'motion';
+  let offerDismissed = stored('bp-motion-offer') === 'dismissed';
   let ranges = [], activeId = 'hero';
   const media = window.matchMedia(motion.desktop);
   const reduce = window.matchMedia(motion.reduce);
   const motionOn = () => media.matches && !manualSimple && (!reduce.matches || manualMotion);
   const simplify = toolbar.querySelector('.bp-simplify');
+  // Managed laptops often report reduced motion by policy; offer the scene once instead of hiding it in the toolbar.
+  const offer = el('div', 'bp-motion-offer', '<p>Animations are reduced on this device, so you are seeing the simple view.</p><button type="button" class="bp-offer-accept">Turn on motion view</button><button type="button" class="bp-offer-dismiss" aria-label="Keep the simple view">×</button>');
+  offer.setAttribute('role', 'region');
+  offer.setAttribute('aria-label', 'Motion view');
+  offer.hidden = true;
+  shell.append(offer);
   const chapter = toolbar.querySelector('.bp-chapter');
   const stepItems = panels.flatMap(p => p.steps?.items || []);
   const activeStep = (id, time) => {
@@ -131,6 +142,7 @@ export function initBlueprint() {
     });
     const previousId = readingPanel?.config.id || activeId;
     simplify.hidden = !media.matches;
+    offer.hidden = !(media.matches && reduce.matches && !manualMotion && !manualSimple && !offerDismissed);
     simplify.textContent = motionOn() ? 'Simple view' : 'Motion view';
     simplify.setAttribute('aria-pressed', String(!motionOn()));
     rebuilding = true;
@@ -290,7 +302,21 @@ export function initBlueprint() {
     const wasMotion = motionOn();
     manualSimple = wasMotion;
     manualMotion = !wasMotion;
+    store('bp-view', wasMotion ? 'simple' : 'motion');
     setup();
+  };
+  const onOffer = event => {
+    if (event.target.closest('.bp-offer-accept')) {
+      manualMotion = true;
+      store('bp-view', 'motion');
+      setup();
+      simplify.focus({ preventScroll: true });
+    } else if (event.target.closest('.bp-offer-dismiss')) {
+      offerDismissed = true;
+      store('bp-motion-offer', 'dismissed');
+      offer.hidden = true;
+      simplify.focus({ preventScroll: true });
+    }
   };
   const onHash = () => go(window.location.hash.slice(1) || 'hero');
   const onFocus = event => {
@@ -332,6 +358,7 @@ export function initBlueprint() {
   const observer = new ResizeObserver(schedule);
   panels.forEach(p => observer.observe(p.detail));
   simplify.addEventListener('click', onSimplify);
+  offer.addEventListener('click', onOffer);
   window.addEventListener('resize', schedule);
   window.addEventListener('hashchange', onHash);
   media.addEventListener('change', onMediaChange);
@@ -377,6 +404,8 @@ export function initBlueprint() {
     document.removeEventListener('focusin', onFocus);
     document.querySelectorAll('details').forEach(d => d.removeEventListener('toggle', schedule));
     simplify.removeEventListener('click', onSimplify);
+    offer.removeEventListener('click', onOffer);
+    offer.remove();
     window.removeEventListener('resize', schedule);
     window.removeEventListener('hashchange', onHash);
     window.removeEventListener('load', seekInitialHash);
