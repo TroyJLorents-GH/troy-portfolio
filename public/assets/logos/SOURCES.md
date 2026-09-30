@@ -1,6 +1,6 @@
 # Logo sources
 
-Brand marks from the svgl.app library (https://svgl.app), used only to identify the named technology. Marks remain trademarks of their owners. The 12 original logos were added in July 2026 from the same library.
+Brand marks from the svgl.app library (https://svgl.app) and Simple Icons (https://simpleicons.org, CC0), used only to identify the named technology. Marks remain trademarks of their owners. The 12 original logos were added in July 2026 from the same library.
 
 Logos use light-background variants to suit the drafting-paper theme (2026-09-24).
 
@@ -43,3 +43,15 @@ Logos use light-background variants to suit the drafting-paper theme (2026-09-24
 | openai.svg | OpenAI | https://svgl.app/library/openai.svg | https://openai.com |
 | anthropic.svg | Anthropic | https://svgl.app/library/anthropic_black.svg | https://anthropic.com |
 | aws.svg | Amazon Web Services | https://svgl.app/library/aws_light.svg | https://aws.amazon.com |
+| apollographql.svg | Apollo GraphQL | https://cdn.simpleicons.org/apollographql | https://www.apollographql.com |
+| streamlit.svg | Streamlit | https://cdn.simpleicons.org/streamlit | https://streamlit.io |
+| octopusdeploy.svg | Octopus Deploy | https://cdn.simpleicons.org/octopusdeploy | https://octopus.com |
+| insomnia.svg | Insomnia | https://cdn.simpleicons.org/insomnia | https://insomnia.rest |
+| neo4j.svg | Neo4j | https://cdn.simpleicons.org/neo4j | https://neo4j.com |
+| splunk.svg | Splunk | https://cdn.simpleicons.org/splunk | https://www.splunk.com |
+| elastic.svg | Elastic | https://cdn.simpleicons.org/elastic | https://www.elastic.co |
+| googleappsscript.svg | Google Apps Script | https://cdn.simpleicons.org/googleappsscript | https://developers.google.com/apps-script |
+| uipath.svg | UiPath | https://cdn.simpleicons.org/uipath | https://www.uipath.com |
+| airtable.svg | Airtable | https://cdn.simpleicons.org/airtable | https://www.airtable.com |
+| tinkercad.svg | Tinkercad | https://cdn.simpleicons.org/tinkercad | https://www.tinkercad.com |
+| autodesk.svg | Autodesk (used for Fusion 360) | https://cdn.simpleicons.org/autodesk | https://www.autodesk.com |
